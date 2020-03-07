@@ -1,5 +1,5 @@
 # ft_printf
-42 ft_printf project (2019-2020)
+_42 ft_printf project (2019-2020)_
 
 ## MANDATORY PART
 
