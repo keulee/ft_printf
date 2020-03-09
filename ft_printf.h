@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/08 19:57:00 by keulee            #+#    #+#             */
-/*   Updated: 2020/03/08 20:03:46 by keulee           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -24,5 +12,9 @@ char	*ft_itoa(int n);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 void	ft_putstr(char *str);
+void    ft_printf(const char *src, ...);
+void    ft_printf_c(va_list *my_list);
+void    ft_printf_nbr(va_list *my_list);
+void    ft_printf_s(va_list *my_list);
 
 #endif
