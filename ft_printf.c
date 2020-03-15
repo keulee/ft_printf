@@ -2,6 +2,8 @@
 
 void   ft_printf(const char *src, ...)
 {
+    void (*tabFunction[3])(va_list *) = {ft_printf_s, ft_printf_c};
+    char    tabIndex[4] = {'s', 'c', 'd', 0};
     va_list my_list;
     int     i;
 
