@@ -2,8 +2,15 @@
 
 void    ft_printf_s(va_list *my_list)
 {
-    char *str;
+    char    *str;
+    //int     i;
 
-    str = va_arg(*my_list, char *);
-    ft_putstr(str);
+    //i = 0;
+    /*str = va_arg(*my_list, char *);
+    while (str[i] != '\0')
+    {
+        if (i != 0 && (i - 1) == '%')
+
+    }*/
+        ft_putstr(str);
 }
