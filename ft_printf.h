@@ -8,8 +8,8 @@
 
 typedef struct	s_tab
 {
-    int         i;
     va_list     list;
+    int         i;
     int         len;
 }				t_tab;
 

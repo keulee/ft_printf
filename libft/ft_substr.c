@@ -31,21 +31,19 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*copy;
-	unsigned int	i;
 	unsigned int	j;
 
-	i = 0;
 	j = 0;
-    if (ft_strlen(s) > start)
+	if (s == NULL)
+		return (NULL);
+    if ((unsigned int)ft_strlen(s) > start)
         return (ft_strdup(""));
-	copy = NULL;
 	if (!(copy = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	while (s[i] != '\0' && 0 < len)
+	while (s[start] != '\0' && 0 < len)
 	{
 		copy[j++] = s[start++];
 		len--;
-		i++;
 	}
 	copy[j] = '\0';
 	return (copy);

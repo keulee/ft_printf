@@ -19,14 +19,7 @@ void    ft_print_str(t_tab *t_val)
 
 int    ft_printf(const char *format, ...)
 {
-    //void (*tabFunction[2])(va_list *) = {ft_printf_s, ft_printf_c};
-    //char    tabIndex[3] = {'s', 'c', 0};
-    //int     tmpIndex;
-    //int     ret;
-    //va_list list;
-    //int     i;
 
-    //i = 0;
     t_tab t_val;
     ft_init(&t_val);
 
@@ -59,6 +52,14 @@ int    ft_printf(const char *format, ...)
     }
     va_end(t_val.list);
 
+    //void (*tabFunction[2])(va_list *) = {ft_printf_s, ft_printf_c};
+    //char    tabIndex[3] = {'s', 'c', 0};
+    //int     tmpIndex;
+    //int     ret;
+    //va_list list;
+    //int     i;
+
+    //i = 0;
     // tmpIndex = 0;
     // va_start(my_list, format);
     // while (format[t_val.i] != '\0')
