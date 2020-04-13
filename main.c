@@ -1,24 +1,32 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-void    ft_test_flag(char *str, ...);
+int    ft_test_flag(char *str, ...);
 
 int main(void)
 {
-    ft_test_flag("abcdef %c %-c\n", 'A', 'B');
-    printf("abcdef %c %-c\n", 'A', 'B');
+    int printf_count;
+    int test_printf_count;
+
+    test_printf_count = ft_test_flag("abcdef %2c %-2c\n", 'A', 'B');
+    printf_count = printf("abcdef %2c %-2c\n", 'A', 'B');
+
+    printf("test printf count : %d\n", test_printf_count);
+    printf("real printf count : %d\n", printf_count);
     return (0);
 }
-void    ft_test_flag(char *str, ...)
+int    ft_test_flag(char *str, ...)
 {
     // char tmp = 'd';
     va_list my_list;
     int num;
     int i;
     int j;
+    int count;
 
     i = 0;
     j = 0;
+    count = 0;
     va_start(my_list, str);
     while (str[i] != '\0')
     {
@@ -34,6 +42,7 @@ void    ft_test_flag(char *str, ...)
                 if (str[i + 1] >= '0' && str[i + 1] <= '9')
                 {
                     num = ft_atoi(&str[i + 1]) - 1;
+                    count = count + num;
                     // ft_putchar('|');
                     while (num > 0)
                     {
@@ -48,6 +57,7 @@ void    ft_test_flag(char *str, ...)
                     if(str[i + 2] >= '0' && str[i + 2] <= '9')
                     {
                         num = ft_atoi(&str[i + 2]) - 1;
+                        count = count + num;
                         // ft_putchar('|');
                         ft_putchar(va_arg(my_list, int));
                         while (num > 0)
@@ -107,7 +117,10 @@ void    ft_test_flag(char *str, ...)
         // if (str[i] == '*')
         //     printf("option * detected\n");
         i++;
+        count++;
     }
+    va_end(my_list);
+    return (count);
 }
 
 
