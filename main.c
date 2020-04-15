@@ -6,12 +6,12 @@ int    ft_test_flag(char *str, ...);
 int main(void)
 {
     int printf_count;
-    int test_printf_count;
+    // int test_printf_count;
 
-    test_printf_count = ft_test_flag("abcdef %2c %-2c\n", 'A', 'B');
-    printf_count = printf("abcdef %2c %-2c\n", 'A', 'B');
+    // test_printf_count = ft_test_flag("abcdef |%2c||%-10c|\n", 'A', 'B');
+    printf_count = printf("abcdef |%-2c|\n", 'A');
 
-    printf("test printf count : %d\n", test_printf_count);
+    // printf("test printf count : %d\n", test_printf_count);
     printf("real printf count : %d\n", printf_count);
     return (0);
 }
@@ -52,6 +52,10 @@ int    ft_test_flag(char *str, ...)
                     ft_putchar(va_arg(my_list, int));
                     // ft_putstr("|");              // a faire
                 }
+                else if (str[i + 1] == '*')
+                {
+                    ft_putnbr(va_arg(my_list, int));
+                }
                 else if (str[i + 1] == '-')
                 {
                     if(str[i + 2] >= '0' && str[i + 2] <= '9')
@@ -66,6 +70,10 @@ int    ft_test_flag(char *str, ...)
                             num--;
                         }
                         // ft_putstr("|");
+                    }
+                    else if (str[i + 2] == '*')
+                    {
+                        ft_putnbr(va_arg(my_list, int));
                     }
                     else
                         ft_putchar(va_arg(my_list, int));

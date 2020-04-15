@@ -19,13 +19,14 @@ char	*ft_itoa(int n);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 void	ft_putstr(char *str);
-int     ft_strlen(char *src);
+int     ft_strlen(const char *src);
 int     ft_printf(const char *src, ...);
-void    ft_printf_c(va_list *my_list);
-void    ft_printf_nbr(va_list *my_list);
-void    ft_printf_s(va_list *my_list);
-void    ft_printf_nbr(va_list *my_list);
-char	*ft_strcpy(char *dest, char *src);
-int     ft_findIndex(char *tab, char element);
+// void    ft_printf_c(va_list *my_list);
+// void    ft_printf_nbr(va_list *my_list);
+// void    ft_printf_s(va_list *my_list);
+// void    ft_printf_nbr(va_list *my_list);
+// char	*ft_strcpy(char *dest, char *src);
+// int     ft_findIndex(char *tab, char element);
+char    *ft_strdup(const char *src);
 
 #endif
