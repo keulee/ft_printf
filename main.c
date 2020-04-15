@@ -6,13 +6,14 @@ int    ft_test_flag(char *str, ...);
 int main(void)
 {
     int printf_count;
-    // int test_printf_count;
+    int test_printf_count;
 
-    // test_printf_count = ft_test_flag("abcdef |%2c||%-10c|\n", 'A', 'B');
-    printf_count = printf("abcdef |%-2c|\n", 'A');
+    test_printf_count = ft_test_flag("%% abc %%def |%%%*c| |%-*c|\n", 10, 'A', 5, 'B');
+    printf_count = printf("%% abc %%def |%%%*c| |%-*c|\n", 10, 'A', 5, 'B');
 
-    // printf("test printf count : %d\n", test_printf_count);
+    printf("test printf count : %d\n", test_printf_count);
     printf("real printf count : %d\n", printf_count);
+
     return (0);
 }
 int    ft_test_flag(char *str, ...)
@@ -23,6 +24,7 @@ int    ft_test_flag(char *str, ...)
     int i;
     int j;
     int count;
+    int star;
 
     i = 0;
     j = 0;
@@ -30,7 +32,12 @@ int    ft_test_flag(char *str, ...)
     va_start(my_list, str);
     while (str[i] != '\0')
     {
-        if (str[i] == '%')
+        if (str[i] == '%' && str[i + 1] == '%')
+        {
+            ft_putchar('%');
+            i++;
+        }
+        else if (str[i] == '%')
         {
             j = i;
             if (str[i + 1] == 'c')
@@ -54,7 +61,36 @@ int    ft_test_flag(char *str, ...)
                 }
                 else if (str[i + 1] == '*')
                 {
-                    ft_putnbr(va_arg(my_list, int));
+                    star = va_arg(my_list, int);
+                    if (star > 0)
+                    {
+                        num = star - 1;
+                        count = count + num;
+                        // ft_putchar('|');
+                        while (num > 0)
+                        {
+                            ft_putchar(' ');
+                            num--;
+                        }
+                        ft_putchar(va_arg(my_list, int));
+                        // ft_putstr("|");              // a faire
+                    }
+                    else
+                    {
+                        if (star == 0)
+                            num = star;
+                        else
+                            num = (star * -1) - 1;
+                        count = count + num;
+                        // ft_putchar('|');
+                        ft_putchar(va_arg(my_list, int));
+                        while (num > 0)
+                        {
+                            ft_putchar(' ');
+                            num--;
+                        }
+                        // ft_putstr("|");
+                    }
                 }
                 else if (str[i + 1] == '-')
                 {
@@ -73,7 +109,36 @@ int    ft_test_flag(char *str, ...)
                     }
                     else if (str[i + 2] == '*')
                     {
-                        ft_putnbr(va_arg(my_list, int));
+                        star = va_arg(my_list, int);
+                        if (star > 0)
+                        {
+                            num = star - 1;
+                            count = count + num;
+                            // ft_putchar('|');
+                            ft_putchar(va_arg(my_list, int));
+                            while (num > 0)
+                            {
+                                ft_putchar(' ');
+                                num--;
+                            }
+                            // ft_putstr("|");              // a faire
+                        }
+                        else
+                        {
+                            if (star == 0)
+                                num = star;
+                            else
+                                num = (star * -1) - 1;
+                            count = count + num;
+                            // ft_putchar('|');
+                            ft_putchar(va_arg(my_list, int));
+                            while (num > 0)
+                            {
+                                ft_putchar(' ');
+                                num--;
+                            }
+                            // ft_putstr("|");
+                        }
                     }
                     else
                         ft_putchar(va_arg(my_list, int));
