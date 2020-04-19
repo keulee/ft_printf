@@ -32,7 +32,7 @@ SRC = ft_putnbr.c \
 		ft_putchar.c \
 		ft_putstr.c \
 		ft_strlen.c \
-		ft_strdup_p.c
+		ft_strdup.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
