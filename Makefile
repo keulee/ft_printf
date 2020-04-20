@@ -34,7 +34,9 @@ SRC = ft_putnbr.c \
 		ft_strlen.c \
 		ft_strdup.c \
 		ft_manage_width.c \
-		ft_manage_width_star.c
+		ft_manage_width_star.c \
+		ft_test_flag.c \
+		ft_find_case.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)

@@ -25,5 +25,7 @@ int     ft_printf(const char *src, ...);
 char    *ft_strdup(const char *src);
 void    ft_manage_width(const char *format, va_list my_list, int *i, int *len, int witdh);
 void    ft_manage_width_star(const char *format, int *i, va_list my_list, int *len);
+int     ft_test_flag(const char *str, ...);
+int     ft_find_case(const char *str, int i, int j);
 
 #endif
