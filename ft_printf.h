@@ -5,6 +5,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 typedef struct	s_tab
 {
@@ -21,12 +22,8 @@ void	ft_putnbr(int nb);
 void	ft_putstr(char *str);
 int     ft_strlen(const char *src);
 int     ft_printf(const char *src, ...);
-// void    ft_printf_c(va_list *my_list);
-// void    ft_printf_nbr(va_list *my_list);
-// void    ft_printf_s(va_list *my_list);
-// void    ft_printf_nbr(va_list *my_list);
-// char	*ft_strcpy(char *dest, char *src);
-// int     ft_findIndex(char *tab, char element);
 char    *ft_strdup(const char *src);
+void    ft_manage_width(const char *format, va_list my_list, int *i, int *len, int witdh);
+void    ft_manage_width_star(const char *format, int *i, va_list my_list, int *len);
 
 #endif
