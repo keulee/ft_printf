@@ -9,8 +9,8 @@ int main(void)
     int printf_count;
     int test_printf_count;
 
-    test_printf_count = ft_test_flag("abcdef |%-*c|\n", 2, 'b');
-    printf_count = printf("abcdef |%-*c|\n", 2, 'b');
+    test_printf_count = ft_test_flag("abcdef |%5c|\n", 'b');
+    printf_count = printf("abcdef |%5c|\n", 'b');
 
     printf("test printf count : %d\n", test_printf_count);
     printf("real printf count : %d\n", printf_count);
@@ -25,8 +25,6 @@ int    ft_test_flag(const char *str, ...)
     int i;
     int j;
     int len;
-    // int s_width;
-    // int find;
 
     i = 0;
     j = 0;
@@ -48,16 +46,20 @@ int    ft_test_flag(const char *str, ...)
                 ft_putchar(va_arg(my_list, int));
             if (str[j] == 'c')
             {
-                if (find_case(str, i, j) == 2)
-                {
-                    width = ft_atoi(&str[i + 1] - 1);
-                    ft_manage_width(str, my_list, &i, &len, width);
-                }
+                if (find_case(str, i + 1, j) == 0)
+                    ft_manage_width_star(str, &i, my_list, &len);
                 else if (find_case(str, i + 1, j) == 1)
                 {
                     width = ft_atoi(&str[i + 2]) - 1;
                     ft_manage_width(str, my_list, &i, &len, width);
                 }
+                else if (find_case(str, i + 1, j) == 2)
+                {
+                    width = ft_atoi(&str[i + 1]) - 1;
+                    ft_manage_width(str, my_list, &i, &len, width);
+                }
+                else if (find_case(str, i + 1, j) == 3)
+                    ft_manage_width_star(str, &i, my_list, &len);
                 else if (find_case(str, i + 1, j) == 4)
                     ft_putchar(va_arg(my_list, int));
                 // if (str[i + 1] >= '0' && str[i + 1] <= '9') // when printf starts with width with number
@@ -71,8 +73,6 @@ int    ft_test_flag(const char *str, ...)
                 //     }
                 //     ft_putchar(va_arg(my_list, int));
                 // }
-                else if (find_case(str, i + 1, j) == 3)
-                    ft_manage_width_star(str, &i, my_list, &len);
                 // else if (str[i + 1] == '*') // width with *
                 // {
                 //     s_width = va_arg(my_list, int);
@@ -105,8 +105,6 @@ int    ft_test_flag(const char *str, ...)
                 // printf("%d\n", i);
                 // find_case = find_case(str, i + 1, j);
                 // printf("%d\n", find_case);
-                else if (find_case(str, i + 1, j) == 0)
-                    ft_manage_width_star(str, &i, my_list, &len);
                 // else if (str[i + 1] == '-') // when printf starts with flag -
                 // {
                 //     // if(str[i + 2] >= '0' && str[i + 2] <= '9') // width with number
@@ -163,12 +161,10 @@ int    ft_test_flag(const char *str, ...)
     return (len);
 }
 
-
 int find_case(const char *str, int i, int j)
 {
     while (str[i] != '\0' && i <= j)
     {
-        // ft_putchar(str[i]);
         if (str[i] == '-' && str[i + 1] == '*')
             return (0);
         else if (str[i] == '-' && str[i + 1] >= '0' && str[i + 1] <= '9')
@@ -182,7 +178,6 @@ int find_case(const char *str, int i, int j)
         i++;
     }
     return (-1);
-    // ft_putstr("recognized\n");
 }
 //
 // void find_str(char *str, int start, int index)
