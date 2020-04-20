@@ -9,8 +9,38 @@ int main(void)
     int printf_count;
     int test_printf_count;
 
-    test_printf_count = ft_test_flag("abcdef |%5c|\n", 'b');
-    printf_count = printf("abcdef |%5c|\n", 'b');
+    test_printf_count = ft_test_flag("abcdef |%c|\n", 'a');
+    printf_count = printf("abcdef |%c|\n", 'a');
+
+    printf("test printf count : %d\n", test_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    test_printf_count = ft_test_flag("abcdef |%2c|\n", 'b');
+    printf_count = printf("abcdef |%2c|\n", 'b');
+
+    printf("test printf count : %d\n", test_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    test_printf_count = ft_test_flag("abcdef |%-c|\n", 'b');
+    printf_count = printf("abcdef |%-c|\n", 'b');
+
+    printf("test printf count : %d\n", test_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    test_printf_count = ft_test_flag("abcdef |%-10c|\n", 'b');
+    printf_count = printf("abcdef |%-10c|\n", 'b');
+
+    printf("test printf count : %d\n", test_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    test_printf_count = ft_test_flag("abcdef |%*c|\n", 7, 'b');
+    printf_count = printf("abcdef |%*c|\n", 7, 'b');
+
+    printf("test printf count : %d\n", test_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    test_printf_count = ft_test_flag("abcdef |%-*c|\n", 20, 'b');
+    printf_count = printf("abcdef |%-*c|\n", 20, 'b');
 
     printf("test printf count : %d\n", test_printf_count);
     printf("real printf count : %d\n", printf_count);
@@ -25,6 +55,7 @@ int    ft_test_flag(const char *str, ...)
     int i;
     int j;
     int len;
+    int tmp;
 
     i = 0;
     j = 0;
@@ -46,109 +77,23 @@ int    ft_test_flag(const char *str, ...)
                 ft_putchar(va_arg(my_list, int));
             if (str[j] == 'c')
             {
-                if (find_case(str, i + 1, j) == 0)
+                tmp = find_case(str, i + 1, j);
+                if (tmp == 0)
                     ft_manage_width_star(str, &i, my_list, &len);
-                else if (find_case(str, i + 1, j) == 1)
+                else if (tmp == 1)
                 {
                     width = ft_atoi(&str[i + 2]) - 1;
                     ft_manage_width(str, my_list, &i, &len, width);
                 }
-                else if (find_case(str, i + 1, j) == 2)
+                else if (tmp == 2)
                 {
                     width = ft_atoi(&str[i + 1]) - 1;
                     ft_manage_width(str, my_list, &i, &len, width);
                 }
-                else if (find_case(str, i + 1, j) == 3)
+                else if (tmp == 3)
                     ft_manage_width_star(str, &i, my_list, &len);
-                else if (find_case(str, i + 1, j) == 4)
+                else if (tmp == 4)
                     ft_putchar(va_arg(my_list, int));
-                // if (str[i + 1] >= '0' && str[i + 1] <= '9') // when printf starts with width with number
-                // {
-                //     width = ft_atoi(&str[i + 1]) - 1;
-                //     len = len + width;
-                //     while (width > 0)
-                //     {
-                //         ft_putchar(' ');
-                //         width--;
-                //     }
-                //     ft_putchar(va_arg(my_list, int));
-                // }
-                // else if (str[i + 1] == '*') // width with *
-                // {
-                //     s_width = va_arg(my_list, int);
-                //     if (s_width > 0) // when number which replace * bigger than 0
-                //     {
-                //         width = s_width - 1;
-                //         len = len + width;
-                //         while (width > 0)
-                //         {
-                //             ft_putchar(' ');
-                //             width--;
-                //         }
-                //         ft_putchar(va_arg(my_list, int));
-                //     }
-                //     else // when number which replace * smaller than 0 or 0
-                //     {
-                //         if (s_width == 0)
-                //             width = s_width;
-                //         else
-                //             width = (s_width * -1) - 1;
-                //         len = len + width;
-                //         ft_putchar(va_arg(my_list, int));
-                //         while (width > 0)
-                //         {
-                //             ft_putchar(' ');
-                //             width--;
-                //         }
-                //     }
-                // }
-                // printf("%d\n", i);
-                // find_case = find_case(str, i + 1, j);
-                // printf("%d\n", find_case);
-                // else if (str[i + 1] == '-') // when printf starts with flag -
-                // {
-                //     // if(str[i + 2] >= '0' && str[i + 2] <= '9') // width with number
-                //     // {
-                //     //     width = ft_atoi(&str[i + 2]) - 1;
-                //     //     len = len + width;
-                //     //     ft_putchar(va_arg(my_list, int));
-                //     //     while (width > 0)
-                //     //     {
-                //     //         ft_putchar(' ');
-                //     //         width--;
-                //     //     }
-                //     // }
-                //     if (str[i + 2] == '*') // with with *
-                //     {
-                //         s_width = va_arg(my_list, int);
-                //         if (s_width > 0) // when number which replace * bigger than 0
-                //         {
-                //             width = s_width - 1;
-                //             len = len + width;
-                //             ft_putchar(va_arg(my_list, int));
-                //             while (width > 0)
-                //             {
-                //                 ft_putchar(' ');
-                //                 width--;
-                //             }
-                //         }
-                //         else // when number which replace * smaller than 0 or 0
-                //         {
-                //             if (s_width == 0)
-                //                 width = s_width;
-                //             else
-                //                 width = (s_width * -1) - 1;
-                //             len = len + width;
-                //             ft_putchar(va_arg(my_list, int));
-                //             while (width > 0)
-                //             {
-                //                 ft_putchar(' ');
-                //                 width--;
-                //             }
-                //         }
-                //     }
-                    // else // nothing to do with flag - and the case just %-c
-                    //     ft_putchar(va_arg(my_list, int));
             }
             i = j;
         }
