@@ -2,6 +2,7 @@
 
 int    ft_test_flag(const char *str, ...)
 {
+    t_struct tab;
     va_list my_list;
     int width;
     int i;
@@ -13,6 +14,8 @@ int    ft_test_flag(const char *str, ...)
     j = 0;
     len = 0;
     va_start(my_list, str);
+    ft_init(&tab);
+    tab.str = str;
     while (str[i] != '\0')
     {
         if (str[i] == '%' && str[i + 1] == '%') // -> make in function (case %)
@@ -25,6 +28,11 @@ int    ft_test_flag(const char *str, ...)
             j = i;
             while (str[j] != '\0' && str[j] != 'c') // find type -> make in function (c,s,p,d,i,u,x,X,%)
                 j++;
+            tab.i = i;
+            tab.j = j;
+            tab = *ft_find_option(&tab);
+            printf("minus: %d, width: %d, s_width: %d\n,", tab.check_minus, tab.check_width, tab.check_s_width);
+            printf("specifier: %c\n", tab.specifier);
             if (str[i + 1] == 'c') // '%c' case (just print char)
                 ft_putchar(va_arg(my_list, int));
             if (str[j] == 'c')
@@ -53,6 +61,7 @@ int    ft_test_flag(const char *str, ...)
             ft_putchar(str[i]);
         i++; // for the string to go foward
         len++; // for return
+        ft_option_clear(&tab);
     }
     va_end (my_list); // close the list
     return (len);

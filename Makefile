@@ -36,7 +36,10 @@ SRC = ft_putnbr.c \
 		ft_manage_width.c \
 		ft_manage_width_star.c \
 		ft_test_flag.c \
-		ft_find_case.c
+		ft_find_case.c \
+		ft_find_option.c \
+		ft_init.c \
+		ft_option_clear.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
