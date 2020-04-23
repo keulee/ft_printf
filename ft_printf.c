@@ -13,7 +13,6 @@ int    ft_printf(const char *str, ...)
             ft_find_option(&tab);
             if (tab.specifier == 'c')
                 ft_print_char(&tab);
-            tab.i = tab.j;
         }
         else // just character out of % and type (c)
             ft_putchar(tab.str[tab.i]);

@@ -29,4 +29,5 @@ void    ft_find_option(t_struct *tab)
             }
         }
     }
+    tab->i = tab->j;
 }
