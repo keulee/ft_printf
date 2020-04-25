@@ -5,20 +5,89 @@ int main(void)
 {
     int printf_count;
     int ft_printf_count;
-    // int width = 10;
+    int width = 10;
     // int precision = 0;
-    char *str = "test";
+    // char *str = "test";
+    char ch = 'K';
 
-    ft_printf_count = ft_printf("abc |%s|\n", str);
-    printf_count = printf("abc |%s|\n", str);
-    printf("ft printf count : %d\n", ft_printf_count);
+    ft_printf_count = ft_printf("abcdef |%c|\n", 'c');
+    printf_count = printf("abcdef |%c|\n", 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%s|\n", str);
-    // printf_count = printf("|%s|\n", str);
+
+    ft_printf_count = ft_printf("abcdef |%100c|\n", 'a');
+    printf_count = printf("abcdef |%100c|\n", 'a');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%-c|\n", 'c');
+    printf_count = printf("abcdef |%-c|\n", 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%*c|\n", 0, 'c');
+    printf_count = printf("abcdef |%*c|\n", 0, 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%-*c|\n", 0, 'c');
+    printf_count = printf("abcdef |%-*c|\n", 0, 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%*c|\n", 5, 'c');
+    printf_count = printf("abcdef |%*c|\n", 5, 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%*c|\n", width, ch);
+    printf_count = printf("abcdef |%*c|\n", width, ch);
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%-7c|\n", 'c');
+    printf_count = printf("abcdef |%-7c|\n", 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%-*c|\n", 5, 'c');
+    printf_count = printf("abcdef |%-*c|\n", 5, 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%-*c|\n", -11, 'c');
+    printf_count = printf("abcdef |%-*c|\n", -11, 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("abcdef |%8c|\n", 'c');
+    printf_count = printf("abcdef |%8c|\n", 'c');
+
+    printf("test printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+
+
+    // ft_printf_count = ft_printf("Default: |%s|\n", str);
+    // printf_count = printf("Default: |%s|\n", str);
     // printf("ft printf count : %d\n", ft_printf_count);
     // printf("real printf count : %d\n", printf_count);
-    //
+    // //
+    // ft_printf_count = ft_printf("With width > str : |%5s|\n", str);
+    // printf_count = printf("With width > str : |%5s|\n", str);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
     // ft_printf_count = ft_printf("|%s|\n", str);
     // printf_count = printf("|%s|\n", str);
     // printf("ft printf count : %d\n", ft_printf_count);
