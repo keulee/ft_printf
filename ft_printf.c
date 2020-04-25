@@ -13,13 +13,17 @@ int    ft_printf(const char *str, ...)
             ft_find_option(&tab);
             if (tab.specifier == 'c')
                 ft_print_char(&tab);
+            if (tab.specifier == 's')
+                ft_print_str(&tab);
         }
-        else // just character out of % and type (c)
+        else
+        {
             ft_putchar(tab.str[tab.i]);
-        tab.i++; // for the tab.string to go foward
-        tab.len++; // for return
+            tab.len++;
+        }
+        tab.i++;
         ft_option_clear(&tab);
     }
-    va_end (tab.list); // close the list
+    va_end (tab.list);
     return (tab.len);
 }

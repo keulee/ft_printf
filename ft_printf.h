@@ -23,8 +23,10 @@ typedef struct      s_struct
     int             check_width;
     int             check_s_width;
     int             check_minus;
+    int             check_precision;
     int             width;
     int             len;
+    int             precision;
     char            specifier;
 }                   t_struct;
 
@@ -34,10 +36,13 @@ int		    ft_atoi(const char *str);
 void	    ft_putchar(char c);
 void        ft_putstr(char *str);
 int         ft_strlen(const char *src);
-void        ft_find_option(t_struct *tab);
+
 void        ft_init(t_struct *tab, const char *str);
-void        ft_option_clear(t_struct *tab);
+void        ft_find_option(t_struct *tab);
+void        ft_find_specifier(t_struct *tab);
 void        ft_print_char(t_struct *tab);
+void        ft_print_str(t_struct *tab);
+void        ft_option_clear(t_struct *tab);
 
 // void        ft_putnbr(int nb);
 // void        ft_manage_width(const char *format, va_list my_list, int *i, int *len, int witdh);

@@ -1,11 +1,11 @@
 #include "ft_printf.h"
-
+/*
+** Function to find every options (flag, width etc)
+*/
 void    ft_find_option(t_struct *tab)
 {
     tab->j = tab->i;
-    while (tab->str[tab->j] != '\0' && tab->str[tab->j] != 'c') // find type -> make in function (c,s,p,d,i,u,x,X,%)
-        tab->j++;
-    tab->specifier = tab->str[tab->j];
+    ft_find_specifier(tab);
     while (tab->str[tab->i++] != '\0' && tab->i < tab->j)
     {
         if (tab->str[tab->i] == '-')

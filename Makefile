@@ -35,7 +35,9 @@ SRC = ft_putnbr.c \
 		ft_find_option.c \
 		ft_init.c \
 		ft_option_clear.c \
-		ft_print_char.c
+		ft_print_char.c \
+		ft_find_specifier.c \
+		ft_print_str.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
