@@ -4,7 +4,7 @@
 int main(void)
 {
     int printf_count;
-    // int ft_printf_count;
+    int ft_printf_count;
     // int width = 10;
     // int precision = 0;
     char *str = "test";
@@ -39,16 +39,16 @@ int main(void)
     // printf("ft printf count : %d\n", ft_printf_count);
     // printf("real printf count : %d\n", printf_count);
     // //
-    // ft_printf_count = ft_printf("|%10.5s|\n", str);
-    printf_count = printf("|%10.2s|\n", str);
-    // printf("ft printf count : %d\n", ft_printf_count);
+    ft_printf_count = ft_printf("with only precision + precision < str : |%.1s|\n", str);
+    printf_count = printf("with only precision + precision < str : |%.1s|\n", str);
+    printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%s|\n", str);
-    // printf_count = printf("|%s|\n", str);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
+    // //
+    ft_printf_count = ft_printf("with only precision + precision >= str : |%.20s|\n", str);
+    printf_count = printf("with only precision + precision >= str : |%.20s|\n", str);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
     // ft_printf_count = ft_printf("|%s|\n", str);
     // printf_count = printf("|%s|\n", str);
     // printf("ft printf count : %d\n", ft_printf_count);

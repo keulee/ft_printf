@@ -10,7 +10,7 @@ void    ft_find_option(t_struct *tab)
     {
         if (tab->str[tab->i] == '-')
             tab->check_minus = 1;
-        else if (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9')
+        else if (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9' && tab->str[tab->i-1] != '.')
         {
             tab->check_width = 1;
             tab->width = ft_atoi(&tab->str[tab->i]);
@@ -27,6 +27,12 @@ void    ft_find_option(t_struct *tab)
                 tab->width = (tab->width * -1);
                 tab->check_minus = 1;
             }
+        }
+        else if (tab->str[tab->i] == '.')
+        {
+            tab->check_precision = 1;
+            tab->precision = ft_atoi(&tab->str[tab->i+1]);
+            break;
         }
     }
     tab->i = tab->j;

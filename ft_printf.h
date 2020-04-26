@@ -28,6 +28,7 @@ typedef struct      s_struct
     int             len;
     int             string_len;
     int             precision;
+    int             index;
     char            specifier;
     char            *string;
 }                   t_struct;

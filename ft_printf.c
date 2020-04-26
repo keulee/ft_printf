@@ -19,6 +19,8 @@ int    ft_printf(const char *str, ...)
                 // printf("specifier : %c\n", tab.specifier);
                 // printf("check_minus : %d\n", tab.check_minus);
                 // printf("check_width : %d\n", tab.check_width);
+                // printf("check_precision : %d\n", tab.check_precision);
+                // printf("precision : %d\n", tab.precision);
                 ft_print_str(&tab);
             }
         }
