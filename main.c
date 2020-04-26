@@ -8,7 +8,7 @@ int main(void)
     // int width = 10;
     // int precision = 0;
     char *str = "test";
-
+    //
     // ft_printf_count = ft_printf("Default: |%s|\n", str);
     // printf_count = printf("Default: |%s|\n", str);
     // printf("ft printf count : %d\n", ft_printf_count);
@@ -39,20 +39,20 @@ int main(void)
     // printf("ft printf count : %d\n", ft_printf_count);
     // printf("real printf count : %d\n", printf_count);
     // //
-    ft_printf_count = ft_printf("with only precision + precision < str : |%.1s|\n", str);
-    printf_count = printf("with only precision + precision < str : |%.1s|\n", str);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-    // //
-    ft_printf_count = ft_printf("with only precision + precision >= str : |%.20s|\n", str);
-    printf_count = printf("with only precision + precision >= str : |%.20s|\n", str);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    // ft_printf_count = ft_printf("|%s|\n", str);
-    // printf_count = printf("|%s|\n", str);
+    // ft_printf_count = ft_printf("with only precision + precision < str : |%.1s|\n", str);
+    // printf_count = printf("with only precision + precision < str : |%.1s|\n", str);
     // printf("ft printf count : %d\n", ft_printf_count);
     // printf("real printf count : %d\n", printf_count);
+    // // //
+    // ft_printf_count = ft_printf("with only precision + precision >= str : |%.20s|\n", str);
+    // printf_count = printf("with only precision + precision >= str : |%.20s|\n", str);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("|%s|\n", str);
+    printf_count = printf("|%s|\n", str);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
     //
     // ft_printf_count = ft_printf("|%s|\n", str);
     // printf_count = printf("|%s|\n", str);
