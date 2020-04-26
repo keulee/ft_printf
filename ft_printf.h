@@ -26,8 +26,10 @@ typedef struct      s_struct
     int             check_precision;
     int             width;
     int             len;
+    int             string_len;
     int             precision;
     char            specifier;
+    char            *string;
 }                   t_struct;
 
 int         ft_printf(const char *str, ...);

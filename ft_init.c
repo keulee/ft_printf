@@ -13,6 +13,7 @@ void    ft_init(t_struct *tab, const char *str)
     tab->check_precision = 0;
     tab->width = 0;
     tab->len = 0;
-    tab->precision = '\0';
+    tab->precision = 0;
     tab->specifier = '\0';
+    tab->string = NULL;
 }

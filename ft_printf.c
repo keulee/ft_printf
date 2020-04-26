@@ -15,11 +15,10 @@ int    ft_printf(const char *str, ...)
                 ft_print_char(&tab);
             if (tab.specifier == 's')
             {
-                printf("specifier : %c\n", tab.specifier);
-                printf("check_minus : %d\n", tab.check_minus);
-                printf("check_width : %d\n", tab.check_width);
-                printf("check_width : %d\n", tab.check_width);
-                printf("width : %d\n", tab.width);
+                // printf("width : %d\n", tab.width);
+                // printf("specifier : %c\n", tab.specifier);
+                // printf("check_minus : %d\n", tab.check_minus);
+                // printf("check_width : %d\n", tab.check_width);
                 ft_print_str(&tab);
             }
         }
