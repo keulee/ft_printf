@@ -1,5 +1,7 @@
 #include "ft_printf.h"
-
+/*
+** ft_printf which works as same as 'the' printf
+*/
 int    ft_printf(const char *str, ...)
 {
     t_struct tab;
@@ -14,15 +16,7 @@ int    ft_printf(const char *str, ...)
             if (tab.specifier == 'c')
                 ft_print_char(&tab);
             if (tab.specifier == 's')
-            {
-                // printf("width : %d\n", tab.width);
-                // printf("specifier : %c\n", tab.specifier);
-                // printf("check_minus : %d\n", tab.check_minus);
-                // printf("check_width : %d\n", tab.check_width);
-                // printf("check_precision : %d\n", tab.check_precision);
-                // printf("precision : %d\n", tab.precision);
                 ft_print_str(&tab);
-            }
         }
         else
         {
