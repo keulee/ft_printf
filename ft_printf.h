@@ -7,13 +7,6 @@
 # include <stdarg.h>
 # include <stdio.h>
 
-// typedef struct	s_tab
-// {
-//     va_list     list;
-//     int         i;
-//     int         len;
-// }				t_tab;
-
 typedef struct      s_struct
 {
     const char      *str;
