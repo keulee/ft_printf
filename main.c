@@ -5,7 +5,12 @@ int main(void)
 {
     int printf_count;
     int ft_printf_count;
-    
+
+    ft_printf_count = ft_printf("Default d: |%d|\n", 10);
+    printf_count = printf("Default d: |%d|\n", 10);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
     return (0);
 }
 

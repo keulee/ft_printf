@@ -18,6 +18,7 @@ typedef struct      s_struct
     int             check_minus;
     int             check_precision;
     int             width;
+    int             number;
     int             len;
     int             string_len;
     int             precision;
@@ -39,12 +40,14 @@ void        ft_find_specifier(t_struct *tab);
 void        ft_print_char(t_struct *tab);
 void        ft_print_str(t_struct *tab);
 void        ft_option_clear(t_struct *tab);
+void        ft_print_di(t_struct *tab);
+void        ft_putnbr(int nb);
+char	    *ft_itoa(int n);
+char        *ft_strdup(const char *src);
 
-// void        ft_putnbr(int nb);
+
 // void        ft_manage_width(const char *format, va_list my_list, int *i, int *len, int witdh);
 // void        ft_manage_width_star(const char *format, int *i, va_list my_list, int *len);
 // int         ft_find_case(const char *str, int i, int j);
-// char	    *ft_itoa(int n);
-// char        *ft_strdup(const char *src);
 
 #endif

@@ -16,13 +16,13 @@ int    ft_printf(const char *str, ...)
             if (tab.specifier == 'c')
                 ft_print_char(&tab);
             if (tab.specifier == 's')
-            {
-                // printf("check_width : %d\n", tab.check_width);
-                // printf("check_precision : %d\n", tab.check_precision);
-                // printf("check_minus : %d\n", tab.check_minus);
-                // printf("width : %d\n", tab.width);
-                // printf("precision : %d\n", tab.precision);
                 ft_print_str(&tab);
+            if (tab.specifier == 'd' || tab.specifier == 'i')
+            {
+                ft_print_di(&tab);
+                // printf("number : %d\n", tab.number);
+                // printf("number char : %s\n", tab.string);
+                // printf("length : %d\n", tab.string_len);
             }
         }
         else
