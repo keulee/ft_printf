@@ -33,9 +33,24 @@ void    ft_print_di(t_struct *tab)
         }
         else //width <= string_len
             tab->width = 0;
-        while (tab->width-- > 0)
+        if (tab->check_zero == 1)
+        {
+            if (tab->number < 0)
+            {
+                ft_putchar('-');
+                tab->number *= -1;
+            }
+            while (tab->width-- > 0)
+                ft_putchar('0');
+        }
+        else
+        {
+            while (tab->width-- > 0)
             ft_putchar(' ');
+        }
         ft_putnbr(tab->number);
         tab->len += tab->string_len;
     }
+    if (tab->check_minus == 1 && tab->check_zero == 1)
+        ft_putstr("Error");
 }
