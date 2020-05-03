@@ -11,9 +11,11 @@ void    ft_init(t_struct *tab, const char *str)
     tab->check_s_width = 0;
     tab->check_minus = 0;
     tab->check_precision = 0;
+    tab->check_zero = 0;
     tab->width = 0;
     tab->len = 0;
     tab->precision = 0;
+    tab->string_len = 0;
     tab->index = 0;
     tab->specifier = '\0';
     tab->string = NULL;

@@ -22,10 +22,12 @@ int    ft_printf(const char *str, ...)
                 ft_print_str(&tab);
             if (tab.specifier == 'd' || tab.specifier == 'i')
             {
+                // printf("check_width : %d\n", tab.check_width);
+                // printf("width : %d\n", tab.width);
+                // printf("check_minus : %d\n", tab.check_minus);
+                // printf("check_zero : %d\n", tab.check_zero);
+                // printf("check_precision : %d\n", tab.check_precision);
                 ft_print_di(&tab);
-                // printf("number : %d\n", tab.number);
-                // printf("number char : %s\n", tab.string);
-                // printf("length : %d\n", tab.string_len);
             }
         }
         else

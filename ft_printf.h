@@ -17,6 +17,7 @@ typedef struct      s_struct
     int             check_s_width;
     int             check_minus;
     int             check_precision;
+    int             check_zero;
     int             width;
     int             number;
     int             len;

@@ -4,29 +4,69 @@
 int main(void)
 {
     int printf_count;
-    // int ft_printf_count;
+    int ft_printf_count;
+
+    printf("======================  [%%d/%%i test]   =====================\n");
+    // ft_printf_count = ft_printf("Default d: |%d|\n", 42);
+    // printf_count = printf("Default d: |%d|\n", 42);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
     // //
-    // printf_count = printf("Default d: |%-5d|\n", -1);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // printf_count = printf("Default d: |%-4.2d|\n", -1);
-    // printf("real printf count : %d\n", printf_count);
-
-    // ft_printf_count = ft_printf("Default d: |%.10d|\n", 10);
-    printf_count = printf("Default d: |%-.d|\n", 10);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    // ft_printf_count = ft_printf("Default d with minus: |%-d|\n", -10);
-    printf_count = printf("Default d with minus: |%.10d|\n", 10);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    // ft_printf_count = ft_printf("Default d with minus: |%-d|\n", -10);
-    // printf_count = printf("Default d with minus: |%-d|\n", -10);
+    // ft_printf_count = ft_printf("Default d with minus: |%-d|\n", 42);
+    // printf_count = printf("Default d with minus: |%-d|\n", 42);
     // printf("ft printf count : %d\n", ft_printf_count);
     // printf("real printf count : %d\n", printf_count);
     //
+    // ft_printf_count = ft_printf("Default d: |%d| (minus argument)\n", -42);
+    // printf_count = printf("Default d: |%d| (minus argument)\n", -42);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
+    // ft_printf_count = ft_printf("Default d with minus: |%-d| (minus argument)\n", -42);
+    // printf_count = printf("Default d with minus: |%-d| (minus argument)\n", -42);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("With just the width (width <= string_len): |%0d|\n", 7);
+    // printf_count = printf("With just the width (width <= string_len): |%0d|\n", 7);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
+    // ft_printf_count = ft_printf("With just the width (width > string_len): |%10d|\n", 123);
+    // printf_count = printf("With just the width (width > string_len): |%10d|\n", 123);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("With just the width (width <= string_len): |%0d| (minus argument)\n", -7);
+    // printf_count = printf("With just the width (width <= string_len): |%0d| (minus argument)\n", -7);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
+    // ft_printf_count = ft_printf("With just the width (width > string_len): |%10d| (minus argument)\n", -123);
+    // printf_count = printf("With just the width (width > string_len): |%10d| (minus argument)\n", -123);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("With just the width (width <= string_len): |%0d|\n", 7);
+    printf_count = printf("With just the width (width <= string_len): |%0d|\n", 7);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+    //
+    ft_printf_count = ft_printf("With just the width (width > string_len): |%10d|\n", 123);
+    printf_count = printf("With just the width (width > string_len): |%10d|\n", 123);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("With just the width (width <= string_len): |%0d| (minus argument)\n", -7);
+    printf_count = printf("With just the width (width <= string_len): |%0d| (minus argument)\n", -7);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+    //
+    ft_printf_count = ft_printf("With just the width (width > string_len): |%10d| (minus argument)\n", -123);
+    printf_count = printf("With just the width (width > string_len): |%10d| (minus argument)\n", -123);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
     // ft_printf_count = ft_printf("Default d with minus: |%-d|\n", -10);
     // printf_count = printf("Default d with minus: |%-d|\n", -10);
     // printf("ft printf count : %d\n", ft_printf_count);
@@ -41,6 +81,7 @@ int main(void)
     // printf_count = printf("Default d with minus: |%-d|\n", 10);
     // printf("ft printf count : %d\n", ft_printf_count);
     // printf("real printf count : %d\n", printf_count);
+    printf("===============================================================\n");
 
     return (0);
 }
