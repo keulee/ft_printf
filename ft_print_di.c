@@ -3,7 +3,7 @@
 /*
 ** d/i 만들때 고려할 점 (diouxX)
 ** diouxX에서 0플래그와 (-)플래그가 함께 나오면 (0)이 무시된다. (에러 송출 - 결과값 없음)
-**          .precision(.정밀도)과 (0)플래그가 함께 나오면 0이 무시된다. (0을 무시하고 결과값나옴.)
+**          .precision(.정밀도)과 (0)플래그가 함께 나오면 0이 무시된다. (0을 무시하고 결과값나옴. 에러 나오지 않음.)
 **          .precision(.정밀도)는 표시해야하는 최소 자리수를 나타낸다. 최소 자리수보다 인수의 값 이 크면 (s 결과값과 다르게) 잘리지 않고 정수가 프린트된다. 반면, 최소 자리수보다 인수의 값이 작을 경우 최소 자리수를 0으로 채운다. (0플래그와 다름)
 **          ("|%.0d|", 0)을 인쇄하면 결과 값이 ||으로 나온다. (아무것도 인쇄되지 않음. 예외값.)
 **          .precision(.정밀도) default 값은 1이다. (?)
@@ -61,6 +61,52 @@ void    ft_print_di(t_struct *tab)
                 ft_putnbr(tab->number);
             }
         }
+        tab->len += tab->string_len;
+    }
+    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->number == 0) //예외
+        ;
+    else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
+    {
+        if (tab->width <= tab->string_len && tab->width <= tab->precision)
+        {
+            if (tab->precision > tab->string_len)
+            {
+                tab->width = 0;
+                tab->precision -= tab->string_len;
+                tab->len += tab->precision;
+            }
+            else
+            {
+                tab->precision = 0;
+                tab->width = 0;
+            }
+        }
+        else
+        {
+            if (tab->precision < tab->string_len)
+                tab->width = 0;
+            else
+            {
+                if (tab->number < 0)
+                    tab->precision++;
+                if(tab->width <= tab->precision)
+                    tab->width = 0;
+                else
+                    tab->width -= tab->precision;
+                tab->precision -= tab->string_len;
+                tab->len += tab->width + tab->precision;
+            }
+        }
+        while (tab->width-- > 0)
+            ft_putchar(' ');
+        if (tab->number < 0)
+        {
+            tab->number *= -1;
+            ft_putchar('-');
+        }
+        while (tab->precision-- > 0)
+            ft_putchar('0');
+        ft_putnbr(tab->number);
         tab->len += tab->string_len;
     }
 }
