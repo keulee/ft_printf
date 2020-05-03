@@ -15,7 +15,7 @@ void    ft_find_option(t_struct *tab)
     {
         if (tab->str[tab->i] == '-')
             tab->check_minus = 1;
-        else if (tab->str[tab->i] == '0' && (tab->str[tab->i + 1] >= '0' && tab->str[tab->i + 1] <= '9'))
+        else if (tab->str[tab->i] == '0' && ((tab->str[tab->i + 1] >= '0' && tab->str[tab->i + 1] <= '9') || tab->str[tab->i - 1] == '-'))
             tab->check_zero = 1;
         else if (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9')
         {

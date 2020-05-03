@@ -18,12 +18,14 @@ void    ft_print_di(t_struct *tab)
     // printf("number : %d\n", tab->number);
     tab->string = ft_itoa(tab->number);
     tab->string_len = ft_strlen(tab->string);
-    if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0)
+    if (tab->check_minus == 1 && tab->check_zero == 1)
+        ft_putstr("Error");
+    else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr(tab->number);
         tab->len += tab->string_len;
     }
-    if (tab->check_width == 1 && tab->check_precision == 0)
+    else if (tab->check_width == 1 && tab->check_precision == 0)
     {
         if (tab->width > tab->string_len)
         {
@@ -51,6 +53,4 @@ void    ft_print_di(t_struct *tab)
         ft_putnbr(tab->number);
         tab->len += tab->string_len;
     }
-    if (tab->check_minus == 1 && tab->check_zero == 1)
-        ft_putstr("Error");
 }
