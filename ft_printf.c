@@ -2,6 +2,9 @@
 /*
 ** ft_printf which works as same as 'the' printf
 */
+/*
+** This function returns a negative value if an error occurs. (remind it)
+*/
 int    ft_printf(const char *str, ...)
 {
     t_struct tab;
