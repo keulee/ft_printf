@@ -67,6 +67,16 @@ int main(void)
     // printf("ft printf count : %d\n", ft_printf_count);
     // printf("real printf count : %d\n", printf_count);
 
+    // ft_printf_count = ft_printf("With the width and minus flag: |%-24d|\n", 123);
+    // printf_count = printf("With the width and minus flag: |%-24d|\n", 123);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("With the width and minus flag: |%-24d|(minus argument)\n", -123);
+    // printf_count = printf("With the width and minus flag: |%-24d|(minus argument)\n", -123);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+
     ft_printf_count = ft_printf("With the width and minus flag: |%-24d|\n", 123);
     printf_count = printf("With the width and minus flag: |%-24d|\n", 123);
     printf("ft printf count : %d\n", ft_printf_count);
@@ -76,6 +86,8 @@ int main(void)
     printf_count = printf("With the width and minus flag: |%-24d|(minus argument)\n", -123);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
+
+
     // ft_printf_count = ft_printf("With the width (width > string_len) and zero flag: |%0100d|\n", 123);
     // printf_count = printf("With the width (width > string_len) and zero flag: |%0100d|\n", 123);
     // printf("ft printf count : %d\n", ft_printf_count);
