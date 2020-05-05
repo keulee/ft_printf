@@ -6,505 +6,15 @@ int main(void)
     int printf_count;
     int ft_printf_count;
 
-    printf("======================  [%%d/%%i test]   =====================\n");
-    // ft_printf_count = ft_printf("Default d: |%d|\n", 42);
-    // printf_count = printf("Default d: |%d|\n", 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    // //
-    // ft_printf_count = ft_printf("Default d with minus: |%-d|\n", 42);
-    // printf_count = printf("Default d with minus: |%-d|\n", 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("Default d: |%d| (minus argument)\n", -42);
-    // printf_count = printf("Default d: |%d| (minus argument)\n", -42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    // //
-    // ft_printf_count = ft_printf("Default d with minus: |%-d| (minus argument)\n", -42);
-    // printf_count = printf("Default d with minus: |%-d| (minus argument)\n", -42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("With just the width (width <= string_len): |%0d|\n", 7);
-    // printf_count = printf("With just the width (width <= string_len): |%0d|\n", 7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    // //
-    // ft_printf_count = ft_printf("With just the width (width > string_len): |%10d|\n", 123);
-    // printf_count = printf("With just the width (width > string_len): |%10d|\n", 123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("With just the width (width <= string_len): |%0d| (minus argument)\n", -7);
-    // printf_count = printf("With just the width (width <= string_len): |%0d| (minus argument)\n", -7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    // //
-    // ft_printf_count = ft_printf("With just the width (width > string_len): |%10d| (minus argument)\n", -123);
-    // printf_count = printf("With just the width (width > string_len): |%10d| (minus argument)\n", -123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("With the width (width <= string_len) and zero flag: |%01d|\n", 7);
-    // printf_count = printf("With the width (width <= string_len) and zero flag: |%01d|\n", 7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("With the width (width > string_len) and zero flag: |%0100d|\n", 123);
-    // printf_count = printf("With the width (width > string_len) and zero flag: |%0100d|\n", 123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    // //
-    // ft_printf_count = ft_printf("With the width (width <= string_len) and zero flag: |%01d|(minus argument)\n", -7);
-    // printf_count = printf("With the width (width <= string_len) and zero flag: |%01d|(minus argument)\n", -7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    // //
-    // ft_printf_count = ft_printf("With the width (width > string_len) and zero flag: |%054d|(minus argument)\n", -123);
-    // printf_count = printf("With the width (width > string_len) and zero flag: |%054d|(minus argument)\n", -123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("With the width and minus flag: |%-24d|\n", 123);
-    // printf_count = printf("With the width and minus flag: |%-24d|\n", 123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("With the width and minus flag: |%-24d|(minus argument)\n", -123);
-    // printf_count = printf("With the width and minus flag: |%-24d|(minus argument)\n", -123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // printf("-----------width, precision, zero combined----------------\n");
-    // printf("---------minus can be combined with this test-------------\n");
-    // //예외
-    // ft_printf_count = ft_printf("Exception 0.0d with argument 0: |%0.0d|\n", 0);
-    // printf_count = printf("Exception 0.0d with argument 0: |%0.0d|\n", 0);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("0.1d: |%0.1d|\n", 1);
-    // printf_count = printf("0.1d: |%0.1d|\n", 1);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("0.12d: |%0.12d|\n", 12);
-    // printf_count = printf("0.12d: |%0.12d|\n", 12);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("1.0d: |%1.0d|\n", 42);
-    // printf_count = printf("1.0d: |%1.0d|\n", 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("12.0d: |%12.0d|\n", 42);
-    // printf_count = printf("12.0d: |%12.0d|\n", 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("0.7d: |%0.7d|\n", 1);
-    // printf_count = printf("0.7d: |%0.7d|\n", 1);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("width > precision > strlen: |%10.5d|\n", 123);
-    // printf_count = printf("width > precision > strlen: |%10.5d|\n", 123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("width > strlen > precision: |%10.1d|\n", 42);
-    // printf_count = printf("width > strlen > precision: |%10.1d|\n", 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("width > strlen >= precision: |%42.7d|\n", 1234567);
-    // printf_count = printf("width > strlen >= precision: |%42.7d|\n", 1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > width > strlen: |%5.7d|\n", 42);
-    // printf_count = printf("precision > width > strlen: |%5.7d|\n", 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > width >= strlen: |%2.7d|\n", 42);
-    // printf_count = printf("precision > width >= strlen: |%2.7d|\n", 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > width >= strlen: |%5.7d|\n", 12345);
-    // printf_count = printf("precision > width >= strlen: |%5.7d|\n", 12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen > width: |%2.15d|\n", 12345);
-    // printf_count = printf("precision > strlen > width: |%2.15d|\n", 12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen >= width: |%2.15d|\n", 42);
-    // printf_count = printf("precision > strlen >= width: |%2.15d|\n", 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen >= width: |%5.15d|\n", 12345);
-    // printf_count = printf("precision > strlen >= width: |%5.15d|\n", 12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen > precision > width: |%3.4d|\n", 12345);
-    // printf_count = printf("strlen > precision > width: |%3.4d|\n", 12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen >= precision > width: |%3.5d|\n", 12345);
-    // printf_count = printf("strlen >= precision > width: |%3.5d|\n", 12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen > precision >= width: |%4.4d|\n", 12345);
-    // printf_count = printf("strlen > precision >= width: |%4.4d|\n", 12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen >= precision >= width: |%4.4d|\n", 1234);
-    // printf_count = printf("strlen >= precision >= width: |%4.4d|\n", 1234);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen > width > precision: |%6.4d|\n", 1234567);
-    // printf_count = printf("strlen > width > precision: |%6.4d|\n", 1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen >= width > precision: |%7.4d|\n", 1234567);
-    // printf_count = printf("strlen >= width > precision: |%7.4d|\n", 1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen > width >= precision: |%5.5d|\n", 1234567);
-    // printf_count = printf("strlen > width >= precision: |%5.5d|\n", 1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen >= width >= precision: |%7.7d|\n", 1234567);
-    // printf_count = printf("strlen >= width >= precision: |%7.7d|\n", 1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("0.1d: |%0.1d|\n", -1);
-    // printf_count = printf("0.1d: |%0.1d|\n", -1);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("0.12d: |%0.12d|\n", -12);
-    // printf_count = printf("0.12d: |%0.12d|\n", -12);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("1.0d: |%1.0d|\n", -42);
-    // printf_count = printf("1.0d: |%1.0d|\n", -42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("12.0d: |%12.0d|\n", -42);
-    // printf_count = printf("12.0d: |%12.0d|\n", -42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("0.7d: |%0.7d|\n", -1);
-    // printf_count = printf("0.7d: |%0.7d|\n", -1);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("width > precision > strlen: |%10.5d|\n", -123);
-    // printf_count = printf("width > precision > strlen: |%10.5d|\n", -123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("width > strlen > precision: |%10.1d|\n", -42);
-    // printf_count = printf("width > strlen > precision: |%10.1d|\n", -42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("width > strlen >= precision: |%42.7d|\n", -1234567);
-    // printf_count = printf("width > strlen >= precision: |%42.7d|\n", -1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > width > strlen: |%5.7d|\n", -42);
-    // printf_count = printf("precision > width > strlen: |%5.7d|\n", -42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > width >= strlen: |%2.7d|\n", -42);
-    // printf_count = printf("precision > width >= strlen: |%2.7d|\n", -42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > width >= strlen: |%5.7d|\n", -12345);
-    // printf_count = printf("precision > width >= strlen: |%5.7d|\n", -12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen > width: |%2.15d|\n", -12345);
-    // printf_count = printf("precision > strlen > width: |%2.15d|\n", -12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen >= width: |%2.15d|\n", -42);
-    // printf_count = printf("precision > strlen >= width: |%2.15d|\n", -42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen >= width: |%5.15d|\n", -12345);
-    // printf_count = printf("precision > strlen >= width: |%5.15d|\n", -12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen > precision > width: |%3.4d|\n", -12345);
-    // printf_count = printf("strlen > precision > width: |%3.4d|\n", -12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen >= precision > width: |%3.5d|\n", -12345);
-    // printf_count = printf("strlen >= precision > width: |%3.5d|\n", -12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen > precision >= width: |%4.4d|\n", -12345);
-    // printf_count = printf("strlen > precision >= width: |%4.4d|\n", -12345);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen >= precision >= width: |%4.4d|\n", -1234);
-    // printf_count = printf("strlen >= precision >= width: |%4.4d|\n", -1234);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen > width > precision: |%6.4d|\n", -1234567);
-    // printf_count = printf("strlen > width > precision: |%6.4d|\n", -1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen >= width > precision: |%7.4d|\n", -1234567);
-    // printf_count = printf("strlen >= width > precision: |%7.4d|\n", -1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen > width >= precision: |%5.5d|\n", -1234567);
-    // printf_count = printf("strlen > width >= precision: |%5.5d|\n", -1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("strlen >= width >= precision: |%7.7d|\n", -1234567);
-    // printf_count = printf("strlen >= width >= precision: |%7.7d|\n", -1234567);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // printf("------------------just precision existed------------------\n");
-    // printf("---------minus can be combined with this test-------------\n");
-    // printf("----(it is the same with/without minus with this test)----\n");
-    //
-    // ft_printf_count = ft_printf("precision < strlen: |%.3d|\n", 1123);
-    // printf_count = printf("precision < strlen: |%.3d|\n", 1123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen: |%.7d|\n", 1123);
-    // printf_count = printf("precision > strlen: |%.7d|\n", 1123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision <= strlen: |%.4d|\n", 1123);
-    // printf_count = printf("precision <= strlen: |%.4d|\n", 1123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision < strlen: |%.3d|\n", 0);
-    // printf_count = printf("precision < strlen: |%.3d|\n", 0);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen: |%.7d|\n", 0);
-    // printf_count = printf("precision > strlen: |%.7d|\n", 0);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision <= strlen: |%.4d|\n", 0);
-    // printf_count = printf("precision <= strlen: |%.4d|\n", 0);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision < strlen: |%.3d|\n", -1123);
-    // printf_count = printf("precision < strlen: |%.3d|\n", -1123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision > strlen: |%.7d|\n", -1123);
-    // printf_count = printf("precision > strlen: |%.7d|\n", -1123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("precision <= strlen: |%.4d|\n", -1123);
-    // printf_count = printf("precision <= strlen: |%.4d|\n", -1123);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
 
-    printf("------------------ * test ------------------\n");
+    printf("======================  [%%u test]   =====================\n");
 
-    // int field_width_0 = 0;
-    // int field_width_1 = 7;
-    // int field_width_2 = 42;
-    // int field_width_3 = 123;
-    // int field_width_4 = 1000;
-    int field_width_minus_1 = -7;
-    // int field_width_minus_2 = -42;
-    // int field_width_minus_3 = -123;
-    // int field_width_minus_4 = -1000;
-
-    //
-    // int precision_0 = 0;
-    // int precision_1 = 7;
-    // int precision_2 = 42;
-    // int precision_3 = 123;
-    // int precision_4 = 1000;
-    int precision_minus_1 = -7;
-    // int precision_minus_2 = -42;
-    // int precision_minus_3 = -123;
-    // int precision_minus_4 = -1000;
-
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_0, 42);
-    // printf_count = printf("|%*d|\n", field_width_0, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_1, 42);
-    // printf_count = printf("|%*d|\n", field_width_1, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_2, 42);
-    // printf_count = printf("|%*d|\n", field_width_2, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_3, 42);
-    // printf_count = printf("|%*d|\n", field_width_3, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_4, 42);
-    // printf_count = printf("|%*d|\n", field_width_4, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_minus_1, 42);
-    // printf_count = printf("|%*d|\n", field_width_minus_1, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_minus_2, 42);
-    // printf_count = printf("|%*d|\n", field_width_minus_2, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_minus_3, 42);
-    // printf_count = printf("|%*d|\n", field_width_minus_3, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*d|\n", field_width_minus_4, 42);
-    // printf_count = printf("|%*d|\n", field_width_minus_4, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_0, 42);
-    // printf_count = printf("|%.*d|\n", precision_0, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    // //
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_1, 42);
-    // printf_count = printf("|%.*d|\n", precision_1, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_2, 42);
-    // printf_count = printf("|%.*d|\n", precision_2, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_3, 42);
-    // printf_count = printf("|%.*d|\n", precision_3, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_4, 42);
-    // printf_count = printf("|%.*d|\n", precision_4, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_minus_1, 42);
-    // printf_count = printf("|%.*d|\n", precision_minus_1, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_minus_2, 42);
-    // printf_count = printf("|%.*d|\n", precision_minus_2, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_minus_3, 42);
-    // printf_count = printf("|%.*d|\n", precision_minus_3, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%.*d|\n", precision_minus_4, 42);
-    // printf_count = printf("|%.*d|\n", precision_minus_4, 42);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-
-    // ft_printf_count = ft_printf("|%*.*d|\n", field_width_0, precision_minus_1, -7);
-    // printf_count = printf("|%*.*d|\n", field_width_0, precision_minus_1, -7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*.*d|\n", field_width_minus_1, precision_minus_1, -7);
-    // printf_count = printf("|%*.*d|\n", field_width_minus_1, precision_minus_1, -7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*.*d|\n", field_width_minus_2, precision_minus_1, -7);
-    // printf_count = printf("|%*.*d|\n", field_width_minus_2, precision_minus_1, -7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*.*d|\n", field_width_minus_3, precision_minus_1, -7);
-    // printf_count = printf("|%*.*d|\n", field_width_minus_3, precision_minus_1, -7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%*.*d|\n", field_width_minus_4, precision_minus_1, -7);
-    // printf_count = printf("|%*.*d|\n", field_width_minus_4, precision_minus_1, -7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-
-    // ft_printf_count = ft_printf("|%-*.*d|\n", field_width_minus_1, precision_minus_1, 7);
-    // printf_count = printf("|%-*.*d|\n", field_width_minus_1, precision_minus_1, 7);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-
-    //
-
-    printf("===============================================================\n");
+    printf("==========================================================\n");
 
     return (0);
 }
 
-// printf("%%c test---------------------------------\n");
+// printf("======================  [%%c test]   =====================\n");
 // char ch = 'K';
 // int width = 10;
 // ft_printf_count = ft_printf("basic c : abcdef |%c|\n", 'c');
@@ -574,8 +84,8 @@ int main(void)
 // printf("real printf count : %d\n", printf_count);
 //
 // printf("-----------------------------------------------------\n");
-
-// printf("%%s test-----------------------------------------------\n");
+//
+// printf("======================  [%%s test]   =====================\n");
 // int width = 10;
 // int width_zero = 0;
 // int width_minus = -21;
@@ -719,3 +229,496 @@ int main(void)
 // printf("real printf count : %d\n", printf_count);
 //
 // printf("---------------------------------------------------------\n");
+
+// printf("======================  [%%d/%%i test]   =====================\n");
+// ft_printf_count = ft_printf("Default d: |%d|\n", 42);
+// printf_count = printf("Default d: |%d|\n", 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+// //
+// ft_printf_count = ft_printf("Default d with minus: |%-d|\n", 42);
+// printf_count = printf("Default d with minus: |%-d|\n", 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("Default d: |%d| (minus argument)\n", -42);
+// printf_count = printf("Default d: |%d| (minus argument)\n", -42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+// //
+// ft_printf_count = ft_printf("Default d with minus: |%-d| (minus argument)\n", -42);
+// printf_count = printf("Default d with minus: |%-d| (minus argument)\n", -42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("With just the width (width <= string_len): |%0d|\n", 7);
+// printf_count = printf("With just the width (width <= string_len): |%0d|\n", 7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+// //
+// ft_printf_count = ft_printf("With just the width (width > string_len): |%10d|\n", 123);
+// printf_count = printf("With just the width (width > string_len): |%10d|\n", 123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("With just the width (width <= string_len): |%0d| (minus argument)\n", -7);
+// printf_count = printf("With just the width (width <= string_len): |%0d| (minus argument)\n", -7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+// //
+// ft_printf_count = ft_printf("With just the width (width > string_len): |%10d| (minus argument)\n", -123);
+// printf_count = printf("With just the width (width > string_len): |%10d| (minus argument)\n", -123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("With the width (width <= string_len) and zero flag: |%01d|\n", 7);
+// printf_count = printf("With the width (width <= string_len) and zero flag: |%01d|\n", 7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("With the width (width > string_len) and zero flag: |%0100d|\n", 123);
+// printf_count = printf("With the width (width > string_len) and zero flag: |%0100d|\n", 123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+// //
+// ft_printf_count = ft_printf("With the width (width <= string_len) and zero flag: |%01d|(minus argument)\n", -7);
+// printf_count = printf("With the width (width <= string_len) and zero flag: |%01d|(minus argument)\n", -7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+// //
+// ft_printf_count = ft_printf("With the width (width > string_len) and zero flag: |%054d|(minus argument)\n", -123);
+// printf_count = printf("With the width (width > string_len) and zero flag: |%054d|(minus argument)\n", -123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("With the width and minus flag: |%-24d|\n", 123);
+// printf_count = printf("With the width and minus flag: |%-24d|\n", 123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("With the width and minus flag: |%-24d|(minus argument)\n", -123);
+// printf_count = printf("With the width and minus flag: |%-24d|(minus argument)\n", -123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// printf("-----------width, precision, zero combined----------------\n");
+// printf("---------minus can be combined with this test-------------\n");
+// //예외
+// ft_printf_count = ft_printf("Exception 0.0d with argument 0: |%0.0d|\n", 0);
+// printf_count = printf("Exception 0.0d with argument 0: |%0.0d|\n", 0);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("0.1d: |%0.1d|\n", 1);
+// printf_count = printf("0.1d: |%0.1d|\n", 1);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("0.12d: |%0.12d|\n", 12);
+// printf_count = printf("0.12d: |%0.12d|\n", 12);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("1.0d: |%1.0d|\n", 42);
+// printf_count = printf("1.0d: |%1.0d|\n", 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("12.0d: |%12.0d|\n", 42);
+// printf_count = printf("12.0d: |%12.0d|\n", 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("0.7d: |%0.7d|\n", 1);
+// printf_count = printf("0.7d: |%0.7d|\n", 1);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("width > precision > strlen: |%10.5d|\n", 123);
+// printf_count = printf("width > precision > strlen: |%10.5d|\n", 123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("width > strlen > precision: |%10.1d|\n", 42);
+// printf_count = printf("width > strlen > precision: |%10.1d|\n", 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("width > strlen >= precision: |%42.7d|\n", 1234567);
+// printf_count = printf("width > strlen >= precision: |%42.7d|\n", 1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > width > strlen: |%5.7d|\n", 42);
+// printf_count = printf("precision > width > strlen: |%5.7d|\n", 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > width >= strlen: |%2.7d|\n", 42);
+// printf_count = printf("precision > width >= strlen: |%2.7d|\n", 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > width >= strlen: |%5.7d|\n", 12345);
+// printf_count = printf("precision > width >= strlen: |%5.7d|\n", 12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen > width: |%2.15d|\n", 12345);
+// printf_count = printf("precision > strlen > width: |%2.15d|\n", 12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen >= width: |%2.15d|\n", 42);
+// printf_count = printf("precision > strlen >= width: |%2.15d|\n", 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen >= width: |%5.15d|\n", 12345);
+// printf_count = printf("precision > strlen >= width: |%5.15d|\n", 12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen > precision > width: |%3.4d|\n", 12345);
+// printf_count = printf("strlen > precision > width: |%3.4d|\n", 12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen >= precision > width: |%3.5d|\n", 12345);
+// printf_count = printf("strlen >= precision > width: |%3.5d|\n", 12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen > precision >= width: |%4.4d|\n", 12345);
+// printf_count = printf("strlen > precision >= width: |%4.4d|\n", 12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen >= precision >= width: |%4.4d|\n", 1234);
+// printf_count = printf("strlen >= precision >= width: |%4.4d|\n", 1234);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen > width > precision: |%6.4d|\n", 1234567);
+// printf_count = printf("strlen > width > precision: |%6.4d|\n", 1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen >= width > precision: |%7.4d|\n", 1234567);
+// printf_count = printf("strlen >= width > precision: |%7.4d|\n", 1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen > width >= precision: |%5.5d|\n", 1234567);
+// printf_count = printf("strlen > width >= precision: |%5.5d|\n", 1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen >= width >= precision: |%7.7d|\n", 1234567);
+// printf_count = printf("strlen >= width >= precision: |%7.7d|\n", 1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("0.1d: |%0.1d|\n", -1);
+// printf_count = printf("0.1d: |%0.1d|\n", -1);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("0.12d: |%0.12d|\n", -12);
+// printf_count = printf("0.12d: |%0.12d|\n", -12);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("1.0d: |%1.0d|\n", -42);
+// printf_count = printf("1.0d: |%1.0d|\n", -42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("12.0d: |%12.0d|\n", -42);
+// printf_count = printf("12.0d: |%12.0d|\n", -42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("0.7d: |%0.7d|\n", -1);
+// printf_count = printf("0.7d: |%0.7d|\n", -1);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("width > precision > strlen: |%10.5d|\n", -123);
+// printf_count = printf("width > precision > strlen: |%10.5d|\n", -123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("width > strlen > precision: |%10.1d|\n", -42);
+// printf_count = printf("width > strlen > precision: |%10.1d|\n", -42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("width > strlen >= precision: |%42.7d|\n", -1234567);
+// printf_count = printf("width > strlen >= precision: |%42.7d|\n", -1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > width > strlen: |%5.7d|\n", -42);
+// printf_count = printf("precision > width > strlen: |%5.7d|\n", -42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > width >= strlen: |%2.7d|\n", -42);
+// printf_count = printf("precision > width >= strlen: |%2.7d|\n", -42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > width >= strlen: |%5.7d|\n", -12345);
+// printf_count = printf("precision > width >= strlen: |%5.7d|\n", -12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen > width: |%2.15d|\n", -12345);
+// printf_count = printf("precision > strlen > width: |%2.15d|\n", -12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen >= width: |%2.15d|\n", -42);
+// printf_count = printf("precision > strlen >= width: |%2.15d|\n", -42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen >= width: |%5.15d|\n", -12345);
+// printf_count = printf("precision > strlen >= width: |%5.15d|\n", -12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen > precision > width: |%3.4d|\n", -12345);
+// printf_count = printf("strlen > precision > width: |%3.4d|\n", -12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen >= precision > width: |%3.5d|\n", -12345);
+// printf_count = printf("strlen >= precision > width: |%3.5d|\n", -12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen > precision >= width: |%4.4d|\n", -12345);
+// printf_count = printf("strlen > precision >= width: |%4.4d|\n", -12345);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen >= precision >= width: |%4.4d|\n", -1234);
+// printf_count = printf("strlen >= precision >= width: |%4.4d|\n", -1234);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen > width > precision: |%6.4d|\n", -1234567);
+// printf_count = printf("strlen > width > precision: |%6.4d|\n", -1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen >= width > precision: |%7.4d|\n", -1234567);
+// printf_count = printf("strlen >= width > precision: |%7.4d|\n", -1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen > width >= precision: |%5.5d|\n", -1234567);
+// printf_count = printf("strlen > width >= precision: |%5.5d|\n", -1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("strlen >= width >= precision: |%7.7d|\n", -1234567);
+// printf_count = printf("strlen >= width >= precision: |%7.7d|\n", -1234567);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// printf("------------------just precision existed------------------\n");
+// printf("---------minus can be combined with this test-------------\n");
+// printf("----(it is the same with/without minus with this test)----\n");
+//
+// ft_printf_count = ft_printf("precision < strlen: |%.3d|\n", 1123);
+// printf_count = printf("precision < strlen: |%.3d|\n", 1123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen: |%.7d|\n", 1123);
+// printf_count = printf("precision > strlen: |%.7d|\n", 1123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision <= strlen: |%.4d|\n", 1123);
+// printf_count = printf("precision <= strlen: |%.4d|\n", 1123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision < strlen: |%.3d|\n", 0);
+// printf_count = printf("precision < strlen: |%.3d|\n", 0);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen: |%.7d|\n", 0);
+// printf_count = printf("precision > strlen: |%.7d|\n", 0);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision <= strlen: |%.4d|\n", 0);
+// printf_count = printf("precision <= strlen: |%.4d|\n", 0);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision < strlen: |%.3d|\n", -1123);
+// printf_count = printf("precision < strlen: |%.3d|\n", -1123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision > strlen: |%.7d|\n", -1123);
+// printf_count = printf("precision > strlen: |%.7d|\n", -1123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("precision <= strlen: |%.4d|\n", -1123);
+// printf_count = printf("precision <= strlen: |%.4d|\n", -1123);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+
+// printf("------------------ * test ------------------\n");
+
+// int field_width_0 = 0;
+// int field_width_1 = 7;
+// int field_width_2 = 42;
+// int field_width_3 = 123;
+// int field_width_4 = 1000;
+// int field_width_minus_1 = -7;
+// int field_width_minus_2 = -42;
+// int field_width_minus_3 = -123;
+// int field_width_minus_4 = -1000;
+
+//
+// int precision_0 = 0;
+// int precision_1 = 7;
+// int precision_2 = 42;
+// int precision_3 = 123;
+// int precision_4 = 1000;
+// int precision_minus_1 = -7;
+// int precision_minus_2 = -42;
+// int precision_minus_3 = -123;
+// int precision_minus_4 = -1000;
+
+// ft_printf_count = ft_printf("|%*d|\n", field_width_0, 42);
+// printf_count = printf("|%*d|\n", field_width_0, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+
+// ft_printf_count = ft_printf("|%*d|\n", field_width_1, 42);
+// printf_count = printf("|%*d|\n", field_width_1, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*d|\n", field_width_2, 42);
+// printf_count = printf("|%*d|\n", field_width_2, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*d|\n", field_width_3, 42);
+// printf_count = printf("|%*d|\n", field_width_3, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*d|\n", field_width_4, 42);
+// printf_count = printf("|%*d|\n", field_width_4, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*d|\n", field_width_minus_1, 42);
+// printf_count = printf("|%*d|\n", field_width_minus_1, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*d|\n", field_width_minus_2, 42);
+// printf_count = printf("|%*d|\n", field_width_minus_2, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*d|\n", field_width_minus_3, 42);
+// printf_count = printf("|%*d|\n", field_width_minus_3, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*d|\n", field_width_minus_4, 42);
+// printf_count = printf("|%*d|\n", field_width_minus_4, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+
+// ft_printf_count = ft_printf("|%.*d|\n", precision_0, 42);
+// printf_count = printf("|%.*d|\n", precision_0, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+// //
+// ft_printf_count = ft_printf("|%.*d|\n", precision_1, 42);
+// printf_count = printf("|%.*d|\n", precision_1, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%.*d|\n", precision_2, 42);
+// printf_count = printf("|%.*d|\n", precision_2, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%.*d|\n", precision_3, 42);
+// printf_count = printf("|%.*d|\n", precision_3, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%.*d|\n", precision_4, 42);
+// printf_count = printf("|%.*d|\n", precision_4, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%.*d|\n", precision_minus_1, 42);
+// printf_count = printf("|%.*d|\n", precision_minus_1, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%.*d|\n", precision_minus_2, 42);
+// printf_count = printf("|%.*d|\n", precision_minus_2, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%.*d|\n", precision_minus_3, 42);
+// printf_count = printf("|%.*d|\n", precision_minus_3, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%.*d|\n", precision_minus_4, 42);
+// printf_count = printf("|%.*d|\n", precision_minus_4, 42);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+
+// ft_printf_count = ft_printf("|%*.*d|\n", field_width_0, precision_minus_1, -7);
+// printf_count = printf("|%*.*d|\n", field_width_0, precision_minus_1, -7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*.*d|\n", field_width_minus_1, precision_minus_1, -7);
+// printf_count = printf("|%*.*d|\n", field_width_minus_1, precision_minus_1, -7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*.*d|\n", field_width_minus_2, precision_minus_1, -7);
+// printf_count = printf("|%*.*d|\n", field_width_minus_2, precision_minus_1, -7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*.*d|\n", field_width_minus_3, precision_minus_1, -7);
+// printf_count = printf("|%*.*d|\n", field_width_minus_3, precision_minus_1, -7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("|%*.*d|\n", field_width_minus_4, precision_minus_1, -7);
+// printf_count = printf("|%*.*d|\n", field_width_minus_4, precision_minus_1, -7);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+
+// ft_printf_count = ft_printf("|%-*.*d|\n", field_width_0, precision_0, 0);
+// printf_count = printf("|%-*.*d|\n", field_width_0, precision_0, 0);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+
+// printf("===============================================================\n");

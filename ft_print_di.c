@@ -1,4 +1,7 @@
 #include "ft_printf.h"
+/*
+** Function to print 'd' and 'i'
+*/
 
 /*
 ** d/i 만들때 고려할 점 (diouxX)

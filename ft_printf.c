@@ -21,15 +21,9 @@ int    ft_printf(const char *str, ...)
             if (tab.specifier == 's')
                 ft_print_str(&tab);
             if (tab.specifier == 'd' || tab.specifier == 'i')
-            {
-                // printf("check_width : %d\n", tab.check_width);
-                // printf("width : %d\n", tab.width);
-                // printf("check_zero : %d\n", tab.check_zero);
-                // printf("check_minus : %d\n", tab.check_minus);
-                // printf("check_precision : %d\n", tab.check_precision);
-                // printf("precision : %d\n", tab.precision);
                 ft_print_di(&tab);
-            }
+            if (tab.specifier == 'u')
+                ft_print_u(&tab);
         }
         else
         {

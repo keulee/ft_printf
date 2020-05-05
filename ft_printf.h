@@ -34,17 +34,19 @@ int		    ft_atoi(const char *str);
 void	    ft_putchar(char c);
 void        ft_putstr(char *str);
 int         ft_strlen(const char *src);
+void        ft_putnbr(int nb);
+char	    *ft_itoa(int n);
+char        *ft_strdup(const char *src);
+
+void        ft_print_char(t_struct *tab);
+void        ft_print_str(t_struct *tab);
+void        ft_print_di(t_struct *tab);
+void        ft_print_u(t_struct *tab);
 
 void        ft_init(t_struct *tab, const char *str);
 void        ft_find_option(t_struct *tab);
 void        ft_find_specifier(t_struct *tab);
-void        ft_print_char(t_struct *tab);
-void        ft_print_str(t_struct *tab);
 void        ft_option_clear(t_struct *tab);
-void        ft_print_di(t_struct *tab);
-void        ft_putnbr(int nb);
-char	    *ft_itoa(int n);
-char        *ft_strdup(const char *src);
 
 
 // void        ft_manage_width(const char *format, va_list my_list, int *i, int *len, int witdh);

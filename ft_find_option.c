@@ -3,7 +3,7 @@
 ** Function to find every options (flag, width etc)
 */
 /*
-** Asterisk (*) - c와 s에 다시 한번 체크해야 할 것.
+** Asterisk (*)
 ** (*)가 음수 field width를 받으면 양수 field width에 왼쪽 정렬 (-플래그)로 취급한다.
 ** (*)가 음수 .precision을 받으면 .precision이 없는 것으로 취급한다.
 */

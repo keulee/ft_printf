@@ -41,7 +41,8 @@ SRC = ft_putnbr.c \
 		ft_print_di.c \
 		ft_putnbr.c \
 		ft_itoa.c \
-		ft_strdup.c 
+		ft_strdup.c \
+		ft_print_u.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
