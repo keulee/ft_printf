@@ -492,10 +492,10 @@ int main(void)
     // printf("ft printf count : %d\n", ft_printf_count);
     // printf("real printf count : %d\n", printf_count);
 
-    ft_printf_count = ft_printf("|%-*.*d|\n", field_width_minus_1, precision_minus_1, 7);
-    printf_count = printf("|%-*.*d|\n", field_width_minus_1, precision_minus_1, 7);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
+    // ft_printf_count = ft_printf("|%-*.*d|\n", field_width_minus_1, precision_minus_1, 7);
+    // printf_count = printf("|%-*.*d|\n", field_width_minus_1, precision_minus_1, 7);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
 
     //
 
