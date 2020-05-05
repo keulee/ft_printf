@@ -69,33 +69,29 @@ void    ft_print_di(t_struct *tab)
             tab->precision++;
         if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
         {
-            // printf("1\n");
             tab->len += tab->string_len;
             tab->precision = 0;
             tab->width = 0;
         }
         else if (tab->width > tab->precision && tab->precision >= tab->string_len)
         {
-            // printf("2\n");
             tab->len += tab->width;
             tab->width = tab->width - tab->precision;
             tab->precision = tab->precision - tab->string_len;
         }
         else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
         {
-            // printf("3\n");
             tab->len += tab->width;
             tab->width = tab->width - tab->string_len;
             tab->precision = 0;
         }
         else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
         {
-            // printf("4\n");
             tab->len += tab->precision;
             tab->precision = tab->precision - tab->string_len;
             tab->width = 0;
         }
-        if (tab->check_minus == 1)
+        if (tab->check_minus == 1) //width, precision (+zero) minus
         {
             if (tab->number < 0)
             {
@@ -108,7 +104,7 @@ void    ft_print_di(t_struct *tab)
             while (tab->width-- > 0)
                 ft_putchar(' ');
         }
-        else
+        else //width, precision (+zero)
         {
             while (tab->width-- > 0)
                 ft_putchar(' ');
@@ -122,4 +118,27 @@ void    ft_print_di(t_struct *tab)
             ft_putnbr(tab->number);
         }
     }
+    else if (tab->check_width == 0 && tab->check_precision == 1 && tab->check_zero == 0)
+    {
+        if (tab->precision > tab->string_len)
+        {
+            tab->len += tab->precision;
+            tab->precision = tab->precision - tab->string_len;
+        }
+        else
+        {
+            tab->len += tab->string_len;
+            tab->precision = 0;
+        }
+        if (tab->number < 0)
+        {
+            tab->number *= -1;
+            ft_putchar('-');
+        }
+        while (tab->precision-- > 0)
+            ft_putchar('0');
+        ft_putnbr(tab->number);
+
+    }
+
 }
