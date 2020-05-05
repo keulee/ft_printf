@@ -15,7 +15,6 @@
 void    ft_print_di(t_struct *tab)
 {
     tab->number = va_arg(tab->list, int);
-    // printf("number : %d\n", tab->number);
     tab->string = ft_itoa(tab->number);
     tab->string_len = ft_strlen(tab->string);
     if (tab->check_minus == 1 && tab->check_zero == 1)
@@ -31,7 +30,6 @@ void    ft_print_di(t_struct *tab)
         {
             tab->width = tab->width - tab->string_len;
             tab->len += tab->width;
-            // printf("width : %d\n", tab->width);
         }
         else //width <= string_len
             tab->width = 0;
