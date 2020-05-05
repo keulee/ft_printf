@@ -122,6 +122,8 @@ void    ft_print_di(t_struct *tab)
     {
         if (tab->precision > tab->string_len)
         {
+            if (tab->number < 0)
+                tab->precision++;
             tab->len += tab->precision;
             tab->precision = tab->precision - tab->string_len;
         }

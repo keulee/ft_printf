@@ -324,6 +324,36 @@ int main(void)
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 
+    ft_printf_count = ft_printf("precision < strlen: |%.3d|\n", 0);
+    printf_count = printf("precision < strlen: |%.3d|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("precision > strlen: |%.7d|\n", 0);
+    printf_count = printf("precision > strlen: |%.7d|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("precision <= strlen: |%.4d|\n", 0);
+    printf_count = printf("precision <= strlen: |%.4d|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("precision < strlen: |%.3d|\n", -1123);
+    printf_count = printf("precision < strlen: |%.3d|\n", -1123);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("precision > strlen: |%.7d|\n", -1123);
+    printf_count = printf("precision > strlen: |%.7d|\n", -1123);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("precision <= strlen: |%.4d|\n", -1123);
+    printf_count = printf("precision <= strlen: |%.4d|\n", -1123);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
 
 //================
 
