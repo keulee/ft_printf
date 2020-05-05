@@ -73,7 +73,7 @@ void    ft_print_di(t_struct *tab)
             tab->precision = 0;
             tab->width = 0;
         }
-        else if (tab->width > tab->precision && tab->precision >= tab->string_len)
+        else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
         {
             tab->len += tab->width;
             tab->width = tab->width - tab->precision;

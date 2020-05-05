@@ -37,20 +37,24 @@ void    ft_find_option(t_struct *tab)
         }
         else if (tab->str[tab->i] == '*')
         {
-            if (tab->str[tab->i-1] == '.')
+            if (tab->str[tab->i-1] == '.') //*가 precision 경우
             {
                 tab->check_precision = 1;
                 tab->precision = va_arg(tab->list, int);
+                if (tab->precision < 0) // precision이 음수라면 없는 것으로 취급
+                    tab->precision = 1;
             }
-            else
+            else //*가 width 경우
             {
                 tab->check_width = 1;
                 tab->width = va_arg(tab->list, int);
                 if (tab->specifier == 'c' && tab->width == 0)
                     tab->width = 1;
                 if (tab->width < 0)
+                {
                     tab->width = (tab->width * -1);
-                    // tab->check_minus = 1;
+                    tab->check_minus = 1;
+                }
             }
         }
     }
