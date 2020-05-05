@@ -1,5 +1,6 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# define UINT_MAX 4294967295
 
 # include <stdlib.h>
 # include <unistd.h>

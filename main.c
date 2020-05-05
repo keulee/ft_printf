@@ -1,13 +1,25 @@
 #include "ft_printf.h"
-#include <stdio.h>
+// #include <stdio.h>
 
 int main(void)
 {
-    int printf_count;
     int ft_printf_count;
-
+    int printf_count;
 
     printf("======================  [%%u test]   =====================\n");
+
+    // unsigned int ft_printf_count;
+    // unsigned int printf_count;
+
+    ft_printf_count = ft_printf("Default u: |%u|\n", 0);
+    printf_count = printf("Default u: |%u|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("Default u with -flag: |%-u|\n", 0);
+    printf_count = printf("Default u with -flag: |%-u|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
 
     printf("==========================================================\n");
 
