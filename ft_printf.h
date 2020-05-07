@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
+/*   Updated: 2020/05/07 13:08:38 by keulee           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # define UINT_MAX 4294967295
@@ -21,6 +33,7 @@ typedef struct      s_struct
     int             check_zero;
     int             width;
     int             number;
+    unsigned int    uint_number;
     int             len;
     int             string_len;
     int             precision;
@@ -36,6 +49,7 @@ void	    ft_putchar(char c);
 void        ft_putstr(char *str);
 int         ft_strlen(const char *src);
 void        ft_putnbr(int nb);
+void    	ft_putnbr_u(unsigned int nb);
 char	    *ft_itoa(int n);
 char        *ft_strdup(const char *src);
 

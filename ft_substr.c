@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keulee <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 17:27:52 by keulee            #+#    #+#             */
-/*   Updated: 2019/12/19 09:52:10 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/07 13:10:27 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//
+
 // Description
 // Allocates (with malloc(3)) and returns a substring from the string ’s’.
 // The substring begins at index ’start’ and is of maximum size ’len’.

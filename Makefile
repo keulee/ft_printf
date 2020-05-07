@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/03/08 20:08:29 by keulee           ###   ########.fr        #
+#    Updated: 2020/05/07 13:10:48 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ SRC = ft_putnbr.c \
 		ft_putnbr.c \
 		ft_itoa.c \
 		ft_strdup.c \
-		ft_print_u.c
+		ft_print_u.c \
+		ft_putnbr_u.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
