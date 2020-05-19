@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:02 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/07 13:08:05 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/19 18:52:41 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,49 @@
 
 void    ft_print_u(t_struct *tab)
 {
-    tab->number = va_arg(tab->list, int);
-    tab->string = ft_itoa(tab->number);
+    tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
+    tab->string = ft_itoa_u(tab->u_number);
     tab->string_len = ft_strlen(tab->string);
-    if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
+    // printf("str: %s\n", tab->string);
+    // printf("strlen: %d\n", tab->string_len);
+    if (tab->check_minus == 1 && tab->check_zero == 1)
+        ft_putstr("Error");
+    else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
-        ft_putnbr(tab->number);
+        ft_putnbr_u(tab->u_number);
         tab->len += tab->string_len;
     }
+    else if (tab->check_width == 1 && tab->check_precision == 0)
+    {
+        if (tab->width > tab->string_len)
+        {
+            tab->width = tab->width - tab->string_len;
+            tab->len += tab->width;
+        }
+        else
+            tab->width = 0;
+        if (tab->check_minus == 1)
+        {
+            ft_putnbr_u(tab->u_number);
+            while (tab->width-- > 0)
+                ft_putchar(' ');
+        }
+        else
+        {
+            if (tab->check_zero == 1)
+            {
+                while (tab->width-- > 0)
+                    ft_putchar('0');
+            }
+            else
+            {
+                while (tab->width-- > 0)
+                    ft_putchar(' ');
+            }
+            ft_putnbr_u(tab->u_number);
+        }
+        tab->len += tab->string_len;
+    }
+    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->u_number == 0) //예외
+        ;
 }

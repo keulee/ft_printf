@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/07 13:09:31 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/15 22:51:18 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,5 @@ void    ft_print_di(t_struct *tab)
         while (tab->precision-- > 0)
             ft_putchar('0');
         ft_putnbr(tab->number);
-
     }
-
 }

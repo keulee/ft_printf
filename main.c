@@ -8,13 +8,89 @@ int main(void)
 
     printf("======================  [%%u test]   =====================\n");
 
-    ft_printf_count = ft_printf("Default u: |%u|\n", -1);
-    printf_count = printf("Default u: |%u|\n", -1);
+    ft_printf_count = ft_printf("default u with more than 0: |%u|\n", 42);
+    printf_count = printf("default u with more than 0: |%u|\n", 42);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 
-    ft_printf_count = ft_printf("Default u with -flag: |%-u|\n", -1);
-    printf_count = printf("Default u with -flag: |%-u|\n", -1);
+    ft_printf_count = ft_printf("default u with 0: |%u|\n", 0);
+    printf_count = printf("default u with 0: |%u|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("default u with less than 0: |%u|\n", -42);
+    printf_count = printf("default u with less than 0: |%u|\n", -42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("default u with more than 0 and with - flag: |%-u|\n", 42);
+    printf_count = printf("default u with more than 0 and with - flag: |%-u|\n", 42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("default u with 0 and with - flag: |%-u|\n", 0);
+    printf_count = printf("default u with 0 and with - flag: |%-u|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("default u with less than 0 and with - flag: |%-u|\n", -42);
+    printf_count = printf("default u with less than 0 and with - flag: |%-u|\n", -42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("u with the width: |%10u|\n", 42);
+    printf_count = printf("u with the width: |%10u|\n", 42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("u with the width and 0: |%u|\n", 0);
+    printf_count = printf("u with the width and 0: |%u|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+    //
+    ft_printf_count = ft_printf("u with the width and minus argu: |%12u|\n", -42);
+    printf_count = printf("u with the width and minus argu: |%12u|\n", -42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("u with the width and the minus: |%-10u|\n", 42);
+    printf_count = printf("u with the width and the minus: |%-10u|\n", 42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("u with the width and 0 and the minus: |%-u|\n", 0);
+    printf_count = printf("u with the width and 0 and the minus: |%-u|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+    //
+    ft_printf_count = ft_printf("u with the width and minus argu and the minus: |%-12u|\n", -42);
+    printf_count = printf("u with the width and minus argu and the minus: |%-12u|\n", -42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("u with the width and the 0 flag: |%02u|\n", 42);
+    printf_count = printf("u with the width and the 0 flag: |%02u|\n", 42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("u with the width and 0 and the 0 flag: |%0u|\n", 0);
+    printf_count = printf("u with the width and 0 and the 0 flag: |%0u|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+    //
+    ft_printf_count = ft_printf("u with the width and minus argu and the 0 flag: |%05u|\n", -42);
+    printf_count = printf("u with the width and minus argu and the 0 flag: |%05u|\n", -42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    //에외
+    ft_printf_count = ft_printf("Exception: |%.0u|\n", 0);
+    printf_count = printf("Exception: |%.0u|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+    //예외
+    ft_printf_count = ft_printf("Exception: |%0.0u|\n", 0);
+    printf_count = printf("Exception: |%0.0u|\n", 0);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 
