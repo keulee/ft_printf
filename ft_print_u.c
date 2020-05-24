@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:02 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/19 18:52:41 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/24 22:31:21 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void    ft_print_u(t_struct *tab)
     tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
     tab->string = ft_itoa_u(tab->u_number);
     tab->string_len = ft_strlen(tab->string);
-    // printf("str: %s\n", tab->string);
-    // printf("strlen: %d\n", tab->string_len);
     if (tab->check_minus == 1 && tab->check_zero == 1)
         ft_putstr("Error");
     else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
@@ -79,4 +77,63 @@ void    ft_print_u(t_struct *tab)
     }
     else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->u_number == 0) //예외
         ;
+    else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
+    {
+        if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+        {
+            tab->len += tab->string_len;
+            tab->precision = 0;
+            tab->width = 0;
+        }
+        else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+        {
+            tab->len += tab->width;
+            tab->width = tab->width - tab->precision;
+            tab->precision = tab->precision - tab->string_len;
+        }
+        else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+        {
+            tab->len += tab->width;
+            tab->width = tab->width - tab->string_len;
+            tab->precision = 0;
+        }
+        else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+        {
+            tab->len += tab->precision;
+            tab->precision = tab->precision - tab->string_len;
+            tab->width = 0;
+        }
+        if (tab->check_minus == 1) //width, precision (+zero) minus
+        {
+            while (tab->precision-- > 0)
+                ft_putchar('0');
+            ft_putnbr_u(tab->u_number);
+            while (tab->width-- > 0)
+                ft_putchar(' ');
+        }
+        else //width, precision (+zero)
+        {
+            while (tab->width-- > 0)
+                ft_putchar(' ');
+            while (tab->precision-- > 0)
+                ft_putchar('0');
+            ft_putnbr_u(tab->u_number);
+        }
+    }
+    else if (tab->check_width == 0 && tab->check_precision == 1 && tab->check_zero == 0)
+    {
+        if (tab->precision > tab->string_len)
+        {
+            tab->len += tab->precision;
+            tab->precision = tab->precision - tab->string_len;
+        }
+        else
+        {
+            tab->len += tab->string_len;
+            tab->precision = 0;
+        }
+        while (tab->precision-- > 0)
+            ft_putchar('0');
+        ft_putnbr_u(tab->u_number);
+    }
 }
