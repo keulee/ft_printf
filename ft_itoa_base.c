@@ -1,58 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_p.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 19:39:14 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/26 17:41:03 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/26 18:17:56 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_int_len_p(long long int n)
+char	*ft_itoa_base(long long int n, char *base)
 {
-	int i;
+	int 			i;
+	unsigned int 	base_len;
+	char 			*str;
+	int 			mark;
+	long long int 	rest;
 
-	i = (n < 0 ? 1 : 0);
-	if (n < 0)
-		n = n * -1;
-	if (n == 0)
-		i = 1;
-	while (n > 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_itoa_p(long long int n)
-{
-	int		i;
-	char	*str;
-	int		mark;
-
+	i = 0;
 	mark = (n < 0 ? 1 : 0);
-	i = ft_int_len_p(n);
+	base_len = ft_strlen(base);
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	// if (n == -2147483648)
-		// return (ft_strdup("-2147483648"));
 	if (n < 0)
 		n = n * -1;
-	str[i] = '\0';
 	if (n == 0)
+	{
 		str[0] = '0';
+		i = 1;
+	}
 	while (n > 0)
 	{
-		str[i - 1] = n % 10 + 48;
-		n = n / 10;
-		i--;
+	    rest = n % 16;
+	    str[i] = base[rest % base_len];
+	    n = n / 16;
+		i++;
 	}
 	if (mark == 1)
 		str[0] = '-';
+	str[i] = '\0';
 	return (str);
 }
