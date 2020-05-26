@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 19:39:14 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/26 18:17:56 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/26 18:25:13 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ char	*ft_itoa_base(long long int n, char *base)
 	while (n > 0)
 	{
 	    rest = n % 16;
-	    str[i] = base[rest % base_len];
+	    str[i++] = base[rest % base_len];
 	    n = n / 16;
-		i++;
 	}
 	if (mark == 1)
 		str[0] = '-';
