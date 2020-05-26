@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_option_clear.c                                  :+:      :+:    :+:   */
+/*   ft_print_x.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/07 13:09:21 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/24 23:03:34 by keulee           ###   ########.fr       */
+/*   Created: 2020/05/24 23:07:38 by keulee            #+#    #+#             */
+/*   Updated: 2020/05/24 23:15:13 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-/*
-** Function to clear find_option function
-*/
-void ft_option_clear(t_struct *tab)
+
+void    ft_print_x(t_struct *tab)
 {
-    tab->check_minus = 0;
-    tab->check_width = 0;
-    tab->check_s_width = 0;
-    tab->check_precision = 0;
-    tab->check_zero = 0;
-    tab->string_len = 0;
-    tab->width = 0;
-    tab->precision = 0;
-    tab->index = 0;
+    ;
 }

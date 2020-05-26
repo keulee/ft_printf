@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/15 23:21:48 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/26 17:40:46 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct      s_struct
     int             width;
     int             number;
     unsigned int    u_number;
+    unsigned long int    p_number;
+    void            *pointer;
     int             len;
     int             string_len;
     int             precision;
@@ -53,11 +55,15 @@ void    	ft_putnbr_u(unsigned int nb);
 char	    *ft_itoa(int n);
 char        *ft_strdup(const char *src);
 char        *ft_itoa_u(unsigned int n);
+void        ft_putnbr_base(long long int nbr, char *base);
+char        *ft_itoa_p(long long int n);
 
 void        ft_print_char(t_struct *tab);
 void        ft_print_str(t_struct *tab);
 void        ft_print_di(t_struct *tab);
 void        ft_print_u(t_struct *tab);
+void        ft_print_p(t_struct *tab);
+// void        ft_print_x(t_struct *tab);
 
 void        ft_init(t_struct *tab, const char *str);
 void        ft_find_option(t_struct *tab);

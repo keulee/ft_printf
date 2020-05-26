@@ -7,8 +7,39 @@ int main(void)
 
     printf("======================  [%%u test]   =====================\n");
 
-    ft_printf_count = ft_printf("default u with more than 0: |%u|\n", 42);
-    printf_count = printf("default u with more than 0: |%u|\n", 42);
+    int a = 42;
+    void *p_int;
+    p_int = &a;
+
+    char b = 'c';
+    char *p_str;
+    p_str = &b;
+
+    float c = 2.42;
+    float *p_float;
+    p_float = &c;
+
+    double d = 2.42;
+    double *p_double;
+    p_double = &d;
+
+    ft_printf_count = ft_printf("default p: |%p|\n", p_int);
+    printf_count = printf("default p: |%p|\n", p_int);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("default p: |%p|\n", p_str);
+    printf_count = printf("default p: |%p|\n", p_str);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("default p: |%p|\n", p_float);
+    printf_count = printf("default p: |%p|\n", p_float);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("default p: |%p|\n", p_double);
+    printf_count = printf("default p: |%p|\n", p_double);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 

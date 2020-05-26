@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:48 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/07 13:09:49 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/26 17:33:05 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,10 @@ int        ft_error(char *base)
     return (1);
 }
 
-int        ft_strlen(char *str)
+void    ft_putnbr_base(long long int nbr, char *base)
 {
-    int i;
-
-    i = 0;
-    while (str[i])
-    {
-        i++;
-    }
-    return (i);
-}
-
-void    ft_putnbr_base(int nbr, char *base)
-{
-    int            size;
-    long int    nb;
+    int                 size;
+    long long int       nb;
 
     size = ft_strlen(base);
     nb = nbr;
@@ -67,9 +55,3 @@ void    ft_putnbr_base(int nbr, char *base)
         ft_putchar(base[nb % size]);
     }
 }
-
-/*int     main(void)
-{
-    ft_putnbr_base(1234, "0123456789");
-    return (0);
-} */
