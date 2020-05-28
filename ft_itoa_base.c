@@ -5,41 +5,67 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/08 19:39:14 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/26 18:25:13 by keulee           ###   ########.fr       */
+/*   Created: 2020/05/28 15:16:33 by keulee            #+#    #+#             */
+/*   Updated: 2020/05/28 15:51:19 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_itoa_base(long long int n, char *base)
+char        *ft_rev(char *string)
 {
-	int 			i;
-	unsigned int 	base_len;
-	char 			*str;
-	int 			mark;
-	long long int 	rest;
+    int     len;
+    int     i;
+    char    tmp;
 
-	i = 0;
-	mark = (n < 0 ? 1 : 0);
-	base_len = ft_strlen(base);
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	if (n < 0)
-		n = n * -1;
-	if (n == 0)
-	{
-		str[0] = '0';
-		i = 1;
-	}
-	while (n > 0)
-	{
-	    rest = n % 16;
-	    str[i++] = base[rest % base_len];
-	    n = n / 16;
-	}
-	if (mark == 1)
-		str[0] = '-';
-	str[i] = '\0';
-	return (str);
+    len = ft_strlen(string) - 1;
+    i = 0;
+    while (i < len)
+    {
+        tmp = string[i];
+        string[i] = string[len];
+        string[len] = tmp;
+        i++;
+        len--;
+    }
+    return (string);
+}
+
+void        ft_manage(long long int *nb, char **string, int *sign, int *i)
+{
+    if (*nb == 0)
+        (*string)[0] = '0';
+    if (*nb < 0)
+    {
+        *nb *= -1;
+        *sign = -1;
+    }
+    if ((*string)[0] == '0')
+        *i = 1;
+    else
+        *i = 0;
+}
+
+char        *ft_itoa_base(long long int nb, char *base)
+{
+    char            *string;
+    int             div;
+    int             i;
+    int             sign;
+
+    div = ft_strlen(base);
+    if (div != 16 || !(string = (char *)malloc(sizeof(char) * 25)))
+        return (NULL);
+    sign = 1;
+    ft_manage(&nb, &string, &sign, &i);
+    while (nb > 0)
+    {
+        string[i++] = base[nb % div];
+        nb = nb / div;
+    }
+    if (sign == -1)
+        string[i++] = '-';
+    string[i] = '\0';
+    string = ft_rev(string);
+    return (string);
 }
