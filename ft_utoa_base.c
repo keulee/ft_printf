@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 17:39:54 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/29 20:58:46 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/29 23:58:39 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ char	*ft_utoa_base(unsigned long long nb, char *base)
 	if (div != 16 || !(string = (char *)malloc(sizeof(char) * (nb_len + 1))))
 		return (NULL);
     if (nb == 0)
+	{
         string[0] = '0';
+		i = 1;
+	}
 	while (nb > 0)
 	{
 		string[i++] = base[nb % div];

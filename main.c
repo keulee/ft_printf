@@ -5,6 +5,50 @@ int main(void)
     int ft_printf_count;
     int printf_count;
 
+    printf("======================  [%%x test]   =====================\n");
+
+    // 에외
+    ft_printf_count = ft_printf("Exception: |%.0x|\n", 0);
+    printf_count = printf("Exception: |%.0x|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+    //예외
+    ft_printf_count = ft_printf("Exception: |%0.0x|\n", 0);
+    printf_count = printf("Exception: |%0.0x|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("Default x: |%x|\n", 42);
+    printf_count = printf("Default x: |%x|\n", 42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("Default x(with -flag): |%-x|\n", 42);
+    printf_count = printf("Default x(with -flag): |%-x|\n", 42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("Default x (with argument as 0): |%x|\n", 0);
+    printf_count = printf("Default x (with argument as 0): |%x|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("Default x(argument with 0 and with -flag): |%-x|\n", 0);
+    printf_count = printf("Default x(argument with 0 and with -flag): |%-x|\n", 0);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("Default x(with minus argument): |%x|\n", -42);
+    printf_count = printf("Default x(with minus argument): |%x|\n", -42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("Default x(with -flag and minus argument): |%-x|\n", -42);
+    printf_count = printf("Default x(with -flag and minus argument): |%-x|\n", -42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    printf("==========================================================\n");
 
     return (0);
 }

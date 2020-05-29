@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:48 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/26 17:33:05 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/29 23:48:20 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int        ft_error(char *base)
     return (1);
 }
 
-void    ft_putnbr_base(long long int nbr, char *base)
+void    ft_putnbr_base(unsigned long long nbr, char *base)
 {
-    int                 size;
-    long long int       nb;
+    unsigned int        size;
+    unsigned long long  nb;
 
     size = ft_strlen(base);
     nb = nbr;
