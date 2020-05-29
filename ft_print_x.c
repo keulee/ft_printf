@@ -6,12 +6,14 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 23:07:38 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/24 23:15:13 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/29 23:15:04 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+/*
+** Function to print 'p'
+*/
 void    ft_print_x(t_struct *tab)
 {
     ;

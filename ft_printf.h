@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/29 20:58:20 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/29 23:14:02 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ char	    *ft_itoa(int n);
 char        *ft_strdup(const char *src);
 char        *ft_itoa_u(unsigned int n);
 void        ft_putnbr_base(long long int nbr, char *base);
-// char        *ft_itoa_base(long long int n, char *base);
-// char        *ft_strcpy(char *dest, char *src);
 char        *ft_utoa_base(unsigned long long nb, char *base);
 
 void        ft_print_char(t_struct *tab);
@@ -65,7 +63,7 @@ void        ft_print_str(t_struct *tab);
 void        ft_print_di(t_struct *tab);
 void        ft_print_u(t_struct *tab);
 void        ft_print_p(t_struct *tab);
-// void        ft_print_x(t_struct *tab);
+void        ft_print_x(t_struct *tab);
 
 void        ft_init(t_struct *tab, const char *str);
 void        ft_find_option(t_struct *tab);
