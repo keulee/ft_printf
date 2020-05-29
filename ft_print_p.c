@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 23:15:29 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/28 15:52:03 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/29 16:54:42 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void    ft_print_p(t_struct *tab)
     tab->p_number = (long long int)tab->pointer;
     tab->string = ft_itoa_base(tab->p_number, "0123456789abcdef");
     tab->string_len = ft_strlen(tab->string) + 2;
-    // printf("string : %s\n", tab->string);
-    // printf("p_number : %lu\n", tab->p_number);
+    printf("string : %s\n", tab->string);
+    printf("p_number : %lu\n", tab->p_number);
     if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
-        ft_putstr("0x");
-        ft_putnbr_base(tab->p_number, "0123456789abcdef");
+        // ft_putstr("0x");
+        // ft_putnbr_base(tab->p_number, "0123456789abcdef");
         tab->len += tab->string_len;
     }
 }
