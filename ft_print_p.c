@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 23:15:29 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/29 16:54:42 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/29 20:56:07 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,16 @@
 void    ft_print_p(t_struct *tab)
 {
     tab->pointer = va_arg(tab->list, void *);
-    tab->p_number = (long long int)tab->pointer;
-    tab->string = ft_itoa_base(tab->p_number, "0123456789abcdef");
+    tab->p_number = (unsigned long long)tab->pointer;
+    // printf("p_number : %llu\n", tab->p_number);
+    tab->string = ft_utoa_base(tab->p_number, "0123456789abcdef");
     tab->string_len = ft_strlen(tab->string) + 2;
-    printf("string : %s\n", tab->string);
-    printf("p_number : %lu\n", tab->p_number);
+    // printf("string : %s\n", tab->string);
+    // printf("string_len : %d\n", tab->string_len);
     if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
-        // ft_putstr("0x");
-        // ft_putnbr_base(tab->p_number, "0123456789abcdef");
+        ft_putstr("0x");
+        ft_putnbr_base(tab->p_number, "0123456789abcdef");
         tab->len += tab->string_len;
     }
 }

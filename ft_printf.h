@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/28 15:38:42 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/29 20:58:20 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,26 @@
 
 typedef struct      s_struct
 {
-    const char      *str;
-    va_list         list;
-    int             i;
-    int             j;
-    int             check_width;
-    int             check_s_width;
-    int             check_minus;
-    int             check_precision;
-    int             check_zero;
-    int             width;
-    int             number;
-    unsigned int    u_number;
-    unsigned long int    p_number;
-    void            *pointer;
-    int             len;
-    int             string_len;
-    int             precision;
-    int             index;
-    char            specifier;
-    char            *string;
+    const char          *str;
+    va_list             list;
+    int                 i;
+    int                 j;
+    int                 check_width;
+    int                 check_s_width;
+    int                 check_minus;
+    int                 check_precision;
+    int                 check_zero;
+    int                 width;
+    int                 number;
+    unsigned int        u_number;
+    unsigned long long  p_number;
+    void                *pointer;
+    int                 len;
+    int                 string_len;
+    int                 precision;
+    int                 index;
+    char                specifier;
+    char                *string;
 }                   t_struct;
 
 int         ft_printf(const char *str, ...);
@@ -56,7 +56,9 @@ char	    *ft_itoa(int n);
 char        *ft_strdup(const char *src);
 char        *ft_itoa_u(unsigned int n);
 void        ft_putnbr_base(long long int nbr, char *base);
-char        *ft_itoa_base(long long int n, char *base);
+// char        *ft_itoa_base(long long int n, char *base);
+// char        *ft_strcpy(char *dest, char *src);
+char        *ft_utoa_base(unsigned long long nb, char *base);
 
 void        ft_print_char(t_struct *tab);
 void        ft_print_str(t_struct *tab);
