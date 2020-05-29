@@ -5,46 +5,6 @@ int main(void)
     int ft_printf_count;
     int printf_count;
 
-    printf("======================  [%%u test]   =====================\n");
-
-    int a = 42;
-    void *p_int;
-    p_int = &a;
-
-    char b = 'c';
-    char *p_str;
-    p_str = &b;
-
-    float c = 2.42;
-    float *p_float;
-    p_float = &c;
-
-    double d = 2.42;
-    double *p_double;
-    p_double = &d;
-
-    ft_printf_count = ft_printf("default p: |%p|\n", p_int);
-    printf_count = printf("default p: |%p|\n", p_int);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    ft_printf_count = ft_printf("default p: |%p|\n", p_str);
-    printf_count = printf("default p: |%p|\n", p_str);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    ft_printf_count = ft_printf("default p: |%p|\n", p_float);
-    printf_count = printf("default p: |%p|\n", p_float);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    ft_printf_count = ft_printf("default p: |%p|\n", p_double);
-    printf_count = printf("default p: |%p|\n", p_double);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    printf("==========================================================\n");
-
 
     return (0);
 }
@@ -1347,3 +1307,180 @@ int main(void)
 // printf("real printf count : %d\n", printf_count);
 //
 // printf("==========================================================\n");
+// printf("======================  [%%p test]   =====================\n");
+//
+// int a = 42;
+// void *p_int;
+// p_int = &a;
+//
+// char b = 'c';
+// char *p_str;
+// p_str = &b;
+//
+// float c = 2.42;
+// float *p_float;
+// p_float = &c;
+//
+// double d = 2.42;
+// double *p_double;
+// p_double = &d;
+
+// ft_printf_count = ft_printf("default p: |%p|\n", p_int);
+// printf_count = printf("default p: |%p|\n", p_int);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%p|\n", p_str);
+// printf_count = printf("default p: |%p|\n", p_str);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%p|\n", p_float);
+// printf_count = printf("default p: |%p|\n", p_float);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%p|\n", p_double);
+// printf_count = printf("default p: |%p|\n", p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+
+// ft_printf_count = ft_printf("default p: |%5p|\n", p_int);
+// printf_count = printf("default p: |%5p|\n", p_int);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%5p|\n", p_str);
+// printf_count = printf("default p: |%5p|\n", p_str);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%5p|\n", p_float);
+// printf_count = printf("default p: |%5p|\n", p_float);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%5p|\n", p_double);
+// printf_count = printf("default p: |%5p|\n", p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%42p|\n", p_int);
+// printf_count = printf("default p: |%42p|\n", p_int);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%42p|\n", p_str);
+// printf_count = printf("default p: |%42p|\n", p_str);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%42p|\n", p_float);
+// printf_count = printf("default p: |%42p|\n", p_float);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%42p|\n", p_double);
+// printf_count = printf("default p: |%42p|\n", p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+
+// ft_printf_count = ft_printf("default p: |%-5p|\n", p_int);
+// printf_count = printf("default p: |%-5p|\n", p_int);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%-5p|\n", p_str);
+// printf_count = printf("default p: |%-5p|\n", p_str);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%-5p|\n", p_float);
+// printf_count = printf("default p: |%-5p|\n", p_float);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%-5p|\n", p_double);
+// printf_count = printf("default p: |%-5p|\n", p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%-42p|\n", p_int);
+// printf_count = printf("default p: |%-42p|\n", p_int);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%-42p|\n", p_str);
+// printf_count = printf("default p: |%-42p|\n", p_str);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%-42p|\n", p_float);
+// printf_count = printf("default p: |%-42p|\n", p_float);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%-42p|\n", p_double);
+// printf_count = printf("default p: |%-42p|\n", p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// printf("------------------ * test ------------------\n");
+//
+// int field_width_0 = 0;
+// int field_width_1 = 7;
+// int field_width_2 = 42;
+// int field_width_3 = 123;
+// int field_width_4 = 1000;
+// int field_width_minus_1 = -7;
+// int field_width_minus_2 = -42;
+// int field_width_minus_3 = -123;
+// int field_width_minus_4 = -1000;
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_0, p_int);
+// printf_count = printf("default p: |%*p|\n", field_width_0, p_int);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_1, p_str);
+// printf_count = printf("default p: |%*p|\n", field_width_1, p_str);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_2, p_float);
+// printf_count = printf("default p: |%*p|\n", field_width_2, p_float);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_3, p_double);
+// printf_count = printf("default p: |%*p|\n", field_width_3, p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_4, p_double);
+// printf_count = printf("default p: |%*p|\n", field_width_4, p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_minus_1, p_double);
+// printf_count = printf("default p: |%*p|\n", field_width_minus_1, p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_minus_2, p_double);
+// printf_count = printf("default p: |%*p|\n", field_width_minus_2, p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_minus_3, p_double);
+// printf_count = printf("default p: |%*p|\n", field_width_minus_3, p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// ft_printf_count = ft_printf("default p: |%*p|\n", field_width_minus_4, p_double);
+// printf_count = printf("default p: |%*p|\n", field_width_minus_4, p_double);
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// printf("==========================================================\n");
+//
