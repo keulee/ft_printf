@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:06:59 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/30 15:50:30 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/30 15:54:21 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int    ft_printf(const char *str, ...)
                 ft_print_p(&tab);
             if (tab.specifier == 'x')
                 ft_print_x(&tab);
+            if (tab.specifier == 'X')
+                ft_print_xx(&tab);
         }
         else
         {
