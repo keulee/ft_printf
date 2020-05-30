@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 23:07:38 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/30 15:32:42 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/30 15:47:59 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void    ft_print_x(t_struct *tab)
             ft_putnbr_base(tab->u_number, "0123456789abcdef");
         }
     }
-    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->number == 0) //예외
+    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->u_number == 0) //예외
         ;
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
     {
