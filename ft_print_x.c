@@ -6,13 +6,13 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 23:07:38 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/30 15:47:59 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/30 15:56:15 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 /*
-** Function to print 'p'
+** Function to print 'x'
 */
 /*
 ** x 만들때 고려할 점 (diouxX)
@@ -30,11 +30,8 @@
 void    ft_print_x(t_struct *tab)
 {
     tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
-    // printf("u_number : %u\n", tab->u_number);
     tab->string = ft_utoa_base(tab->u_number, "0123456789abcdef");
-    // printf("string : %s\n", tab->string);
     tab->string_len = ft_strlen(tab->string);
-    // printf("string_len : %d\n", tab->string_len);
     if (tab->check_minus == 1 && tab->check_zero == 1)
         ft_putstr("Error");
     else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
