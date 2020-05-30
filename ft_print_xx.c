@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/30 15:54:00 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/30 16:00:17 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/30 16:00:52 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@
 void    ft_print_xx(t_struct *tab)
 {
     tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
-    // printf("u_number : %u\n", tab->u_number);
     tab->string = ft_utoa_base(tab->u_number, "0123456789ABCDEF");
-    // printf("string : %s\n", tab->string);
     tab->string_len = ft_strlen(tab->string);
-    // printf("string_len : %d\n", tab->string_len);
     if (tab->check_minus == 1 && tab->check_zero == 1)
         ft_putstr("Error");
     else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
