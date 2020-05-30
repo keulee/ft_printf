@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 23:07:38 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/30 14:46:18 by keulee           ###   ########.fr       */
+/*   Updated: 2020/05/30 15:32:42 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void    ft_print_x(t_struct *tab)
     // printf("string_len : %d\n", tab->string_len);
     if (tab->check_minus == 1 && tab->check_zero == 1)
         ft_putstr("Error");
-    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->number == 0) //예외
-        ;
     else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr_base(tab->u_number, "0123456789abcdef");
@@ -77,6 +75,8 @@ void    ft_print_x(t_struct *tab)
             ft_putnbr_base(tab->u_number, "0123456789abcdef");
         }
     }
+    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->number == 0) //예외
+        ;
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
     {
         if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
@@ -119,5 +119,21 @@ void    ft_print_x(t_struct *tab)
                 ft_putchar('0');
             ft_putnbr_base(tab->u_number, "0123456789abcdef");
         }
+    }
+    else if (tab->check_width == 0 && tab->check_precision == 1 && tab->check_zero == 0)
+    {
+        if (tab->precision > tab->string_len)
+        {
+            tab->len += tab->precision;
+            tab->precision = tab->precision - tab->string_len;
+        }
+        else
+        {
+            tab->len += tab->string_len;
+            tab->precision = 0;
+        }
+        while (tab->precision-- > 0)
+            ft_putchar('0');
+        ft_putnbr_base(tab->u_number, "0123456789abcdef");
     }
 }
