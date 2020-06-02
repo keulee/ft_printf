@@ -5,6 +5,15 @@ int main(void)
     int ft_printf_count;
     int printf_count;
 
+    printf("======================  [percent test]   =====================\n");
+
+    ft_printf_count = ft_printf("%%c %%s %%p %%d %%i %%u %%x %%X %%\n");
+    printf_count = printf("%%c %%s %%p %%d %%i %%u %%x %%X %%\n");
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    printf("--------------------------------------------------------------\n");
+
     return (0);
 }
 

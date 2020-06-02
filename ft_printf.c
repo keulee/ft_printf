@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:06:59 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/30 16:02:46 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/02 21:58:03 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,7 @@ int    ft_printf(const char *str, ...)
         if (tab.str[tab.i] == '%')
         {
             ft_find_option(&tab);
-            if (tab.specifier == 'c')
-                ft_print_char(&tab);
-            if (tab.specifier == 's')
-                ft_print_str(&tab);
-            if (tab.specifier == 'd' || tab.specifier == 'i')
-                ft_print_di(&tab);
-            if (tab.specifier == 'u')
-                ft_print_u(&tab);
-            if (tab.specifier == 'p')
-                ft_print_p(&tab);
-            if (tab.specifier == 'x')
-                ft_print_x(&tab);
-            if (tab.specifier == 'X')
-                ft_print_xx(&tab);
-            if (tab.specifier == '%')
-                ft_print_percent(&tab);
+            ft_print_option(&tab);
         }
         else
         {

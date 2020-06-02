@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/30 16:00:06 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/02 21:56:00 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,14 @@ void        ft_print_u(t_struct *tab);
 void        ft_print_p(t_struct *tab);
 void        ft_print_x(t_struct *tab);
 void        ft_print_xx(t_struct *tab);
+void        ft_print_percent(t_struct *tab);
 
 
 void        ft_init(t_struct *tab, const char *str);
 void        ft_find_option(t_struct *tab);
 void        ft_find_specifier(t_struct *tab);
 void        ft_option_clear(t_struct *tab);
+void        ft_print_option(t_struct *tab);
 
 
 // void        ft_manage_width(const char *format, va_list my_list, int *i, int *len, int witdh);
