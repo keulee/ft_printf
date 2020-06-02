@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/06/02 21:56:29 by keulee           ###   ########.fr        #
+#    Updated: 2020/06/02 22:08:34 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRC = ft_putnbr.c \
 		ft_print_x.c \
 		ft_print_xx.c \
 		ft_print_percent.c \
-		ft_print_option.c
+		ft_print_case.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)

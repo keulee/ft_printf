@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_option.c                                  :+:      :+:    :+:   */
+/*   ft_print_case.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 21:54:13 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/02 21:57:50 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/02 22:08:59 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_print_option(t_struct *tab)
+void    ft_print_case(t_struct *tab)
 {
     if (tab->specifier == 'c')
         ft_print_char(tab);

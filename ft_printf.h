@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/02 21:56:00 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/02 22:08:18 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,6 @@ void        ft_init(t_struct *tab, const char *str);
 void        ft_find_option(t_struct *tab);
 void        ft_find_specifier(t_struct *tab);
 void        ft_option_clear(t_struct *tab);
-void        ft_print_option(t_struct *tab);
-
-
-// void        ft_manage_width(const char *format, va_list my_list, int *i, int *len, int witdh);
-// void        ft_manage_width_star(const char *format, int *i, va_list my_list, int *len);
-// int         ft_find_case(const char *str, int i, int j);
+void        ft_print_case(t_struct *tab);
 
 #endif
