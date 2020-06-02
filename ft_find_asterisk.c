@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parce_asterisk.c                                :+:      :+:    :+:   */
+/*   ft_find_asterisk.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 22:14:08 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/02 22:15:09 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/03 01:27:18 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_parce_asterisk(t_struct *tab)
+void    ft_find_asterisk(t_struct *tab)
 {
     if (tab->str[tab->i-1] == '.') //*가 precision 경우
     {
