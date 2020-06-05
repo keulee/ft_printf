@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 22:14:08 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/05 10:02:25 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/05 11:58:26 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void    ft_find_asterisk(t_struct *tab)
 {
+    if (tab->str[tab->i-1] == '0' && tab->str[tab->i+1] == '.')
+        tab->check_zero = 1;
     if (tab->str[tab->i-1] == '.') //*가 precision 경우
     {
         tab->check_precision = 1;
@@ -22,6 +24,7 @@ void    ft_find_asterisk(t_struct *tab)
             tab->check_precision = 0;
         else if (tab->precision < 0) // precision이 음수라면 없는 것으로 취급
             tab->precision = 1;
+            // tab->precision = 0;
 
     }
     else //*가 width 경우

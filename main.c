@@ -7,27 +7,24 @@ int main(void)
 
     printf("======================  [Error fixing]   =====================\n");
 
-    char    *str = NULL;
+    int d = -12;
 
-    ft_printf_count = ft_printf("|%-16.*s|\n", -4, str);
-    printf_count = printf("|%-16.*s|\n", -4, str);
+    ft_printf_count = ft_printf("-->|%*.d|<--\n", 4, d);
+    printf_count = printf("-->|%*.d|<--\n", 4, d);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 
-    // ft_printf_count = ft_printf("|%-16.s|\n", str);
-    // printf_count = printf("|%-16.s|\n", str);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%-16.s|\n", str);
-    // printf_count = printf("|%-16.s|\n", str);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("|%-16.s|\n", str);
-    // printf_count = printf("|%-16.s|\n", str);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
+    ft_printf_count = ft_printf("-->|%0*.d|<--\n", -4, d);
+    printf_count = printf("-->|%0*.d|<--\n", -4, d);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("-->|%0*.d|<--\n", 4, d);
+    printf_count = printf("-->|%0*.d|<--\n", 4, d);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+
 
     printf("--------------------------------------------------------------\n");
 

@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/24 23:12:04 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/05 12:16:45 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ void    ft_print_di(t_struct *tab)
     tab->number = va_arg(tab->list, int);
     tab->string = ft_itoa(tab->number);
     tab->string_len = ft_strlen(tab->string);
-    if (tab->check_minus == 1 && tab->check_zero == 1)
-        ft_putstr("Error");
-    else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
+    // printf("string_len : %d\n", tab->string_len);
+    // if (tab->check_precision == 1 && tab->check_zero == 1)
+    //     tab->check_zero = 0;
+    if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr(tab->number);
         tab->len += tab->string_len;
@@ -79,8 +80,12 @@ void    ft_print_di(t_struct *tab)
         ;
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
     {
+        // printf("ici\n");
+        // printf("number: %d\n", tab->number);
         if (tab->number < 0)
             tab->precision++;
+        // printf("precision: %d\n", tab->precision);
+        // printf("string_len: %d\n", tab->string_len);
         if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
         {
             tab->len += tab->string_len;
@@ -120,8 +125,16 @@ void    ft_print_di(t_struct *tab)
         }
         else //width, precision (+zero)
         {
-            while (tab->width-- > 0)
-                ft_putchar(' ');
+            if (tab->check_zero == 1)
+            {
+                while (tab->width-- > 0)
+                    ft_putchar('0');
+            }
+            else
+            {
+                while (tab->width-- > 0)
+                    ft_putchar(' ');
+            }
             if (tab->number < 0)
             {
                 tab->number *= -1;
@@ -134,10 +147,12 @@ void    ft_print_di(t_struct *tab)
     }
     else if (tab->check_width == 0 && tab->check_precision == 1 && tab->check_zero == 0)
     {
+        if (tab->number < 0)
+            tab->precision++;
         if (tab->precision > tab->string_len)
         {
-            if (tab->number < 0)
-                tab->precision++;
+            // if (tab->number < 0)
+            //     tab->precision++;
             tab->len += tab->precision;
             tab->precision = tab->precision - tab->string_len;
         }
