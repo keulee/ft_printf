@@ -5,12 +5,29 @@ int main(void)
     int ft_printf_count;
     int printf_count;
 
-    printf("======================  [percent test]   =====================\n");
+    printf("======================  [Error fixing]   =====================\n");
 
-    ft_printf_count = ft_printf("%%c %%s %%p %%d %%i %%u %%x %%X %%\n");
-    printf_count = printf("%%c %%s %%p %%d %%i %%u %%x %%X %%\n");
+    char    *str = NULL;
+
+    ft_printf_count = ft_printf("|%-16.*s|\n", -4, str);
+    printf_count = printf("|%-16.*s|\n", -4, str);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
+
+    // ft_printf_count = ft_printf("|%-16.s|\n", str);
+    // printf_count = printf("|%-16.s|\n", str);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("|%-16.s|\n", str);
+    // printf_count = printf("|%-16.s|\n", str);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("|%-16.s|\n", str);
+    // printf_count = printf("|%-16.s|\n", str);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
 
     printf("--------------------------------------------------------------\n");
 
@@ -2617,3 +2634,12 @@ int main(void)
 // printf("real printf count : %d\n", printf_count);
 //
 // printf("==========================================================\n");
+
+// printf("======================  [percent test]   =====================\n");
+//
+// ft_printf_count = ft_printf("%%c %%s %%p %%d %%i %%u %%x %%X %%\n");
+// printf_count = printf("%%c %%s %%p %%d %%i %%u %%x %%X %%\n");
+// printf("ft printf count : %d\n", ft_printf_count);
+// printf("real printf count : %d\n", printf_count);
+//
+// printf("--------------------------------------------------------------\n");

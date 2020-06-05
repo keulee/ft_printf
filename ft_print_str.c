@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:34 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/07 13:09:35 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/05 10:01:36 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 void    ft_print_str(t_struct *tab)
 {
     tab->string = va_arg(tab->list, char *);
+    if (tab->string == NULL)
+        tab->string = "(null)";
     tab->string_len = ft_strlen(tab->string);
     if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0) // %s & %-s
     {
@@ -26,7 +28,7 @@ void    ft_print_str(t_struct *tab)
     else if (tab->check_width == 1 && tab->check_precision == 0) //just width
     {
         if (tab->width == 0) //0 is Error case;
-            ft_putstr("flag '0' results in undefined behavior with 's' conversion specifier");
+            ;
         if (tab->width <= tab->string_len)
         {
             tab->len += tab->string_len;
@@ -52,6 +54,7 @@ void    ft_print_str(t_struct *tab)
     }
     else if (tab->check_width == 0 && tab->check_precision == 1 && (tab->check_minus == 0 || tab->check_minus == 1)) // when .precision exist
     {
+        // printf("here2\n");
         if (tab->precision < tab->string_len) //when .precision is smaller than string length
             tab->len += tab->precision;
         else //when .precision is bigger than string length
@@ -64,12 +67,22 @@ void    ft_print_str(t_struct *tab)
     }
     else if (tab->check_width == 1 && tab->check_precision == 1)
     {
+        // printf("here3\n");
         if (tab->precision > tab->string_len)
+        {
+            // printf("here3-1\n");
             tab->precision = tab->string_len;
+        }
         if (tab->width > tab->precision)
+        {
+            // printf("here3-2\n");
             tab->width = tab->width - tab->precision;
+        }
         else
+        {
+            // printf("here3-3\n");
             tab->width = 0;
+        }
         tab->len += tab->width + tab->precision;
         if (tab->check_minus == 0)
         {
