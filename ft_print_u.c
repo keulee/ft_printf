@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:02 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/17 18:20:25 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/17 18:51:38 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,12 @@ void    ft_print_u(t_struct *tab)
     tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
     tab->string = ft_itoa_u(tab->u_number);
     tab->string_len = ft_strlen(tab->string);
+    // printf("u_number: %u\n", tab->u_number);
     if (tab->check_minus == 1 && tab->check_zero == 1)
         tab->check_zero = 0;
     if (tab->check_precision == 1 && tab->check_zero == 1)
         tab->check_zero = 0;
-    else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
+    if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr_u(tab->u_number);
         tab->len += tab->string_len;
@@ -85,6 +86,7 @@ void    ft_print_u(t_struct *tab)
     }
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
     {
+        // printf("here\n");
         if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
         {
             tab->len += tab->string_len;
