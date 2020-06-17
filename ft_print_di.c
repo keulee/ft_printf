@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/05 12:16:45 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/17 17:51:39 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ void    ft_print_di(t_struct *tab)
     tab->string = ft_itoa(tab->number);
     tab->string_len = ft_strlen(tab->string);
     // printf("string_len : %d\n", tab->string_len);
-    // if (tab->check_precision == 1 && tab->check_zero == 1)
-    //     tab->check_zero = 0;
+    if (tab->check_minus == 1 && tab->check_zero == 1)
+        tab->check_zero = 0;
+    if (tab->check_precision == 1 && tab->check_zero == 1)
+        tab->check_zero = 0;
     if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr(tab->number);
@@ -77,7 +79,11 @@ void    ft_print_di(t_struct *tab)
         tab->len += tab->string_len;
     }
     else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->number == 0) //예외
-        ;
+    {
+        tab->len += tab->width;
+        while (tab->width-- > 0)
+            ft_putchar(' ');
+    }
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
     {
         // printf("ici\n");
@@ -88,24 +94,34 @@ void    ft_print_di(t_struct *tab)
         // printf("string_len: %d\n", tab->string_len);
         if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
         {
+            // printf("ici1\n");
             tab->len += tab->string_len;
             tab->precision = 0;
             tab->width = 0;
         }
         else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
         {
+            // printf("ici2\n");
             tab->len += tab->width;
             tab->width = tab->width - tab->precision;
             tab->precision = tab->precision - tab->string_len;
         }
         else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
         {
+            // printf("ici3\n");
             tab->len += tab->width;
             tab->width = tab->width - tab->string_len;
             tab->precision = 0;
+            // printf("check_minus: %d\n", tab->check_minus);
+            // printf("check_width: %d\n", tab->check_width);
+            // printf("check_precision: %d\n", tab->check_precision);
+            // printf("check_zero: %d\n", tab->check_zero);
+            // printf("width: %d\n", tab->width);
+            // printf("precision: %d\n", tab->precision);
         }
         else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
         {
+            // printf("ici4\n");
             tab->len += tab->precision;
             tab->precision = tab->precision - tab->string_len;
             tab->width = 0;

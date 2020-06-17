@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:48 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/05 12:16:03 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/17 14:40:35 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,8 @@ void	ft_find_option(t_struct *tab)
 		}
 		if (tab->str[tab->i] == '.')
 			tab->check_precision = 1;
-		else if (tab->str[tab->i] == '*')
+		if (tab->str[tab->i] == '*')
 			ft_find_asterisk(tab);
 	}
-	if (tab->check_precision == 1 && tab->check_zero == 1)
-		tab->check_zero = 0;
 	tab->i = tab->j;
 }
