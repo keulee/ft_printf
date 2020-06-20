@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:48 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/17 14:40:35 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/20 17:55:39 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,11 @@ void	ft_find_option(t_struct *tab)
 			if (tab->str[tab->i-1] == '.')
 			{
 				tab->check_precision = 1;
-				// tab->precision = ft_atoi(&tab->str[tab->i]);
 				while (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9')
 				{
 					tab->precision = tab->precision * 10 + tab->str[tab->i] - '0';
 					tab->i++;
 				}
-				// break;
 			}
 			else
 			{

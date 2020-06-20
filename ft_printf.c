@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:06:59 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/03 01:39:49 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/20 16:39:09 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,17 @@ int		ft_printf(const char *str, ...)
 	{
 		if (tab.str[tab.i] == '%')
 		{
-			ft_find_option(&tab);
-			ft_print_case(&tab);
+            if (tab.str[tab.i+1] == '%')
+            {
+                ft_putchar('%');
+                tab.len++;
+                tab.i++;
+            }
+            else
+            {
+    			ft_find_option(&tab);
+    			ft_print_case(&tab);
+            }
 		}
 		else
 		{
