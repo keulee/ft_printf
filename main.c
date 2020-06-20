@@ -11,11 +11,17 @@ int main(void)
 
     int ft_printf_count;
     int printf_count;
+    // char *s_hidden = "hi low\0don't print me lol\0";
 
     printf("======================  [Error fixing]   =====================\n");
 
-    ft_printf_count = ft_printf("mypf: -->|%0*.%|<--\n", 2);
-    printf_count = printf("real: -->|%0*.%|<--\n", 2);
+    ft_printf_count = ft_printf("mypf: %.p\n", NULL);
+    printf_count = printf("real: %.p\n", NULL);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("mypf: %5.p\n", NULL);
+    printf_count = printf("real: %5.p\n", NULL);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 
