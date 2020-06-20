@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 23:15:29 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/29 23:35:29 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/20 14:34:52 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,22 @@ void    ft_print_p(t_struct *tab)
     tab->p_number = (unsigned long long)tab->pointer;
     tab->string = ft_utoa_base(tab->p_number, "0123456789abcdef");
     tab->string_len = ft_strlen(tab->string) + 2;
-    if (tab->check_precision == 1 || tab->check_zero == 1)
-        ft_putstr("Error");
+    if (tab->check_precision == 1)
+        tab->check_precision = 0;
+    if (tab->check_zero == 1)
+        tab->check_zero = 0;
     else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putstr("0x");
         ft_putnbr_base(tab->p_number, "0123456789abcdef");
         tab->len += tab->string_len;
+    }
+    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->p_number == 0) //예외
+    {
+        tab->len += tab->width;
+        ft_putstr("0x");
+        while (tab->width-- > 0)
+            ft_putchar(' ');
     }
     else if (tab->check_width == 1)
     {
