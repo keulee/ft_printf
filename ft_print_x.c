@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 23:07:38 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/17 18:26:58 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/20 13:13:02 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void    ft_print_x(t_struct *tab)
         tab->check_zero = 0;
     if (tab->check_precision == 1 && tab->check_zero == 1)
         tab->check_zero = 0;
-    else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
+    if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr_base(tab->u_number, "0123456789abcdef");
         tab->len += tab->string_len;
@@ -126,8 +126,6 @@ void    ft_print_x(t_struct *tab)
                 while (tab->width-- > 0)
                     ft_putchar(' ');
             }
-            // while (tab->width-- > 0)
-            //     ft_putchar(' ');
             while (tab->precision-- > 0)
                 ft_putchar('0');
             ft_putnbr_base(tab->u_number, "0123456789abcdef");

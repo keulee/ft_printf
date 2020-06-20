@@ -9,16 +9,16 @@ int main(void)
 
     printf("======================  [Error fixing]   =====================\n");
 
-    int u = -135;
+    int x = -135;
 
-    ft_printf_count = ft_printf("mypf: -->|%0*.u|<--\n", 0, u);
-    printf_count = printf("real: -->|%0*.u|<--\n", 0, u);
+    ft_printf_count = ft_printf("mypf: -->|%0*.x|<--\n", 0, x);
+    printf_count = printf("real: -->|%0*.x|<--\n", 0, x);
     printf("test printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
     printf("-------------------------------------------------------------\n");
 
-    printf_count = printf("real: -->|%0*.u|<--\n", 0, u);
-    printf_count = printf("real: -->|%00.u|<--\n", u);
+    printf_count = printf("real: -->|%0*.x|<--\n", 0, x);
+    printf_count = printf("real: -->|%00.x|<--\n", x);
 
     return (0);
 }

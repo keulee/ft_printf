@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/30 15:54:00 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/30 16:00:52 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/20 13:15:31 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void    ft_print_xx(t_struct *tab)
     tab->string = ft_utoa_base(tab->u_number, "0123456789ABCDEF");
     tab->string_len = ft_strlen(tab->string);
     if (tab->check_minus == 1 && tab->check_zero == 1)
-        ft_putstr("Error");
+        tab->check_zero = 0;
+    if (tab->check_precision == 1 && tab->check_zero == 1)
+        tab->check_zero = 0;
     else if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
@@ -73,7 +75,11 @@ void    ft_print_xx(t_struct *tab)
         }
     }
     else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->u_number == 0) //예외
-        ;
+    {
+        tab->len += tab->width;
+        while (tab->width-- > 0)
+            ft_putchar(' ');
+    }
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
     {
         if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
@@ -110,8 +116,16 @@ void    ft_print_xx(t_struct *tab)
         }
         else //width, precision (+zero)
         {
-            while (tab->width-- > 0)
-                ft_putchar(' ');
+            if (tab->check_zero == 1)
+            {
+                while (tab->width-- > 0)
+                    ft_putchar('0');
+            }
+            else
+            {
+                while (tab->width-- > 0)
+                    ft_putchar(' ');
+            }
             while (tab->precision-- > 0)
                 ft_putchar('0');
             ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
