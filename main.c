@@ -15,15 +15,107 @@ int main(void)
 
     printf("======================  [Error fixing]   =====================\n");
 
-    ft_printf_count = ft_printf("mypf: %.p\n", NULL);
-    printf_count = printf("real: %.p\n", NULL);
+    // int p = NULL;
+
+    ft_printf_count = ft_printf("mypf: -->|%-1.p|<--\n", NULL);
+    printf_count = printf("real: -->|%-1.p|<--\n", NULL);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 
-    ft_printf_count = ft_printf("mypf: %5.p\n", NULL);
-    printf_count = printf("real: %5.p\n", NULL);
+    ft_printf_count = ft_printf("mypf: -->|%-2.p|<--\n", NULL);
+    printf_count = printf("real: -->|%-2.p|<--\n", NULL);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
+
+    // ft_printf_count = ft_printf("mypf: -->|%-16.p|<--\n", NULL);
+    // printf_count = printf("real: -->|%-16.p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%.p|<--\n", NULL);
+    // printf_count = printf("real: -->|%.p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%20.p|<--\n", NULL);
+    // printf_count = printf("real: -->|%20.p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%p|<--\n", NULL);
+    // printf_count = printf("real: -->|%p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
+    // ft_printf_count = ft_printf("mypf: -->|%20.p|<--\n", NULL);
+    // printf_count = printf("real: -->|%20.p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%.0p|<--\n", 0);
+    // // printf_count = printf("real: -->|%.0p|<--\n", 0);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%.p|<--\n",&p);
+    // printf_count = printf("real: -->|%.p|<--\n",&p);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%20.p|<--\n",&p);
+    // printf_count = printf("real: -->|%20.p|<--\n",&p);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
+    // ft_printf_count = ft_printf("mypf: -->|%20p|<--\n",&p);
+    // printf_count = printf("real: -->|%20p|<--\n",&p);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%-20p|<--\n",&p);
+    // printf_count = printf("real: -->|%-20p|<--\n",&p);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%2p|<--\n",&p);
+    // printf_count = printf("real: -->|%2p|<--\n",&p);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
+    // ft_printf_count = ft_printf("mypf: -->|%p|<--\n",&p);
+    // printf_count = printf("real: -->|%p|<--\n",&p);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
+    // ft_printf_count = ft_printf("mypf: -->|%-p|<--\n",&p);
+    // printf_count = printf("real: -->|%-p|<--\n",&p);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%20.p|<--\n", NULL);
+    // printf_count = printf("real: -->|%20.p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%20p|<--\n", NULL);
+    // printf_count = printf("real: -->|%20p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%p|<--\n", NULL);
+    // printf_count = printf("real: -->|%p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%2p|<--\n", NULL);
+    // printf_count = printf("real: -->|%2p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%5p|<--\n", NULL);
+    // printf_count = printf("real: -->|%5p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
 
     return (0);
 }
