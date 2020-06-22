@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:48 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/20 19:29:46 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/22 18:48:00 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	ft_find_option(t_struct *tab)
 	ft_find_specifier(tab);
 	while (tab->str[tab->i++] != '\0' && tab->i < tab->j)
 	{
-		// if (tab->str[tab->i] == '-')
-		// 	tab->check_minus = 1;
 		if ((tab->str[tab->i] == '0' && (tab->str[tab->i + 1] >= '0'
 						&& tab->str[tab->i + 1] <= '9'))
 						&& (tab->str[tab->i - 1] == '-' || tab->str[tab->i-1] == '%'))

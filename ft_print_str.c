@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:34 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/05 10:05:24 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/22 18:51:32 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void    ft_print_str(t_struct *tab)
     if (tab->string == NULL)
         tab->string = "(null)";
     tab->string_len = ft_strlen(tab->string);
-    if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0) // %s & %-s
+    if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0)
     {
         ft_putstr(tab->string);
         tab->len += tab->string_len;
     }
-    else if (tab->check_width == 1 && tab->check_precision == 0) //just width
+    else if (tab->check_width == 1 && tab->check_precision == 0)
     {
-        if (tab->width == 0) //0 is Error case;
+        if (tab->width == 0)
             ;
         if (tab->width <= tab->string_len)
         {
@@ -52,11 +52,11 @@ void    ft_print_str(t_struct *tab)
             }
         }
     }
-    else if (tab->check_width == 0 && tab->check_precision == 1 && (tab->check_minus == 0 || tab->check_minus == 1)) // when .precision exist
+    else if (tab->check_width == 0 && tab->check_precision == 1 && (tab->check_minus == 0 || tab->check_minus == 1))
     {
-        if (tab->precision < tab->string_len) //when .precision is smaller than string length
+        if (tab->precision < tab->string_len)
             tab->len += tab->precision;
-        else //when .precision is bigger than string length
+        else
         {
             tab->len += tab->string_len;
             tab->precision = tab->string_len;
