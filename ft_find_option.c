@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:48 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/22 18:48:00 by keulee           ###   ########.fr       */
+/*   Updated: 2020/06/29 16:51:26 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,27 @@ void	ft_find_option(t_struct *tab)
 						&& (tab->str[tab->i - 1] == '-' || tab->str[tab->i-1] == '%'))
 			tab->check_zero = 1;
 		if (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9')
-		{
-			if (tab->str[tab->i-1] == '.')
-			{
-				tab->check_precision = 1;
-				while (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9')
-				{
-					tab->precision = tab->precision * 10 + tab->str[tab->i] - '0';
-					tab->i++;
-				}
-			}
-			else
-			{
-				tab->check_width = 1;
-				while (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9')
-				{
-					tab->width = tab->width * 10 + tab->str[tab->i] - '0';
-					tab->i++;
-				}
-			}
-		}
+			ft_find_precision_and_width(tab);
+		// {
+		// 	if (tab->str[tab->i-1] == '.')
+		// 	{
+		// 		tab->check_precision = 1;
+		// 		while (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9')
+		// 		{
+		// 			tab->precision = tab->precision * 10 + tab->str[tab->i] - '0';
+		// 			tab->i++;
+		// 		}
+		// 	}
+		// 	else
+		// 	{
+		// 		tab->check_width = 1;
+		// 		while (tab->str[tab->i] >= '0' && tab->str[tab->i] <= '9')
+		// 		{
+		// 			tab->width = tab->width * 10 + tab->str[tab->i] - '0';
+		// 			tab->i++;
+		// 		}
+		// 	}
+		// }
 		if (tab->str[tab->i] == '.')
 			tab->check_precision = 1;
 		if (tab->str[tab->i] == '-')
