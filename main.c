@@ -17,6 +17,14 @@ int main(void)
 
     // int p = NULL;
 
+    char *str = "We all pretend to be the hero on the good side";
+    
+    ft_printf_count = ft_printf("Default: |%s|\n", str);
+    printf_count = printf("Default: |%s|\n", str);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+
     ft_printf_count = ft_printf("mypf: -->|%-1.p|<--\n", NULL);
     printf_count = printf("real: -->|%-1.p|<--\n", NULL);
     printf("ft printf count : %d\n", ft_printf_count);

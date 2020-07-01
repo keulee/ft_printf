@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/06/29 16:47:09 by keulee           ###   ########.fr        #
+#    Updated: 2020/07/02 00:26:51 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,11 @@ SRC = ft_putnbr.c \
 		ft_print_percent.c \
 		ft_print_case.c \
 		ft_find_asterisk.c \
-		ft_find_precision_and_width.c
+		ft_find_precision_and_width.c \
+		ft_info_str.c \
+		ft_str_case_one.c \
+		ft_str_case_two.c \
+		ft_str_case_thr.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
