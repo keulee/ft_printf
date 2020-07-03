@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/02 00:26:41 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/03 11:41:53 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,7 @@ void        ft_print_case(t_struct *tab);
 void        ft_find_asterisk(t_struct *tab);
 void        ft_find_precision_and_width(t_struct *tab);
 void        ft_info_str(t_struct *tab);
-void        ft_str_case_one(t_struct *tab);
-void        ft_str_case_two(t_struct *tab);
-void        ft_str_case_thr(t_struct *tab);
+void        ft_info_di(t_struct *tab);
+
 
 #endif

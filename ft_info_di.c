@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_case_two.c                                  :+:      :+:    :+:   */
+/*   ft_info_di.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/02 00:23:35 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/02 00:24:11 by keulee           ###   ########.fr       */
+/*   Created: 2020/07/03 11:36:32 by keulee            #+#    #+#             */
+/*   Updated: 2020/07/03 11:42:44 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_str_case_two(t_struct *tab)
+void    ft_info_di(t_struct *tab)
 {
-    if (tab->precision < tab->string_len)
-        tab->len += tab->precision;
-    else
-    {
-        tab->len += tab->string_len;
-        tab->precision = tab->string_len;
-    }
-    while (tab->index < tab->precision)
-        ft_putchar(tab->string[tab->index++]);
+    tab->number = va_arg(tab->list, int);
+    tab->string = ft_itoa(tab->number);
+    tab->string_len = ft_strlen(tab->string);
+    if (tab->check_minus == 1 && tab->check_zero == 1)
+        tab->check_zero = 0;
+    if (tab->check_precision == 1 && tab->check_zero == 1)
+        tab->check_zero = 0;
 }

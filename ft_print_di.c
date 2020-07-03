@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/20 19:24:02 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/03 11:40:49 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@
 
 void    ft_print_di(t_struct *tab)
 {
-    tab->number = va_arg(tab->list, int);
-    tab->string = ft_itoa(tab->number);
-    tab->string_len = ft_strlen(tab->string);
-    if (tab->check_minus == 1 && tab->check_zero == 1)
-        tab->check_zero = 0;
-    if (tab->check_precision == 1 && tab->check_zero == 1)
-        tab->check_zero = 0;
+    ft_info_di(tab);
+    // tab->number = va_arg(tab->list, int);
+    // tab->string = ft_itoa(tab->number);
+    // tab->string_len = ft_strlen(tab->string);
+    // if (tab->check_minus == 1 && tab->check_zero == 1)
+    //     tab->check_zero = 0;
+    // if (tab->check_precision == 1 && tab->check_zero == 1)
+    //     tab->check_zero = 0;
     if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr(tab->number);

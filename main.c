@@ -18,9 +18,19 @@ int main(void)
     // int p = NULL;
 
     char *str = "We all pretend to be the hero on the good side";
-    
+
     ft_printf_count = ft_printf("Default: |%s|\n", str);
     printf_count = printf("Default: |%s|\n", str);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("Default d: |%d|\n", 42);
+    printf_count = printf("Default d: |%d|\n", 42);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+    //
+    ft_printf_count = ft_printf("Default d with minus: |%-d|\n", 42);
+    printf_count = printf("Default d with minus: |%-d|\n", 42);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 
