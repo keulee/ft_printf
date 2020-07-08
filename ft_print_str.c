@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:34 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/03 11:34:18 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 17:00:25 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ** Function to print 's'
 */
 
-void    ft_str_case_one(t_struct *tab)
+void    ft_str_case_1(t_struct *tab)
 {
     if (tab->width == 0)
         ;
@@ -43,7 +43,7 @@ void    ft_str_case_one(t_struct *tab)
     }
 }
 
-void    ft_str_case_two(t_struct *tab)
+void    ft_str_case_2(t_struct *tab)
 {
     if (tab->precision < tab->string_len)
         tab->len += tab->precision;
@@ -56,7 +56,7 @@ void    ft_str_case_two(t_struct *tab)
         ft_putchar(tab->string[tab->index++]);
 }
 
-void    ft_str_case_thr(t_struct *tab)
+void    ft_str_case_3(t_struct *tab)
 {
     if (tab->precision > tab->string_len)
         tab->precision = tab->string_len;
@@ -94,7 +94,7 @@ void    ft_print_str(t_struct *tab)
         tab->len += tab->string_len;
     }
     else if (tab->check_width == 1 && tab->check_precision == 0)
-        ft_str_case_one(tab);
+        ft_str_case_1(tab);
     // {
         // if (tab->width == 0)
         //     ;
@@ -122,7 +122,7 @@ void    ft_print_str(t_struct *tab)
         // }
     // }
     else if (tab->check_width == 0 && tab->check_precision == 1 && (tab->check_minus == 0 || tab->check_minus == 1))
-        ft_str_case_two(tab);
+        ft_str_case_2(tab);
     // {
         // if (tab->precision < tab->string_len)
         //     tab->len += tab->precision;
@@ -135,7 +135,7 @@ void    ft_print_str(t_struct *tab)
         //     ft_putchar(tab->string[tab->index++]);
     // }
     else if (tab->check_width == 1 && tab->check_precision == 1)
-        ft_str_case_thr(tab);
+        ft_str_case_3(tab);
     // {
         // if (tab->precision > tab->string_len)
         //     tab->precision = tab->string_len;

@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:06:59 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/20 16:39:09 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 17:11:35 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ int		ft_printf(const char *str, ...)
 		if (tab.str[tab.i] == '%')
 		{
             if (tab.str[tab.i+1] == '%')
-            {
-                ft_putchar('%');
-                tab.len++;
-                tab.i++;
-            }
+				ft_print_double_percent(&tab);
+            // {
+            //     ft_putchar('%');
+            //     tab.len++;
+            //     tab.i++;
+            // }
             else
             {
     			ft_find_option(&tab);
@@ -42,10 +43,11 @@ int		ft_printf(const char *str, ...)
             }
 		}
 		else
-		{
-			ft_putchar(tab.str[tab.i]);
-			tab.len++;
-		}
+			ft_print_sgl_caracter(&tab);
+		// {
+		// 	ft_putchar(tab.str[tab.i]);
+		// 	tab.len++;
+		// }
 		tab.i++;
 		ft_option_clear(&tab);
 	}
