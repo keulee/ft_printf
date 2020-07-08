@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 11:47:59 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 12:18:47 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,31 +36,33 @@ void 	ft_di_case_1(t_struct *tab)
 	else
 		tab->width = 0;
 	if (tab->check_zero == 1)
-	{
-		if (tab->number < 0)
-		{
-			ft_putchar('-');
-			tab->number *= -1;
-		}
-		while (tab->width-- > 0)
-			ft_putchar('0');
-		ft_putnbr(tab->number);
-	}
+		ft_di_case_1_y_zero(tab);
+	// {
+	// 	if (tab->number < 0)
+	// 	{
+	// 		ft_putchar('-');
+	// 		tab->number *= -1;
+	// 	}
+	// 	while (tab->width-- > 0)
+	// 		ft_putchar('0');
+	// 	ft_putnbr(tab->number);
+	// }
 	else
-	{
-		if (tab->check_minus == 1)
-		{
-			ft_putnbr(tab->number);
-			while (tab->width-- > 0)
-				ft_putchar(' ');
-		}
-		else
-		{
-			while (tab->width-- > 0)
-				ft_putchar(' ');
-			ft_putnbr(tab->number);
-		}
-	}
+		ft_di_case_1_n_zero(tab);
+	// {
+	// 	if (tab->check_minus == 1)
+	// 	{
+	// 		ft_putnbr(tab->number);
+	// 		while (tab->width-- > 0)
+	// 			ft_putchar(' ');
+	// 	}
+	// 	else
+	// 	{
+	// 		while (tab->width-- > 0)
+	// 			ft_putchar(' ');
+	// 		ft_putnbr(tab->number);
+	// 	}
+	// }
 	tab->len += tab->string_len;
 }
 
@@ -68,64 +70,67 @@ void 	ft_di_case_2(t_struct *tab)
 {
 	if (tab->number < 0)
 		tab->precision++;
-	if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
-	{
-		tab->len += tab->string_len;
-		tab->precision = 0;
-		tab->width = 0;
-	}
-	else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
-	{
-		tab->len += tab->width;
-		tab->width = tab->width - tab->precision;
-		tab->precision = tab->precision - tab->string_len;
-	}
-	else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
-	{
-		tab->len += tab->width;
-		tab->width = tab->width - tab->string_len;
-		tab->precision = 0;
-	}
-	else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
-	{
-		tab->len += tab->precision;
-		tab->precision = tab->precision - tab->string_len;
-		tab->width = 0;
-	}
+	ft_di_case_2_1(tab);
+	// if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+	// {
+	// 	tab->len += tab->string_len;
+	// 	tab->precision = 0;
+	// 	tab->width = 0;
+	// }
+	// else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+	// {
+	// 	tab->len += tab->width;
+	// 	tab->width = tab->width - tab->precision;
+	// 	tab->precision = tab->precision - tab->string_len;
+	// }
+	// else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+	// {
+	// 	tab->len += tab->width;
+	// 	tab->width = tab->width - tab->string_len;
+	// 	tab->precision = 0;
+	// }
+	// else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+	// {
+	// 	tab->len += tab->precision;
+	// 	tab->precision = tab->precision - tab->string_len;
+	// 	tab->width = 0;
+	// }
 	if (tab->check_minus == 1)
-	{
-		if (tab->number < 0)
-		{
-			tab->number *= -1;
-			ft_putchar('-');
-		}
-		while (tab->precision-- > 0)
-			ft_putchar('0');
-		ft_putnbr(tab->number);
-		while (tab->width-- > 0)
-			ft_putchar(' ');
-	}
+		ft_di_case_2_y_minus(tab);
+	// {
+	// 	if (tab->number < 0)
+	// 	{
+	// 		tab->number *= -1;
+	// 		ft_putchar('-');
+	// 	}
+	// 	while (tab->precision-- > 0)
+	// 		ft_putchar('0');
+	// 	ft_putnbr(tab->number);
+	// 	while (tab->width-- > 0)
+	// 		ft_putchar(' ');
+	// }
 	else
-	{
-		if (tab->check_zero == 1)
-		{
-			while (tab->width-- > 0)
-				ft_putchar('0');
-		}
-		else
-		{
-			while (tab->width-- > 0)
-				ft_putchar(' ');
-		}
-		if (tab->number < 0)
-		{
-			tab->number *= -1;
-			ft_putchar('-');
-		}
-		while (tab->precision-- > 0)
-			ft_putchar('0');
-		ft_putnbr(tab->number);
-	}
+		ft_di_case_2_n_minus(tab);
+	// {
+	// 	if (tab->check_zero == 1)
+	// 	{
+	// 		while (tab->width-- > 0)
+	// 			ft_putchar('0');
+	// 	}
+	// 	else
+	// 	{
+	// 		while (tab->width-- > 0)
+	// 			ft_putchar(' ');
+	// 	}
+	// 	if (tab->number < 0)
+	// 	{
+	// 		tab->number *= -1;
+	// 		ft_putchar('-');
+	// 	}
+	// 	while (tab->precision-- > 0)
+	// 		ft_putchar('0');
+	// 	ft_putnbr(tab->number);
+	// }
 }
 
 void 	ft_di_case_3(t_struct *tab)
