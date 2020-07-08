@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 12:18:47 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 12:22:47 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,34 @@ void 	ft_di_case_1(t_struct *tab)
 	// 	}
 	// }
 	tab->len += tab->string_len;
+}
+
+void 	ft_di_case_2_1(t_struct *tab)
+{
+	if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+	{
+		tab->len += tab->string_len;
+		tab->precision = 0;
+		tab->width = 0;
+	}
+	else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+	{
+		tab->len += tab->width;
+		tab->width = tab->width - tab->precision;
+		tab->precision = tab->precision - tab->string_len;
+	}
+	else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+	{
+		tab->len += tab->width;
+		tab->width = tab->width - tab->string_len;
+		tab->precision = 0;
+	}
+	else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+	{
+		tab->len += tab->precision;
+		tab->precision = tab->precision - tab->string_len;
+		tab->width = 0;
+	}
 }
 
 void 	ft_di_case_2(t_struct *tab)

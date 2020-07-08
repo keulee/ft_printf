@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 12:18:08 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 12:21:52 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void        ft_option_clear(t_struct *tab);
 void        ft_print_case(t_struct *tab);
 void        ft_find_asterisk(t_struct *tab);
 void        ft_find_precision_and_width(t_struct *tab);
+
 void        ft_info_str(t_struct *tab);
 void        ft_info_di(t_struct *tab);
 void 		ft_info_p(t_struct *tab);
@@ -81,7 +82,6 @@ void 		ft_info_percent(t_struct *tab);
 
 void 		ft_di_case_1_y_zero(t_struct *tab);
 void 		ft_di_case_1_n_zero(t_struct *tab);
-void 		ft_di_case_2_1(t_struct *tab);
 void 		ft_di_case_2_y_minus(t_struct *tab);
 void 		ft_di_case_2_n_minus(t_struct *tab);
 
