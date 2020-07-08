@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 15:23:34 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 15:59:59 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 16:24:26 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ void    ft_u_case_1_y_n_minus(t_struct *tab)
     }
 }
 
-void    ft_u_case_2_1_a(t_struct *tab)
+void    ft_u_case_2_a(t_struct *tab)
 {
     tab->len += tab->string_len;
     tab->precision = 0;
     tab->width = 0;
 }
 
-void    ft_u_case_2_1_b(t_struct *tab)
+void    ft_u_case_2_b(t_struct *tab)
 {
     tab->len += tab->width;
     tab->width = tab->width - tab->precision;
