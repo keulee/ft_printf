@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/07 17:01:52 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 11:47:59 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,133 @@
 **          (-)플래그, (0)플래그는 width와 항상 함께 해야 한다.
 */
 
+void 	ft_di_case_1(t_struct *tab)
+{
+	if (tab->width > tab->string_len)
+	{
+		tab->width = tab->width - tab->string_len;
+		tab->len += tab->width;
+	}
+	else
+		tab->width = 0;
+	if (tab->check_zero == 1)
+	{
+		if (tab->number < 0)
+		{
+			ft_putchar('-');
+			tab->number *= -1;
+		}
+		while (tab->width-- > 0)
+			ft_putchar('0');
+		ft_putnbr(tab->number);
+	}
+	else
+	{
+		if (tab->check_minus == 1)
+		{
+			ft_putnbr(tab->number);
+			while (tab->width-- > 0)
+				ft_putchar(' ');
+		}
+		else
+		{
+			while (tab->width-- > 0)
+				ft_putchar(' ');
+			ft_putnbr(tab->number);
+		}
+	}
+	tab->len += tab->string_len;
+}
+
+void 	ft_di_case_2(t_struct *tab)
+{
+	if (tab->number < 0)
+		tab->precision++;
+	if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+	{
+		tab->len += tab->string_len;
+		tab->precision = 0;
+		tab->width = 0;
+	}
+	else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+	{
+		tab->len += tab->width;
+		tab->width = tab->width - tab->precision;
+		tab->precision = tab->precision - tab->string_len;
+	}
+	else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+	{
+		tab->len += tab->width;
+		tab->width = tab->width - tab->string_len;
+		tab->precision = 0;
+	}
+	else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+	{
+		tab->len += tab->precision;
+		tab->precision = tab->precision - tab->string_len;
+		tab->width = 0;
+	}
+	if (tab->check_minus == 1)
+	{
+		if (tab->number < 0)
+		{
+			tab->number *= -1;
+			ft_putchar('-');
+		}
+		while (tab->precision-- > 0)
+			ft_putchar('0');
+		ft_putnbr(tab->number);
+		while (tab->width-- > 0)
+			ft_putchar(' ');
+	}
+	else
+	{
+		if (tab->check_zero == 1)
+		{
+			while (tab->width-- > 0)
+				ft_putchar('0');
+		}
+		else
+		{
+			while (tab->width-- > 0)
+				ft_putchar(' ');
+		}
+		if (tab->number < 0)
+		{
+			tab->number *= -1;
+			ft_putchar('-');
+		}
+		while (tab->precision-- > 0)
+			ft_putchar('0');
+		ft_putnbr(tab->number);
+	}
+}
+
+void 	ft_di_case_3(t_struct *tab)
+{
+	if (tab->number < 0)
+		tab->precision++;
+	if (tab->precision > tab->string_len)
+	{
+		tab->len += tab->precision;
+		tab->precision = tab->precision - tab->string_len;
+	}
+	else
+	{
+		tab->len += tab->string_len;
+		tab->precision = 0;
+	}
+	if (tab->number < 0)
+	{
+		tab->number *= -1;
+		ft_putchar('-');
+	}
+	while (tab->precision-- > 0)
+		ft_putchar('0');
+	ft_putnbr(tab->number);
+}
+
+
 void    ft_print_di(t_struct *tab)
 {
     ft_info_di(tab);
@@ -42,42 +169,43 @@ void    ft_print_di(t_struct *tab)
         tab->len += tab->string_len;
     }
     else if (tab->check_width == 1 && tab->check_precision == 0)
-    {
-        if (tab->width > tab->string_len)
-        {
-            tab->width = tab->width - tab->string_len;
-            tab->len += tab->width;
-        }
-        else
-            tab->width = 0;
-        if (tab->check_zero == 1)
-        {
-            if (tab->number < 0)
-            {
-                ft_putchar('-');
-                tab->number *= -1;
-            }
-            while (tab->width-- > 0)
-                ft_putchar('0');
-            ft_putnbr(tab->number);
-        }
-        else
-        {
-            if (tab->check_minus == 1)
-            {
-                ft_putnbr(tab->number);
-                while (tab->width-- > 0)
-                    ft_putchar(' ');
-            }
-            else
-            {
-                while (tab->width-- > 0)
-                    ft_putchar(' ');
-                ft_putnbr(tab->number);
-            }
-        }
-        tab->len += tab->string_len;
-    }
+		ft_di_case_1(tab);
+    // {
+    //     if (tab->width > tab->string_len)
+    //     {
+    //         tab->width = tab->width - tab->string_len;
+    //         tab->len += tab->width;
+    //     }
+    //     else
+    //         tab->width = 0;
+    //     if (tab->check_zero == 1)
+    //     {
+    //         if (tab->number < 0)
+    //         {
+    //             ft_putchar('-');
+    //             tab->number *= -1;
+    //         }
+    //         while (tab->width-- > 0)
+    //             ft_putchar('0');
+    //         ft_putnbr(tab->number);
+    //     }
+    //     else
+    //     {
+    //         if (tab->check_minus == 1)
+    //         {
+    //             ft_putnbr(tab->number);
+    //             while (tab->width-- > 0)
+    //                 ft_putchar(' ');
+    //         }
+    //         else
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar(' ');
+    //             ft_putnbr(tab->number);
+    //         }
+    //     }
+    //     tab->len += tab->string_len;
+    // }
     else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->number == 0)
     {
         tab->len += tab->width;
@@ -85,89 +213,91 @@ void    ft_print_di(t_struct *tab)
             ft_putchar(' ');
     }
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
-    {
-        if (tab->number < 0)
-            tab->precision++;
-        if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
-        {
-            tab->len += tab->string_len;
-            tab->precision = 0;
-            tab->width = 0;
-        }
-        else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
-        {
-            tab->len += tab->width;
-            tab->width = tab->width - tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-        }
-        else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
-        {
-            tab->len += tab->width;
-            tab->width = tab->width - tab->string_len;
-            tab->precision = 0;
-        }
-        else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
-        {
-            tab->len += tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-            tab->width = 0;
-        }
-        if (tab->check_minus == 1)
-        {
-            if (tab->number < 0)
-            {
-                tab->number *= -1;
-                ft_putchar('-');
-            }
-            while (tab->precision-- > 0)
-                ft_putchar('0');
-            ft_putnbr(tab->number);
-            while (tab->width-- > 0)
-                ft_putchar(' ');
-        }
-        else
-        {
-            if (tab->check_zero == 1)
-            {
-                while (tab->width-- > 0)
-                    ft_putchar('0');
-            }
-            else
-            {
-                while (tab->width-- > 0)
-                    ft_putchar(' ');
-            }
-            if (tab->number < 0)
-            {
-                tab->number *= -1;
-                ft_putchar('-');
-            }
-            while (tab->precision-- > 0)
-                ft_putchar('0');
-            ft_putnbr(tab->number);
-        }
-    }
+		ft_di_case_2(tab);
+    // {
+    //     if (tab->number < 0)
+    //         tab->precision++;
+    //     if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+    //     {
+    //         tab->len += tab->string_len;
+    //         tab->precision = 0;
+    //         tab->width = 0;
+    //     }
+    //     else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+    //     {
+    //         tab->len += tab->width;
+    //         tab->width = tab->width - tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //     }
+    //     else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+    //     {
+    //         tab->len += tab->width;
+    //         tab->width = tab->width - tab->string_len;
+    //         tab->precision = 0;
+    //     }
+    //     else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+    //     {
+    //         tab->len += tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //         tab->width = 0;
+    //     }
+    //     if (tab->check_minus == 1)
+    //     {
+    //         if (tab->number < 0)
+    //         {
+    //             tab->number *= -1;
+    //             ft_putchar('-');
+    //         }
+    //         while (tab->precision-- > 0)
+    //             ft_putchar('0');
+    //         ft_putnbr(tab->number);
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     else
+    //     {
+    //         if (tab->check_zero == 1)
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar('0');
+    //         }
+    //         else
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar(' ');
+    //         }
+    //         if (tab->number < 0)
+    //         {
+    //             tab->number *= -1;
+    //             ft_putchar('-');
+    //         }
+    //         while (tab->precision-- > 0)
+    //             ft_putchar('0');
+    //         ft_putnbr(tab->number);
+    //     }
+    // }
     else if (tab->check_width == 0 && tab->check_precision == 1 && tab->check_zero == 0)
-    {
-        if (tab->number < 0)
-            tab->precision++;
-        if (tab->precision > tab->string_len)
-        {
-            tab->len += tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-        }
-        else
-        {
-            tab->len += tab->string_len;
-            tab->precision = 0;
-        }
-        if (tab->number < 0)
-        {
-            tab->number *= -1;
-            ft_putchar('-');
-        }
-        while (tab->precision-- > 0)
-            ft_putchar('0');
-        ft_putnbr(tab->number);
-    }
+		ft_di_case_3(tab);
+    // {
+    //     if (tab->number < 0)
+    //         tab->precision++;
+    //     if (tab->precision > tab->string_len)
+    //     {
+    //         tab->len += tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //     }
+    //     else
+    //     {
+    //         tab->len += tab->string_len;
+    //         tab->precision = 0;
+    //     }
+    //     if (tab->number < 0)
+    //     {
+    //         tab->number *= -1;
+    //         ft_putchar('-');
+    //     }
+    //     while (tab->precision-- > 0)
+    //         ft_putchar('0');
+    //     ft_putnbr(tab->number);
+    // }
 }
