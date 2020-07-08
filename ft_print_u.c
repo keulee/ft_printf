@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:02 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 15:44:30 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 16:00:45 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,58 @@ void    ft_u_case_1(t_struct *tab)
     }
     else
         tab->width = 0;
-    if (tab->check_minus == 1)
-    {
-        ft_putnbr_u(tab->u_number);
-        while (tab->width-- > 0)
-            ft_putchar(' ');
-    }
-    else
-    {
-        if (tab->check_zero == 1)
-        {
-            while (tab->width-- > 0)
-                ft_putchar('0');
-        }
-        else
-        {
-            while (tab->width-- > 0)
-                ft_putchar(' ');
-        }
-        ft_putnbr_u(tab->u_number);
-    }
+    ft_u_case_1_y_n_minus(tab);
+    // if (tab->check_minus == 1)
+    // {
+    //     ft_putnbr_u(tab->u_number);
+    //     while (tab->width-- > 0)
+    //         ft_putchar(' ');
+    // }
+    // else
+    // {
+    //     if (tab->check_zero == 1)
+    //     {
+    //         while (tab->width-- > 0)
+    //             ft_putchar('0');
+    //     }
+    //     else
+    //     {
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     ft_putnbr_u(tab->u_number);
+    // }
     tab->len += tab->string_len;
+}
+
+void    ft_u_case_2_1(t_struct *tab)
+{
+    if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+        ft_u_case_2_1_a(tab);
+    // {
+    //     tab->len += tab->string_len;
+    //     tab->precision = 0;
+    //     tab->width = 0;
+    // }
+    else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+        ft_u_case_2_1_b(tab);
+    // {
+    //     tab->len += tab->width;
+    //     tab->width = tab->width - tab->precision;
+    //     tab->precision = tab->precision - tab->string_len;
+    // }
+    else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+    {
+        tab->len += tab->width;
+        tab->width = tab->width - tab->string_len;
+        tab->precision = 0;
+    }
+    else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+    {
+        tab->len += tab->precision;
+        tab->precision = tab->precision - tab->string_len;
+        tab->width = 0;
+    }
 }
 
 void    ft_u_case_2(t_struct *tab)
