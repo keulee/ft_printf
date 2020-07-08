@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include "limits.h"
 
 int main(void)
 {
@@ -15,35 +16,47 @@ int main(void)
 
     printf("======================  [Error fixing]   =====================\n");
 
+
+    ft_printf_count = ft_printf("%i\n", INT_MIN);
+    printf_count = printf("%i\n", INT_MIN);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("%%-d 42 == %-d\n", INT_MIN);
+    printf_count = printf("%%-d 42 == %-d\n", INT_MIN);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+
     // int p = NULL;
 
-    char *str = "We all pretend to be the hero on the good side";
+    // char *str = "We all pretend to be the hero on the good side";
 
-    ft_printf_count = ft_printf("Default: |%s|\n", str);
-    printf_count = printf("Default: |%s|\n", str);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    ft_printf_count = ft_printf("Default d: |%d|\n", 42);
-    printf_count = printf("Default d: |%d|\n", 42);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
+    // ft_printf_count = ft_printf("Default: |%s|\n", str);
+    // printf_count = printf("Default: |%s|\n", str);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
     //
-    ft_printf_count = ft_printf("Default d with minus: |%-d|\n", 42);
-    printf_count = printf("Default d with minus: |%-d|\n", 42);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-
-    ft_printf_count = ft_printf("mypf: -->|%-1.p|<--\n", NULL);
-    printf_count = printf("real: -->|%-1.p|<--\n", NULL);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
-
-    ft_printf_count = ft_printf("mypf: -->|%-2.p|<--\n", NULL);
-    printf_count = printf("real: -->|%-2.p|<--\n", NULL);
-    printf("ft printf count : %d\n", ft_printf_count);
-    printf("real printf count : %d\n", printf_count);
+    // ft_printf_count = ft_printf("Default d: |%d|\n", 42);
+    // printf_count = printf("Default d: |%d|\n", 42);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    // //
+    // ft_printf_count = ft_printf("Default d with minus: |%-d|\n", 42);
+    // printf_count = printf("Default d with minus: |%-d|\n", 42);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%-1.p|<--\n", NULL);
+    // printf_count = printf("real: -->|%-1.p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
+    //
+    // ft_printf_count = ft_printf("mypf: -->|%-2.p|<--\n", NULL);
+    // printf_count = printf("real: -->|%-2.p|<--\n", NULL);
+    // printf("ft printf count : %d\n", ft_printf_count);
+    // printf("real printf count : %d\n", printf_count);
 
     // ft_printf_count = ft_printf("mypf: -->|%-16.p|<--\n", NULL);
     // printf_count = printf("real: -->|%-16.p|<--\n", NULL);
