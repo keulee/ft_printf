@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/30 15:54:00 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/22 18:51:38 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 16:45:55 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,124 +27,236 @@
 **          width없이 (-)플래그와 .precision만 함께 오면 (-)flag가 무시된다. (당연한 이야기. 폭 없이 인수의 최소, 최대 길이만 정해주기 때문에 오/왼 정렬할 이유가 없다. 따라서 (-)플래그를 무시하고 .precision만 읽은 값으로 송출된다. 에러가 나오지는 않는다.)
 **          (-)플래그, (0)플래그는 width와 항상 함께 해야 한다.
 */
+
+void    ft_xx_case_1(t_struct *tab)
+{
+    if (tab->width > tab->string_len)
+    {
+        tab->len += tab->width;
+        tab->width = tab->width - tab->string_len;
+    }
+    else
+    {
+        tab->len += tab->string_len;
+        tab->width = 0;
+    }
+    ft_xx_case_1_y_n_minus(tab);
+    // if (tab->check_minus == 1)
+    // {
+    //     ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    //     while (tab->width-- > 0)
+    //         ft_putchar(' ');
+    // }
+    // else
+    // {
+    //     if (tab->check_zero == 1)
+    //     {
+    //         while (tab->width-- > 0)
+    //             ft_putchar('0');
+    //     }
+    //     else
+    //     {
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    // }
+}
+
+void    ft_xx_case_2(t_struct *tab)
+{
+    if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+        ft_xx_case_2_a(tab);
+    // {
+    //     tab->len += tab->string_len;
+    //     tab->precision = 0;
+    //     tab->width = 0;
+    // }
+    else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+        ft_xx_case_2_b(tab);
+    // {
+    //     tab->len += tab->width;
+    //     tab->width = tab->width - tab->precision;
+    //     tab->precision = tab->precision - tab->string_len;
+    // }
+    else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+    {
+        tab->len += tab->width;
+        tab->width = tab->width - tab->string_len;
+        tab->precision = 0;
+    }
+    else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+    {
+        tab->len += tab->precision;
+        tab->precision = tab->precision - tab->string_len;
+        tab->width = 0;
+    }
+    ft_xx_case_2_y_n_minus(tab);
+    // if (tab->check_minus == 1)
+    // {
+    //     while (tab->precision-- > 0)
+    //         ft_putchar('0');
+    //     ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    //     while (tab->width-- > 0)
+    //         ft_putchar(' ');
+    // }
+    // else
+    // {
+    //     if (tab->check_zero == 1)
+    //     {
+    //         while (tab->width-- > 0)
+    //             ft_putchar('0');
+    //     }
+    //     else
+    //     {
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     while (tab->precision-- > 0)
+    //         ft_putchar('0');
+    //     ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    // }
+}
+
+void    ft_xx_case_3(t_struct *tab)
+{
+    if (tab->precision > tab->string_len)
+    {
+        tab->len += tab->precision;
+        tab->precision = tab->precision - tab->string_len;
+    }
+    else
+    {
+        tab->len += tab->string_len;
+        tab->precision = 0;
+    }
+    while (tab->precision-- > 0)
+        ft_putchar('0');
+    ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+}
+
 void    ft_print_xx(t_struct *tab)
 {
-    tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
-    tab->string = ft_utoa_base(tab->u_number, "0123456789ABCDEF");
-    tab->string_len = ft_strlen(tab->string);
-    if (tab->check_minus == 1 && tab->check_zero == 1)
-        tab->check_zero = 0;
-    if (tab->check_precision == 1 && tab->check_zero == 1)
-        tab->check_zero = 0;
+    ft_info_xx(tab);
+    // tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
+    // tab->string = ft_utoa_base(tab->u_number, "0123456789ABCDEF");
+    // tab->string_len = ft_strlen(tab->string);
+    // if (tab->check_minus == 1 && tab->check_zero == 1)
+    //     tab->check_zero = 0;
+    // if (tab->check_precision == 1 && tab->check_zero == 1)
+    //     tab->check_zero = 0;
     if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
         tab->len += tab->string_len;
     }
     else if (tab->check_width == 1 && tab->check_precision == 0)
-    {
-        if (tab->width > tab->string_len)
-        {
-            tab->len += tab->width;
-            tab->width = tab->width - tab->string_len;
-        }
-        else
-        {
-            tab->len += tab->string_len;
-            tab->width = 0;
-        }
-        if (tab->check_minus == 1)
-        {
-            ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
-            while (tab->width-- > 0)
-                ft_putchar(' ');
-        }
-        else
-        {
-            if (tab->check_zero == 1)
-            {
-                while (tab->width-- > 0)
-                    ft_putchar('0');
-            }
-            else
-            {
-                while (tab->width-- > 0)
-                    ft_putchar(' ');
-            }
-            ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
-        }
-    }
-    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->u_number == 0) 
+        ft_xx_case_1(tab);
+    // {
+    //     if (tab->width > tab->string_len)
+    //     {
+    //         tab->len += tab->width;
+    //         tab->width = tab->width - tab->string_len;
+    //     }
+    //     else
+    //     {
+    //         tab->len += tab->string_len;
+    //         tab->width = 0;
+    //     }
+    //     if (tab->check_minus == 1)
+    //     {
+    //         ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     else
+    //     {
+    //         if (tab->check_zero == 1)
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar('0');
+    //         }
+    //         else
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar(' ');
+    //         }
+    //         ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    //     }
+    // }
+    else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->u_number == 0)
     {
         tab->len += tab->width;
         while (tab->width-- > 0)
             ft_putchar(' ');
     }
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
-    {
-        if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
-        {
-            tab->len += tab->string_len;
-            tab->precision = 0;
-            tab->width = 0;
-        }
-        else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
-        {
-            tab->len += tab->width;
-            tab->width = tab->width - tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-        }
-        else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
-        {
-            tab->len += tab->width;
-            tab->width = tab->width - tab->string_len;
-            tab->precision = 0;
-        }
-        else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
-        {
-            tab->len += tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-            tab->width = 0;
-        }
-        if (tab->check_minus == 1)
-        {
-            while (tab->precision-- > 0)
-                ft_putchar('0');
-            ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
-            while (tab->width-- > 0)
-                ft_putchar(' ');
-        }
-        else
-        {
-            if (tab->check_zero == 1)
-            {
-                while (tab->width-- > 0)
-                    ft_putchar('0');
-            }
-            else
-            {
-                while (tab->width-- > 0)
-                    ft_putchar(' ');
-            }
-            while (tab->precision-- > 0)
-                ft_putchar('0');
-            ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
-        }
-    }
+        ft_xx_case_2(tab);
+    // {
+    //     if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+    //     {
+    //         tab->len += tab->string_len;
+    //         tab->precision = 0;
+    //         tab->width = 0;
+    //     }
+    //     else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+    //     {
+    //         tab->len += tab->width;
+    //         tab->width = tab->width - tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //     }
+    //     else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+    //     {
+    //         tab->len += tab->width;
+    //         tab->width = tab->width - tab->string_len;
+    //         tab->precision = 0;
+    //     }
+    //     else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+    //     {
+    //         tab->len += tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //         tab->width = 0;
+    //     }
+    //     if (tab->check_minus == 1)
+    //     {
+    //         while (tab->precision-- > 0)
+    //             ft_putchar('0');
+    //         ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     else
+    //     {
+    //         if (tab->check_zero == 1)
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar('0');
+    //         }
+    //         else
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar(' ');
+    //         }
+    //         while (tab->precision-- > 0)
+    //             ft_putchar('0');
+    //         ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    //     }
+    // }
     else if (tab->check_width == 0 && tab->check_precision == 1 && tab->check_zero == 0)
-    {
-        if (tab->precision > tab->string_len)
-        {
-            tab->len += tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-        }
-        else
-        {
-            tab->len += tab->string_len;
-            tab->precision = 0;
-        }
-        while (tab->precision-- > 0)
-            ft_putchar('0');
-        ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
-    }
+        ft_xx_case_3(tab);
+    // {
+    //     if (tab->precision > tab->string_len)
+    //     {
+    //         tab->len += tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //     }
+    //     else
+    //     {
+    //         tab->len += tab->string_len;
+    //         tab->precision = 0;
+    //     }
+    //     while (tab->precision-- > 0)
+    //         ft_putchar('0');
+    //     ft_putnbr_base(tab->u_number, "0123456789ABCDEF");
+    // }
 }

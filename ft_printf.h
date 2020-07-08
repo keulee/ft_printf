@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 16:24:19 by k                ###   ########.fr       */
+/*   Updated: 2020/07/08 16:46:33 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,12 @@ void        ft_find_asterisk(t_struct *tab);
 void        ft_find_precision_and_width(t_struct *tab);
 
 void        ft_info_str(t_struct *tab);
-void        ft_info_di(t_struct *tab);
 void 		ft_info_p(t_struct *tab);
-void 		ft_info_percent(t_struct *tab);
+void        ft_info_di(t_struct *tab);
 void        ft_info_u(t_struct *tab);
 void        ft_info_x(t_struct *tab);
+void        ft_info_xx(t_struct *tab);
+void 		ft_info_percent(t_struct *tab);
 
 void 		ft_di_case_1_y_zero(t_struct *tab);
 void 		ft_di_case_1_n_zero(t_struct *tab);
@@ -98,5 +99,10 @@ void        ft_x_case_2_y_minus(t_struct *tab);
 void        ft_x_case_2_n_minus(t_struct *tab);
 void        ft_x_case_2_a(t_struct *tab);
 void        ft_x_case_2_b(t_struct *tab);
+
+void        ft_xx_case_1_y_n_minus(t_struct *tab);
+void        ft_xx_case_2_a(t_struct *tab);
+void        ft_xx_case_2_b(t_struct *tab);
+void        ft_xx_case_2_y_n_minus(t_struct *tab);
 
 #endif
