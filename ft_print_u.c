@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:02 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/22 18:51:34 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/08 15:44:30 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,51 +32,157 @@
 ** 결국 -2147283647부터 -1사이의 결과값은 2147483649부터 4294967295. (이 사이 2147483648값은 결과값으로 나올 수 없는거 같다??)
 */
 
+void    ft_u_case_1(t_struct *tab)
+{
+    if (tab->width > tab->string_len)
+    {
+        tab->width = tab->width - tab->string_len;
+        tab->len += tab->width;
+    }
+    else
+        tab->width = 0;
+    if (tab->check_minus == 1)
+    {
+        ft_putnbr_u(tab->u_number);
+        while (tab->width-- > 0)
+            ft_putchar(' ');
+    }
+    else
+    {
+        if (tab->check_zero == 1)
+        {
+            while (tab->width-- > 0)
+                ft_putchar('0');
+        }
+        else
+        {
+            while (tab->width-- > 0)
+                ft_putchar(' ');
+        }
+        ft_putnbr_u(tab->u_number);
+    }
+    tab->len += tab->string_len;
+}
+
+void    ft_u_case_2(t_struct *tab)
+{
+    ft_u_case_2_1(tab);
+    // if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+    // {
+    //     tab->len += tab->string_len;
+    //     tab->precision = 0;
+    //     tab->width = 0;
+    // }
+    // else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+    // {
+    //     tab->len += tab->width;
+    //     tab->width = tab->width - tab->precision;
+    //     tab->precision = tab->precision - tab->string_len;
+    // }
+    // else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+    // {
+    //     tab->len += tab->width;
+    //     tab->width = tab->width - tab->string_len;
+    //     tab->precision = 0;
+    // }
+    // else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+    // {
+    //     tab->len += tab->precision;
+    //     tab->precision = tab->precision - tab->string_len;
+    //     tab->width = 0;
+    // }
+    if (tab->check_minus == 1)
+        ft_u_case_2_y_minus(tab);
+    // {
+    //     while (tab->precision-- > 0)
+    //         ft_putchar('0');
+    //     ft_putnbr_u(tab->u_number);
+    //     while (tab->width-- > 0)
+    //         ft_putchar(' ');
+    // }
+    else
+        ft_u_case_2_n_minus(tab);
+    // {
+    //     if (tab->check_zero == 1)
+    //     {
+    //         while (tab->width-- > 0)
+    //             ft_putchar('0');
+    //     }
+    //     else
+    //     {
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     while (tab->precision-- > 0)
+    //         ft_putchar('0');
+    //     ft_putnbr_u(tab->u_number);
+    // }
+}
+
+void    ft_u_case_3(t_struct *tab)
+{
+    if (tab->precision > tab->string_len)
+    {
+        tab->len += tab->precision;
+        tab->precision = tab->precision - tab->string_len;
+    }
+    else
+    {
+        tab->len += tab->string_len;
+        tab->precision = 0;
+    }
+    while (tab->precision-- > 0)
+        ft_putchar('0');
+    ft_putnbr_u(tab->u_number);
+}
+
 void    ft_print_u(t_struct *tab)
 {
-    tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
-    tab->string = ft_itoa_u(tab->u_number);
-    tab->string_len = ft_strlen(tab->string);
-    if (tab->check_minus == 1 && tab->check_zero == 1)
-        tab->check_zero = 0;
-    if (tab->check_precision == 1 && tab->check_zero == 1)
-        tab->check_zero = 0;
+    ft_info_u(tab);
+    // tab->u_number = (unsigned int)va_arg(tab->list, unsigned int);
+    // tab->string = ft_itoa_u(tab->u_number);
+    // tab->string_len = ft_strlen(tab->string);
+    // if (tab->check_minus == 1 && tab->check_zero == 1)
+    //     tab->check_zero = 0;
+    // if (tab->check_precision == 1 && tab->check_zero == 1)
+    //     tab->check_zero = 0;
     if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
         ft_putnbr_u(tab->u_number);
         tab->len += tab->string_len;
     }
     else if (tab->check_width == 1 && tab->check_precision == 0)
-    {
-        if (tab->width > tab->string_len)
-        {
-            tab->width = tab->width - tab->string_len;
-            tab->len += tab->width;
-        }
-        else
-            tab->width = 0;
-        if (tab->check_minus == 1)
-        {
-            ft_putnbr_u(tab->u_number);
-            while (tab->width-- > 0)
-                ft_putchar(' ');
-        }
-        else
-        {
-            if (tab->check_zero == 1)
-            {
-                while (tab->width-- > 0)
-                    ft_putchar('0');
-            }
-            else
-            {
-                while (tab->width-- > 0)
-                    ft_putchar(' ');
-            }
-            ft_putnbr_u(tab->u_number);
-        }
-        tab->len += tab->string_len;
-    }
+        ft_u_case_1(tab);
+    // {
+    //     if (tab->width > tab->string_len)
+    //     {
+    //         tab->width = tab->width - tab->string_len;
+    //         tab->len += tab->width;
+    //     }
+    //     else
+    //         tab->width = 0;
+    //     if (tab->check_minus == 1)
+    //     {
+    //         ft_putnbr_u(tab->u_number);
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     else
+    //     {
+    //         if (tab->check_zero == 1)
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar('0');
+    //         }
+    //         else
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar(' ');
+    //         }
+    //         ft_putnbr_u(tab->u_number);
+    //     }
+    //     tab->len += tab->string_len;
+    // }
     else if ((tab->check_width == 0 || tab->check_width == 1) && tab->check_precision == 1 && tab->precision == 0 && tab->u_number == 0)
     {
         tab->len += tab->width;
@@ -84,71 +190,72 @@ void    ft_print_u(t_struct *tab)
             ft_putchar(' ');
     }
     else if (tab->check_width == 1 && tab->check_precision == 1 && (tab->check_zero == 1 || tab->check_zero == 0))
-    {
-        // printf("here\n");
-        if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
-        {
-            tab->len += tab->string_len;
-            tab->precision = 0;
-            tab->width = 0;
-        }
-        else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
-        {
-            tab->len += tab->width;
-            tab->width = tab->width - tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-        }
-        else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
-        {
-            tab->len += tab->width;
-            tab->width = tab->width - tab->string_len;
-            tab->precision = 0;
-        }
-        else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
-        {
-            tab->len += tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-            tab->width = 0;
-        }
-        if (tab->check_minus == 1)
-        {
-            while (tab->precision-- > 0)
-                ft_putchar('0');
-            ft_putnbr_u(tab->u_number);
-            while (tab->width-- > 0)
-                ft_putchar(' ');
-        }
-        else
-        {
-            if (tab->check_zero == 1)
-            {
-                while (tab->width-- > 0)
-                    ft_putchar('0');
-            }
-            else
-            {
-                while (tab->width-- > 0)
-                    ft_putchar(' ');
-            }
-            while (tab->precision-- > 0)
-                ft_putchar('0');
-            ft_putnbr_u(tab->u_number);
-        }
-    }
+        ft_u_case_2(tab);
+    // {
+    //     if ((tab->string_len >= tab->precision && tab->precision >= tab->width) || (tab->string_len >= tab->width && tab->width >= tab->precision))
+    //     {
+    //         tab->len += tab->string_len;
+    //         tab->precision = 0;
+    //         tab->width = 0;
+    //     }
+    //     else if (tab->width >= tab->precision && tab->precision >= tab->string_len)
+    //     {
+    //         tab->len += tab->width;
+    //         tab->width = tab->width - tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //     }
+    //     else if (tab->width > tab->string_len && tab->string_len >= tab->precision)
+    //     {
+    //         tab->len += tab->width;
+    //         tab->width = tab->width - tab->string_len;
+    //         tab->precision = 0;
+    //     }
+    //     else if ((tab->precision > tab->width && tab->width >= tab->string_len) || (tab->precision > tab->string_len && tab->string_len >= tab->width))
+    //     {
+    //         tab->len += tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //         tab->width = 0;
+    //     }
+    //     if (tab->check_minus == 1)
+    //     {
+    //         while (tab->precision-- > 0)
+    //             ft_putchar('0');
+    //         ft_putnbr_u(tab->u_number);
+    //         while (tab->width-- > 0)
+    //             ft_putchar(' ');
+    //     }
+    //     else
+    //     {
+    //         if (tab->check_zero == 1)
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar('0');
+    //         }
+    //         else
+    //         {
+    //             while (tab->width-- > 0)
+    //                 ft_putchar(' ');
+    //         }
+    //         while (tab->precision-- > 0)
+    //             ft_putchar('0');
+    //         ft_putnbr_u(tab->u_number);
+    //     }
+    // }
     else if (tab->check_width == 0 && tab->check_precision == 1 && tab->check_zero == 0)
-    {
-        if (tab->precision > tab->string_len)
-        {
-            tab->len += tab->precision;
-            tab->precision = tab->precision - tab->string_len;
-        }
-        else
-        {
-            tab->len += tab->string_len;
-            tab->precision = 0;
-        }
-        while (tab->precision-- > 0)
-            ft_putchar('0');
-        ft_putnbr_u(tab->u_number);
-    }
+        ft_u_case_3(tab);
+    // {
+    //     if (tab->precision > tab->string_len)
+    //     {
+    //         tab->len += tab->precision;
+    //         tab->precision = tab->precision - tab->string_len;
+    //     }
+    //     else
+    //     {
+    //         tab->len += tab->string_len;
+    //         tab->precision = 0;
+    //     }
+    //     while (tab->precision-- > 0)
+    //         ft_putchar('0');
+    //     ft_putnbr_u(tab->u_number);
+    // }
 }
