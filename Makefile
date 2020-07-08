@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/07/03 11:41:04 by keulee           ###   ########.fr        #
+#    Updated: 2020/07/08 10:50:50 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,8 @@ SRC = ft_putnbr.c \
 		ft_find_asterisk.c \
 		ft_find_precision_and_width.c \
 		ft_info_str.c \
-		ft_info_di.c
+		ft_info_di.c \
+		ft_info_p.c
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
