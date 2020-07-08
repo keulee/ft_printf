@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 16:53:52 by k                ###   ########.fr       */
+/*   Updated: 2020/07/08 19:30:35 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void 	ft_di_case_1(t_struct *tab)
 	if (tab->check_zero == 1)
 		ft_di_case_1_y_zero(tab);
 	// {
-	// 	if (tab->number < 0)
+	// 	if (tab->number < 0 && tab->number != -2147483648)
 	// 	{
 	// 		ft_putchar('-');
 	// 		tab->number *= -1;
@@ -127,7 +127,7 @@ void 	ft_di_case_2(t_struct *tab)
 	if (tab->check_minus == 1)
 		ft_di_case_2_y_minus(tab);
 	// {
-	// 	if (tab->number < 0)
+	// 	if (tab->number < 0 && tab->number != -2147483648)
 	// 	{
 	// 		tab->number *= -1;
 	// 		ft_putchar('-');
@@ -151,7 +151,7 @@ void 	ft_di_case_2(t_struct *tab)
 	// 		while (tab->width-- > 0)
 	// 			ft_putchar(' ');
 	// 	}
-	// 	if (tab->number < 0)
+	// 	if (tab->number < 0 && tab->number != -2147483648)
 	// 	{
 	// 		tab->number *= -1;
 	// 		ft_putchar('-');
@@ -176,7 +176,7 @@ void 	ft_di_case_3(t_struct *tab)
 		tab->len += tab->string_len;
 		tab->precision = 0;
 	}
-	if (tab->number < 0)
+	if (tab->number < 0 && tab->number != -2147483648)
 	{
 		tab->number *= -1;
 		ft_putchar('-');
