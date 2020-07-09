@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:09 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/07 13:09:10 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/09 17:38:43 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ void	ft_find_specifier(t_struct *tab)
 				|| tab->str[tab->j] == '%')
 			break ;
 	}
+	if (tab->str[tab->j-1] == '\0')
+		tab->error = 1;
 	tab->specifier = tab->str[tab->j];
 }

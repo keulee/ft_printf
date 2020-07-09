@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 17:10:59 by k                ###   ########.fr       */
+/*   Updated: 2020/07/09 18:13:46 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct      s_struct
     int                 index;
     char                specifier;
     char                *string;
+    int                 error;
 }                   t_struct;
 
 int         ft_printf(const char *str, ...);

@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:30 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 19:30:35 by k                ###   ########.fr       */
+/*   Updated: 2020/07/09 18:11:16 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,10 +176,11 @@ void 	ft_di_case_3(t_struct *tab)
 		tab->len += tab->string_len;
 		tab->precision = 0;
 	}
-	if (tab->number < 0 && tab->number != -2147483648)
+	if (tab->number < 0)
 	{
-		tab->number *= -1;
 		ft_putchar('-');
+		if (tab->number != -2147483648)
+			tab->number *= -1;
 	}
 	while (tab->precision-- > 0)
 		ft_putchar('0');
@@ -199,6 +200,8 @@ void    ft_print_di(t_struct *tab)
     //     tab->check_zero = 0;
     if (tab->check_width == 0 && (tab->check_minus == 1 || tab->check_minus == 0) && tab->check_precision == 0 && tab->check_zero == 0)
     {
+		if (tab->number == -2147483648)
+			ft_putchar('-');
         ft_putnbr(tab->number);
         tab->len += tab->string_len;
     }

@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:14 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/02 22:05:30 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/09 18:11:22 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ void    ft_init(t_struct *tab, const char *str)
     tab->index = 0;
     tab->specifier = '\0';
     tab->string = NULL;
+    tab->error = 0;
 }

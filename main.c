@@ -1,5 +1,5 @@
 #include "ft_printf.h"
-// #include "limits.h"
+#include "limits.h"
 
 int main(void)
 {
@@ -25,20 +25,29 @@ int main(void)
     printf("======================  [Error fixing]   =====================\n");
 
 
-    // ft_printf_count = ft_printf("%i\n", INT_MIN);
-    // printf_count = printf("%i\n", INT_MIN);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-    //
-    // ft_printf_count = ft_printf("%%-d 42 == %-d\n", INT_MIN);
-    // printf_count = printf("%%-d 42 == %-d\n", INT_MIN);
-    // printf("ft printf count : %d\n", ft_printf_count);
-    // printf("real printf count : %d\n", printf_count);
-
-    ft_printf_count = ft_printf("%0.i, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d);
-    printf_count = printf("%0.i, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d);
+    ft_printf_count = ft_printf("%i\n", INT_MIN);
+    printf_count = printf("%i\n", INT_MIN);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("%%-d 42 == %-d\n", INT_MIN);
+    printf_count = printf("%%-d 42 == %-d\n", INT_MIN);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("%-i, %-d, %-d, %-d, %-d, %-d, %-d, %-d\n", i, j, k, l, m, c, e, d);
+    printf_count = printf("%-i, %-d, %-d, %-d, %-d, %-d, %-d, %-d\n", i, j, k, l, m, c, e, d);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+
+    ft_printf_count = ft_printf("%-20d\n", INT_MIN);
+    printf_count = printf("%-20d\n", INT_MIN);
+    printf("ft printf count : %d\n", ft_printf_count);
+    printf("real printf count : %d\n", printf_count);
+
+    ft_printf_count = ft_printf("%-5");
+    // printf("ft printf count : %d\n", ft_printf_count);
 
 
     // int p = NULL;

@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:21 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/24 23:03:34 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/09 18:11:19 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void ft_option_clear(t_struct *tab)
     tab->width = 0;
     tab->precision = 0;
     tab->index = 0;
+    tab->error = 0;
 }
