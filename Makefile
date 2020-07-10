@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/07/10 16:27:06 by keulee           ###   ########.fr        #
+#    Updated: 2020/07/10 16:39:51 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,13 +53,17 @@ SRC = ft_putnbr.c \
 		ft_print_double_percent.c \
 		ft_print_sgl_caracter.c
 
+INCLUDES = includes
+DIR_S = srcs
+DIR_O = tmp
+
+SRCS = $(addprefix ${DIR_S}/, ${SRC})
+
+OBJS = $(addprefix ${DIR_O}/, ${SRC:.c=.o})
+
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
-
-OBJ = $(SRC:.c=.o)
-
-INCLUDE = ./
 
 AR = ar
 
@@ -67,15 +71,21 @@ RC = rc
 
 RM = rm -f
 
-$(NAME):
-	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
-	$(AR) $(RC) $(NAME) $(OBJ)
-	ranlib $(NAME)
+RMD = rm -rf
 
 all: $(NAME)
 
+$(NAME): $(OBJS)
+	$(AR) $(RC) $(NAME) $(OBJS)
+	ranlib $(NAME)
+
+$(DIR_O)/%.o: $(DIR_S)/%.c
+	@makir -p tmp
+	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ -c $<
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
+	$(RMD) $(DIR_O)
 
 fclean: clean
 	$(RM) $(NAME)
