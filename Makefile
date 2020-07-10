@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/07/10 16:39:51 by keulee           ###   ########.fr        #
+#    Updated: 2020/07/10 16:44:20 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ SRC = ft_putnbr.c \
 		ft_print_double_percent.c \
 		ft_print_sgl_caracter.c
 
-INCLUDES = includes
+HEADER = includes
 DIR_S = srcs
 DIR_O = tmp
 
@@ -80,8 +80,8 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 
 $(DIR_O)/%.o: $(DIR_S)/%.c
-	@makir -p tmp
-	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ -c $<
+	@mkdir -p tmp
+	@$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
 
 clean:
 	$(RM) $(OBJS)
