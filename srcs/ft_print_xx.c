@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/30 15:54:00 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 16:45:55 by k                ###   ########.fr       */
+/*   Updated: 2020/07/10 23:01:44 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 /*
 ** Function to print 'X'
 */

@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:09:14 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/09 18:11:22 by k                ###   ########.fr       */
+/*   Updated: 2020/07/10 23:00:35 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 /*
 ** Function to initialize structure before using it
 */

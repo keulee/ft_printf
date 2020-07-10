@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 21:54:13 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/10 18:22:40 by k                ###   ########.fr       */
+/*   Updated: 2020/07/10 23:00:50 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void    ft_print_case(t_struct *tab)
 {

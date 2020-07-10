@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/10 16:27:11 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/10 23:02:45 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdarg.h>
-# include <stdio.h>
 
 typedef struct      s_struct
 {

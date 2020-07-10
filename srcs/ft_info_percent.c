@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 10:59:31 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 11:00:15 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/10 23:00:15 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void 	ft_info_percent(t_struct *tab)
 {

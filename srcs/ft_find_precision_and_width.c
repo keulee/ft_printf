@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:44:21 by keulee            #+#    #+#             */
-/*   Updated: 2020/06/29 16:46:22 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/10 22:59:57 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void    ft_find_precision_and_width(t_struct *tab)
 {

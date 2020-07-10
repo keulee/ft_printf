@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 11:36:32 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 12:11:14 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/10 23:00:07 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void    ft_info_di(t_struct *tab)
 {
