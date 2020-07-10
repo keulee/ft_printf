@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/07/09 18:13:52 by k                ###   ########.fr        #
+#    Updated: 2020/07/10 16:01:03 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,6 @@ SRC = ft_putnbr.c \
 		ft_find_specifier.c \
 		ft_print_str.c \
 		ft_print_di.c \
-		ft_putnbr.c \
 		ft_itoa.c \
 		ft_strdup.c \
 		ft_print_u.c \
