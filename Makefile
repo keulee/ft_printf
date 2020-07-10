@@ -6,25 +6,11 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/07/10 16:01:03 by keulee           ###   ########.fr        #
+#    Updated: 2020/07/10 16:27:06 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-
-CC = gcc
-
-CFLAGS = -Wall -Wextra -Werror
-
-OBJ = $(SRC:.c=.o)
-
-INCLUDE = ./
-
-AR = ar
-
-RC = rc
-
-RM = rm -f
 
 SRC = ft_putnbr.c \
 		ft_atoi.c \
@@ -66,6 +52,20 @@ SRC = ft_putnbr.c \
 		ft_xx_case.c \
 		ft_print_double_percent.c \
 		ft_print_sgl_caracter.c
+
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror
+
+OBJ = $(SRC:.c=.o)
+
+INCLUDE = ./
+
+AR = ar
+
+RC = rc
+
+RM = rm -f
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDE)
