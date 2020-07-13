@@ -6,11 +6,11 @@
 /*   By: k <k@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 18:33:56 by k                 #+#    #+#             */
-/*   Updated: 2020/07/09 16:17:31 by k                ###   ########.fr       */
+/*   Updated: 2020/07/10 23:02:06 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	ft_print_nbr(int nbr)
 {

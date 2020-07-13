@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:37 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/10 16:27:11 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/11 01:44:29 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdarg.h>
-# include <stdio.h>
 
 typedef struct      s_struct
 {
@@ -74,6 +73,7 @@ void        ft_init(t_struct *tab, const char *str);
 void        ft_find_option(t_struct *tab);
 void        ft_find_specifier(t_struct *tab);
 void        ft_option_clear(t_struct *tab);
+void 		ft_clear(t_struct *tab);
 void        ft_print_case(t_struct *tab);
 void        ft_find_asterisk(t_struct *tab);
 void        ft_find_precision_and_width(t_struct *tab);
@@ -86,6 +86,7 @@ void        ft_info_x(t_struct *tab);
 void        ft_info_xx(t_struct *tab);
 void 		ft_info_percent(t_struct *tab);
 
+void 		ft_di_case_0(t_struct *tab);
 void 		ft_di_case_1_y_zero(t_struct *tab);
 void 		ft_di_case_1_n_zero(t_struct *tab);
 void        ft_di_case_2_1_a(t_struct *tab);

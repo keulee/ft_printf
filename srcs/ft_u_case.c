@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 15:23:34 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 16:24:26 by k                ###   ########.fr       */
+/*   Updated: 2020/07/10 23:02:24 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void    ft_u_case_1_y_n_minus(t_struct *tab)
 {

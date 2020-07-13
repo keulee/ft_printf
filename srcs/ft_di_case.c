@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 12:10:47 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/09 16:27:39 by k                ###   ########.fr       */
+/*   Updated: 2020/07/10 22:59:33 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void 	ft_di_case_1_y_zero(t_struct *tab)
 {

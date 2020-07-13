@@ -6,7 +6,7 @@
 #    By: keulee <keulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:04:39 by keulee            #+#    #+#              #
-#    Updated: 2020/07/10 16:44:20 by keulee           ###   ########.fr        #
+#    Updated: 2020/07/10 22:51:01 by keulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,15 +62,10 @@ SRCS = $(addprefix ${DIR_S}/, ${SRC})
 OBJS = $(addprefix ${DIR_O}/, ${SRC:.c=.o})
 
 CC = gcc
-
 CFLAGS = -Wall -Wextra -Werror
-
 AR = ar
-
 RC = rc
-
 RM = rm -f
-
 RMD = rm -rf
 
 all: $(NAME)

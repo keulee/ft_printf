@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/30 16:03:01 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/08 16:59:02 by k                ###   ########.fr       */
+/*   Updated: 2020/07/10 23:01:23 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void 	ft_percent_case_1_y_n_zero(t_struct *tab)
 {

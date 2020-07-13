@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 14:14:10 by keulee            #+#    #+#             */
-/*   Updated: 2020/05/07 13:10:13 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/13 18:37:49 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // The pointer may subsequently be used as an argument to the function free(3).
 // If insufficient memory is available, NULL is returned and errno is set to ENOMEM.
 //
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 char		*ft_strdup(const char *src)
 {
@@ -26,7 +26,7 @@ char		*ft_strdup(const char *src)
 	i = 0;
 	copy = NULL;
 	len = ft_strlen(src);
-	if (!(copy = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(copy = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	while (i < len)
 	{

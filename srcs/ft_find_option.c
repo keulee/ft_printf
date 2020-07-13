@@ -6,11 +6,11 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 13:08:48 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/09 17:41:08 by k                ###   ########.fr       */
+/*   Updated: 2020/07/10 22:59:52 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 /*
 ** Function to find every options (flag, width etc)
