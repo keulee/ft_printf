@@ -6,7 +6,7 @@
 /*   By: k <k@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 16:25:43 by k                 #+#    #+#             */
-/*   Updated: 2020/07/08 16:28:56 by k                ###   ########.fr       */
+/*   Updated: 2020/07/12 23:58:50 by k                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void    ft_info_xx(t_struct *tab)
         tab->check_zero = 0;
     if (tab->check_precision == 1 && tab->check_zero == 1)
         tab->check_zero = 0;
+    free(tab->string);
 }

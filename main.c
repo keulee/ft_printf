@@ -1,6 +1,13 @@
 #include "includes/ft_printf.h"
 #include <limits.h>
 #include <stdio.h>
+#include <fcntl.h>
+
+__attribute__ ((destructor)) void ft_quit(void)
+{
+    system("leaks a.out");
+}
+
 
 int main(void)
 {
@@ -50,7 +57,10 @@ int main(void)
     ft_printf_count = ft_printf("%-5");
     // printf("ft printf count : %d\n", ft_printf_count);
 
+    while(1)
+        ;
 
+    system("leaks a.out");
     // int p = NULL;
 
     // char *str = "We all pretend to be the hero on the good side";
