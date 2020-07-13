@@ -6,7 +6,7 @@
 /*   By: keulee <keulee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 11:36:32 by keulee            #+#    #+#             */
-/*   Updated: 2020/07/10 23:59:41 by keulee           ###   ########.fr       */
+/*   Updated: 2020/07/13 17:36:44 by keulee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void    ft_info_di(t_struct *tab)
         tab->check_zero = 0;
     if (tab->check_precision == 1 && tab->check_zero == 1)
         tab->check_zero = 0;
+	free(tab->string);
 }
 
 void 	ft_di_case_0(t_struct *tab)
