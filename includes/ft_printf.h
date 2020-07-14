@@ -55,7 +55,10 @@ char	    *ft_itoa(int n);
 char        *ft_strdup(const char *src);
 char        *ft_itoa_u(unsigned int n);
 void        ft_putnbr_base(unsigned long long nbr, char *base);
-char        *ft_utoa_base(unsigned long long nb, char *base);
+//char        *ft_utoa_base(unsigned long long nb, char *base);
+char		*ft_utoa_base(unsigned long long value, char *base);
+int			ft_strcmp(const char *s1, const char *s2);
+char		*ft_strsub(char const *s, unsigned int start, size_t len);
 
 void        ft_print_double_percent(t_struct *tab);
 void        ft_print_sgl_caracter(t_struct *tab);

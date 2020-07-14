@@ -22,5 +22,4 @@ void    ft_info_u(t_struct *tab)
     if (tab->check_precision == 1 && tab->check_zero == 1)
         tab->check_zero = 0;
     free(tab->string);
-	free(tab->string);
 }

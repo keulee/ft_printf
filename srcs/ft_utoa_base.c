@@ -12,7 +12,46 @@
 
 #include "../includes/ft_printf.h"
 
-char	*ft_rev(char *string)
+unsigned long long		ft_pow2(unsigned long long nb, unsigned long long pow)
+{
+	if (pow == 0)
+		return (1);
+	else
+		return (nb * ft_pow2(nb, pow - 1));
+}
+
+char					*ft_utoa_base(unsigned long long value, char *base)
+{
+	char				*nbr;
+	unsigned long long	i;
+	unsigned long long	neg;
+	unsigned long long	b;
+
+	b = ft_strlen(base);
+	i = 1;
+	neg = 0;
+	while (ft_pow2(b, i) - 1 < value)
+		i++;
+	if (!(nbr = (char*)malloc(sizeof(nbr) * i)))
+		return (NULL);
+	nbr[i + neg] = '\0';
+	while (i-- > 0)
+	{
+		nbr[i + neg] = (value % b) + (value % b > 9 ? 'a' - 10 : '0');
+		value = value / b;
+	}
+	(neg ? nbr[0] = '-' : 0);
+	if (nbr[0] == '0' && ft_strcmp(nbr, "0") != 0)
+	{
+		i = 0;
+		while (nbr[i] == '0')
+			i++;
+		return (ft_strsub(nbr, i, ft_strlen(nbr) - i));
+	}
+	return (nbr);
+}
+
+/*char	*ft_rev(char *string)
 {
 	int		len;
 	int		i;
@@ -70,4 +109,4 @@ char	*ft_utoa_base(unsigned long long nb, char *base)
 	}
 	string[i] = '\0';
 	return (ft_rev(string));
-}
+}*/
