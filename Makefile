@@ -51,9 +51,7 @@ SRC = ft_putnbr.c \
 		ft_info_xx.c \
 		ft_xx_case.c \
 		ft_print_double_percent.c \
-		ft_print_sgl_caracter.c \
-		ft_strcmp.c \
-		ft_strsub.c 
+		ft_print_sgl_caracter.c  
 
 HEADER = includes
 DIR_S = srcs
@@ -64,7 +62,7 @@ SRCS = $(addprefix ${DIR_S}/, ${SRC})
 OBJS = $(addprefix ${DIR_O}/, ${SRC:.c=.o})
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 AR = ar
 RC = rc
 RM = rm -f

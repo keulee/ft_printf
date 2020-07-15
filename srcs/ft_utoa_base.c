@@ -12,41 +12,43 @@
 
 #include "../includes/ft_printf.h"
 
-unsigned long long		ft_pow2(unsigned long long nb, unsigned long long pow)
+char		*ft_addchar(char *str, int nb)
 {
-	if (pow == 0)
-		return (1);
-	else
-		return (nb * ft_pow2(nb, pow - 1));
+	char	*tmp;
+	int		i;
+
+	tmp = str;
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	str = (char*)malloc(sizeof(*str) * (i + 2));
+	i = 0;
+	str[i] = (nb > 9) ? nb + 55 : nb + 48;
+	while (tmp[i] != '\0')
+	{
+		str[i + 1] = tmp[i];
+		i++;
+	}
+	str[i + 1] = '\0';
+	free(tmp);
+	return (str);
 }
 
-char					*ft_utoa_base(unsigned long long value, char *base)
+char		*ft_utoa_base(unsigned long long value, char *b)
 {
-	char				*nbr;
-	unsigned long long	i;
-	unsigned long long	neg;
-	unsigned long long	b;
+	char				*str;
+	unsigned long long	base;
 
-	b = ft_strlen(base);
-	i = 1;
-	neg = 0;
-	while (ft_pow2(b, i) - 1 < value)
-		i++;
-	if (!(nbr = (char*)malloc(sizeof(nbr) * i)))
+	base = ft_strlen(b);
+	if (base < 2 || base > 16)
 		return (NULL);
-	nbr[i + neg] = '\0';
-	while (i-- > 0)
+	str = (char*)malloc(sizeof(*str) * 1);
+	str[0] = '\0';
+	while (value / base > 0)
 	{
-		nbr[i + neg] = (value % b) + (value % b > 9 ? 'a' - 10 : '0');
-		value = value / b;
+		str = ft_addchar(str, value % base);
+		value = value / base;
 	}
-	(neg ? nbr[0] = '-' : 0);
-	if (nbr[0] == '0' && ft_strcmp(nbr, "0") != 0)
-	{
-		i = 0;
-		while (nbr[i] == '0')
-			i++;
-		return (ft_strsub(nbr, i, ft_strlen(nbr) - i));
-	}
-	return (nbr);
+	str = ft_addchar(str, value);
+	return (str);
 }
