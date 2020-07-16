@@ -1,12 +1,12 @@
 #include "includes/ft_printf.h"
 #include <limits.h>
 #include <stdio.h>
-#include <fcntl.h>
+//#include <fcntl.h>
 
-__attribute__ ((destructor)) void ft_quit(void)
+/*__attribute__ ((destructor)) void ft_quit(void)
 {
     system("leaks a.out");
-}
+}*/
 
 
 int main(void)
@@ -49,18 +49,13 @@ int main(void)
     printf("real printf count : %d\n", printf_count);
 
 
-    ft_printf_count = ft_printf("%-20d\n", INT_MIN);
-    printf_count = printf("%-20d\n", INT_MIN);
+    ft_printf_count = ft_printf("%-20u\n", INT_MIN);
+    printf_count = printf("%-20u\n", INT_MIN);
     printf("ft printf count : %d\n", ft_printf_count);
     printf("real printf count : %d\n", printf_count);
 
     ft_printf_count = ft_printf("%-5");
     // printf("ft printf count : %d\n", ft_printf_count);
-
-    while(1)
-        ;
-
-    system("leaks a.out");
     // int p = NULL;
 
     // char *str = "We all pretend to be the hero on the good side";
