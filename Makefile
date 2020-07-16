@@ -62,7 +62,7 @@ SRCS = $(addprefix ${DIR_S}/, ${SRC})
 OBJS = $(addprefix ${DIR_O}/, ${SRC:.c=.o})
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 AR = ar
 RC = rc
 RM = rm -f
